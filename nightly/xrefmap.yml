@@ -1,0 +1,582 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Qommon.Collections
+  name: Qommon.Collections
+  href: api/Qommon.Collections.html
+  commentId: N:Qommon.Collections
+  fullName: Qommon.Collections
+  nameWithType: Qommon.Collections
+- uid: Qommon.Collections.ReadOnlyCollection`1
+  name: ReadOnlyCollection<T>
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html
+  commentId: T:Qommon.Collections.ReadOnlyCollection`1
+  name.vb: ReadOnlyCollection(Of T)
+  fullName: Qommon.Collections.ReadOnlyCollection<T>
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T)
+  nameWithType: ReadOnlyCollection<T>
+  nameWithType.vb: ReadOnlyCollection(Of T)
+- uid: Qommon.Collections.ReadOnlyCollection`1.#ctor(System.Collections.Generic.ICollection{`0})
+  name: ReadOnlyCollection(ICollection<T>)
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1__ctor_System_Collections_Generic_ICollection__0__
+  commentId: M:Qommon.Collections.ReadOnlyCollection`1.#ctor(System.Collections.Generic.ICollection{`0})
+  name.vb: ReadOnlyCollection(ICollection(Of T))
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.ReadOnlyCollection(System.Collections.Generic.ICollection<T>)
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).ReadOnlyCollection(System.Collections.Generic.ICollection(Of T))
+  nameWithType: ReadOnlyCollection<T>.ReadOnlyCollection(ICollection<T>)
+  nameWithType.vb: ReadOnlyCollection(Of T).ReadOnlyCollection(ICollection(Of T))
+- uid: Qommon.Collections.ReadOnlyCollection`1.#ctor*
+  name: ReadOnlyCollection
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1__ctor_
+  commentId: Overload:Qommon.Collections.ReadOnlyCollection`1.#ctor
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.ReadOnlyCollection
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).ReadOnlyCollection
+  nameWithType: ReadOnlyCollection<T>.ReadOnlyCollection
+  nameWithType.vb: ReadOnlyCollection(Of T).ReadOnlyCollection
+- uid: Qommon.Collections.ReadOnlyCollection`1.Count
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1_Count
+  commentId: P:Qommon.Collections.ReadOnlyCollection`1.Count
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).Count
+  nameWithType: ReadOnlyCollection<T>.Count
+  nameWithType.vb: ReadOnlyCollection(Of T).Count
+- uid: Qommon.Collections.ReadOnlyCollection`1.Count*
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1_Count_
+  commentId: Overload:Qommon.Collections.ReadOnlyCollection`1.Count
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).Count
+  nameWithType: ReadOnlyCollection<T>.Count
+  nameWithType.vb: ReadOnlyCollection(Of T).Count
+- uid: Qommon.Collections.ReadOnlyCollection`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1_GetEnumerator
+  commentId: M:Qommon.Collections.ReadOnlyCollection`1.GetEnumerator
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.GetEnumerator()
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).GetEnumerator()
+  nameWithType: ReadOnlyCollection<T>.GetEnumerator()
+  nameWithType.vb: ReadOnlyCollection(Of T).GetEnumerator()
+- uid: Qommon.Collections.ReadOnlyCollection`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/Qommon.Collections.ReadOnlyCollection-1.html#Qommon_Collections_ReadOnlyCollection_1_GetEnumerator_
+  commentId: Overload:Qommon.Collections.ReadOnlyCollection`1.GetEnumerator
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyCollection<T>.GetEnumerator
+  fullName.vb: Qommon.Collections.ReadOnlyCollection(Of T).GetEnumerator
+  nameWithType: ReadOnlyCollection<T>.GetEnumerator
+  nameWithType.vb: ReadOnlyCollection(Of T).GetEnumerator
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2
+  name: ReadOnlyConcurrentDictionary<TKey, TValue>
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html
+  commentId: T:Qommon.Collections.ReadOnlyConcurrentDictionary`2
+  name.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue)
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue)
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue)
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.#ctor(System.Collections.Concurrent.ConcurrentDictionary{`0,`1})
+  name: ReadOnlyConcurrentDictionary(ConcurrentDictionary<TKey, TValue>)
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2__ctor_System_Collections_Concurrent_ConcurrentDictionary__0__1__
+  commentId: M:Qommon.Collections.ReadOnlyConcurrentDictionary`2.#ctor(System.Collections.Concurrent.ConcurrentDictionary{`0,`1})
+  name.vb: ReadOnlyConcurrentDictionary(ConcurrentDictionary(Of TKey, TValue))
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ReadOnlyConcurrentDictionary(System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>)
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ReadOnlyConcurrentDictionary(System.Collections.Concurrent.ConcurrentDictionary(Of TKey, TValue))
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ReadOnlyConcurrentDictionary(ConcurrentDictionary<TKey, TValue>)
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ReadOnlyConcurrentDictionary(ConcurrentDictionary(Of TKey, TValue))
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.#ctor*
+  name: ReadOnlyConcurrentDictionary
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2__ctor_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.#ctor
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ReadOnlyConcurrentDictionary
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ReadOnlyConcurrentDictionary
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ReadOnlyConcurrentDictionary
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ReadOnlyConcurrentDictionary
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.ContainsKey(`0)
+  name: ContainsKey(TKey)
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_ContainsKey__0_
+  commentId: M:Qommon.Collections.ReadOnlyConcurrentDictionary`2.ContainsKey(`0)
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ContainsKey(TKey)
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ContainsKey(TKey)
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.ContainsKey*
+  name: ContainsKey
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_ContainsKey_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.ContainsKey
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ContainsKey
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ContainsKey
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ContainsKey
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ContainsKey
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Count
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Count
+  commentId: P:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Count
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Count
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Count
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Count
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Count*
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Count_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Count
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Count
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Count
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Count
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.GetEnumerator
+  name: GetEnumerator()
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_GetEnumerator
+  commentId: M:Qommon.Collections.ReadOnlyConcurrentDictionary`2.GetEnumerator
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.GetEnumerator()
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).GetEnumerator()
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.GetEnumerator()
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).GetEnumerator()
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.GetEnumerator*
+  name: GetEnumerator
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_GetEnumerator_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.GetEnumerator
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.GetEnumerator
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).GetEnumerator
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.GetEnumerator
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).GetEnumerator
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Item(`0)
+  name: Item[TKey]
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Item__0_
+  commentId: P:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Item(`0)
+  name.vb: Item(TKey)
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Item[TKey]
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Item(TKey)
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Item[TKey]
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Item(TKey)
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Item*
+  name: Item
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Item_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Item
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Item
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Item
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Item
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Item
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Keys
+  name: Keys
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Keys
+  commentId: P:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Keys
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Keys
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Keys
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Keys
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Keys
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Keys*
+  name: Keys
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Keys_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Keys
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Keys
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Keys
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Keys
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Keys
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.ToArray
+  name: ToArray()
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_ToArray
+  commentId: M:Qommon.Collections.ReadOnlyConcurrentDictionary`2.ToArray
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ToArray()
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ToArray()
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ToArray()
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ToArray()
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.ToArray*
+  name: ToArray
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_ToArray_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.ToArray
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.ToArray
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).ToArray
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.ToArray
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).ToArray
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, out TValue)
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_TryGetValue__0__1__
+  commentId: M:Qommon.Collections.ReadOnlyConcurrentDictionary`2.TryGetValue(`0,`1@)
+  name.vb: TryGetValue(TKey, ByRef TValue)
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.TryGetValue*
+  name: TryGetValue
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_TryGetValue_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.TryGetValue
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.TryGetValue
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).TryGetValue
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.TryGetValue
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).TryGetValue
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Values
+  name: Values
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Values
+  commentId: P:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Values
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Values
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Values
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Values
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Values
+- uid: Qommon.Collections.ReadOnlyConcurrentDictionary`2.Values*
+  name: Values
+  href: api/Qommon.Collections.ReadOnlyConcurrentDictionary-2.html#Qommon_Collections_ReadOnlyConcurrentDictionary_2_Values_
+  commentId: Overload:Qommon.Collections.ReadOnlyConcurrentDictionary`2.Values
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyConcurrentDictionary<TKey, TValue>.Values
+  fullName.vb: Qommon.Collections.ReadOnlyConcurrentDictionary(Of TKey, TValue).Values
+  nameWithType: ReadOnlyConcurrentDictionary<TKey, TValue>.Values
+  nameWithType.vb: ReadOnlyConcurrentDictionary(Of TKey, TValue).Values
+- uid: Qommon.Collections.ReadOnlyDictionary`2
+  name: ReadOnlyDictionary<TKey, TValue>
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html
+  commentId: T:Qommon.Collections.ReadOnlyDictionary`2
+  name.vb: ReadOnlyDictionary(Of TKey, TValue)
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue)
+  nameWithType: ReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue)
+- uid: Qommon.Collections.ReadOnlyDictionary`2.#ctor(System.Collections.Generic.IReadOnlyDictionary{`0,`1})
+  name: ReadOnlyDictionary(IReadOnlyDictionary<TKey, TValue>)
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2__ctor_System_Collections_Generic_IReadOnlyDictionary__0__1__
+  commentId: M:Qommon.Collections.ReadOnlyDictionary`2.#ctor(System.Collections.Generic.IReadOnlyDictionary{`0,`1})
+  name.vb: ReadOnlyDictionary(IReadOnlyDictionary(Of TKey, TValue))
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.ReadOnlyDictionary(System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>)
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).ReadOnlyDictionary(System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue))
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.ReadOnlyDictionary(IReadOnlyDictionary<TKey, TValue>)
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).ReadOnlyDictionary(IReadOnlyDictionary(Of TKey, TValue))
+- uid: Qommon.Collections.ReadOnlyDictionary`2.#ctor*
+  name: ReadOnlyDictionary
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2__ctor_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.#ctor
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.ReadOnlyDictionary
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).ReadOnlyDictionary
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.ReadOnlyDictionary
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).ReadOnlyDictionary
+- uid: Qommon.Collections.ReadOnlyDictionary`2.ContainsKey(`0)
+  name: ContainsKey(TKey)
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_ContainsKey__0_
+  commentId: M:Qommon.Collections.ReadOnlyDictionary`2.ContainsKey(`0)
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).ContainsKey(TKey)
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).ContainsKey(TKey)
+- uid: Qommon.Collections.ReadOnlyDictionary`2.ContainsKey*
+  name: ContainsKey
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_ContainsKey_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.ContainsKey
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.ContainsKey
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).ContainsKey
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.ContainsKey
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).ContainsKey
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Count
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Count
+  commentId: P:Qommon.Collections.ReadOnlyDictionary`2.Count
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Count
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Count
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Count
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Count*
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Count_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.Count
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Count
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Count
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Count
+- uid: Qommon.Collections.ReadOnlyDictionary`2.GetEnumerator
+  name: GetEnumerator()
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_GetEnumerator
+  commentId: M:Qommon.Collections.ReadOnlyDictionary`2.GetEnumerator
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.GetEnumerator()
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).GetEnumerator()
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.GetEnumerator()
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).GetEnumerator()
+- uid: Qommon.Collections.ReadOnlyDictionary`2.GetEnumerator*
+  name: GetEnumerator
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_GetEnumerator_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.GetEnumerator
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.GetEnumerator
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).GetEnumerator
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.GetEnumerator
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).GetEnumerator
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Item(`0)
+  name: Item[TKey]
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Item__0_
+  commentId: P:Qommon.Collections.ReadOnlyDictionary`2.Item(`0)
+  name.vb: Item(TKey)
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Item[TKey]
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Item(TKey)
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Item[TKey]
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Item(TKey)
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Item*
+  name: Item
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Item_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.Item
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Item
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Item
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Item
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Item
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Keys
+  name: Keys
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Keys
+  commentId: P:Qommon.Collections.ReadOnlyDictionary`2.Keys
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Keys
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Keys
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Keys
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Keys
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Keys*
+  name: Keys
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Keys_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.Keys
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Keys
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Keys
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Keys
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Keys
+- uid: Qommon.Collections.ReadOnlyDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, out TValue)
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_TryGetValue__0__1__
+  commentId: M:Qommon.Collections.ReadOnlyDictionary`2.TryGetValue(`0,`1@)
+  name.vb: TryGetValue(TKey, ByRef TValue)
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+- uid: Qommon.Collections.ReadOnlyDictionary`2.TryGetValue*
+  name: TryGetValue
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_TryGetValue_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.TryGetValue
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.TryGetValue
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).TryGetValue
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.TryGetValue
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).TryGetValue
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Values
+  name: Values
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Values
+  commentId: P:Qommon.Collections.ReadOnlyDictionary`2.Values
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Values
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Values
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Values
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Values
+- uid: Qommon.Collections.ReadOnlyDictionary`2.Values*
+  name: Values
+  href: api/Qommon.Collections.ReadOnlyDictionary-2.html#Qommon_Collections_ReadOnlyDictionary_2_Values_
+  commentId: Overload:Qommon.Collections.ReadOnlyDictionary`2.Values
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyDictionary<TKey, TValue>.Values
+  fullName.vb: Qommon.Collections.ReadOnlyDictionary(Of TKey, TValue).Values
+  nameWithType: ReadOnlyDictionary<TKey, TValue>.Values
+  nameWithType.vb: ReadOnlyDictionary(Of TKey, TValue).Values
+- uid: Qommon.Collections.ReadOnlyList`1
+  name: ReadOnlyList<T>
+  href: api/Qommon.Collections.ReadOnlyList-1.html
+  commentId: T:Qommon.Collections.ReadOnlyList`1
+  name.vb: ReadOnlyList(Of T)
+  fullName: Qommon.Collections.ReadOnlyList<T>
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T)
+  nameWithType: ReadOnlyList<T>
+  nameWithType.vb: ReadOnlyList(Of T)
+- uid: Qommon.Collections.ReadOnlyList`1.#ctor(System.Collections.Generic.IReadOnlyList{`0})
+  name: ReadOnlyList(IReadOnlyList<T>)
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1__ctor_System_Collections_Generic_IReadOnlyList__0__
+  commentId: M:Qommon.Collections.ReadOnlyList`1.#ctor(System.Collections.Generic.IReadOnlyList{`0})
+  name.vb: ReadOnlyList(IReadOnlyList(Of T))
+  fullName: Qommon.Collections.ReadOnlyList<T>.ReadOnlyList(System.Collections.Generic.IReadOnlyList<T>)
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).ReadOnlyList(System.Collections.Generic.IReadOnlyList(Of T))
+  nameWithType: ReadOnlyList<T>.ReadOnlyList(IReadOnlyList<T>)
+  nameWithType.vb: ReadOnlyList(Of T).ReadOnlyList(IReadOnlyList(Of T))
+- uid: Qommon.Collections.ReadOnlyList`1.#ctor*
+  name: ReadOnlyList
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1__ctor_
+  commentId: Overload:Qommon.Collections.ReadOnlyList`1.#ctor
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyList<T>.ReadOnlyList
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).ReadOnlyList
+  nameWithType: ReadOnlyList<T>.ReadOnlyList
+  nameWithType.vb: ReadOnlyList(Of T).ReadOnlyList
+- uid: Qommon.Collections.ReadOnlyList`1.Count
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_Count
+  commentId: P:Qommon.Collections.ReadOnlyList`1.Count
+  fullName: Qommon.Collections.ReadOnlyList<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).Count
+  nameWithType: ReadOnlyList<T>.Count
+  nameWithType.vb: ReadOnlyList(Of T).Count
+- uid: Qommon.Collections.ReadOnlyList`1.Count*
+  name: Count
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_Count_
+  commentId: Overload:Qommon.Collections.ReadOnlyList`1.Count
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyList<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).Count
+  nameWithType: ReadOnlyList<T>.Count
+  nameWithType.vb: ReadOnlyList(Of T).Count
+- uid: Qommon.Collections.ReadOnlyList`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_GetEnumerator
+  commentId: M:Qommon.Collections.ReadOnlyList`1.GetEnumerator
+  fullName: Qommon.Collections.ReadOnlyList<T>.GetEnumerator()
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).GetEnumerator()
+  nameWithType: ReadOnlyList<T>.GetEnumerator()
+  nameWithType.vb: ReadOnlyList(Of T).GetEnumerator()
+- uid: Qommon.Collections.ReadOnlyList`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_GetEnumerator_
+  commentId: Overload:Qommon.Collections.ReadOnlyList`1.GetEnumerator
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyList<T>.GetEnumerator
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).GetEnumerator
+  nameWithType: ReadOnlyList<T>.GetEnumerator
+  nameWithType.vb: ReadOnlyList(Of T).GetEnumerator
+- uid: Qommon.Collections.ReadOnlyList`1.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_Item_System_Int32_
+  commentId: P:Qommon.Collections.ReadOnlyList`1.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Qommon.Collections.ReadOnlyList<T>.Item[System.Int32]
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).Item(System.Int32)
+  nameWithType: ReadOnlyList<T>.Item[Int32]
+  nameWithType.vb: ReadOnlyList(Of T).Item(Int32)
+- uid: Qommon.Collections.ReadOnlyList`1.Item*
+  name: Item
+  href: api/Qommon.Collections.ReadOnlyList-1.html#Qommon_Collections_ReadOnlyList_1_Item_
+  commentId: Overload:Qommon.Collections.ReadOnlyList`1.Item
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlyList<T>.Item
+  fullName.vb: Qommon.Collections.ReadOnlyList(Of T).Item
+  nameWithType: ReadOnlyList<T>.Item
+  nameWithType.vb: ReadOnlyList(Of T).Item
+- uid: Qommon.Events
+  name: Qommon.Events
+  href: api/Qommon.Events.html
+  commentId: N:Qommon.Events
+  fullName: Qommon.Events
+  nameWithType: Qommon.Events
+- uid: Qommon.Events.AsynchronousEvent`1
+  name: AsynchronousEvent<T>
+  href: api/Qommon.Events.AsynchronousEvent-1.html
+  commentId: T:Qommon.Events.AsynchronousEvent`1
+  name.vb: AsynchronousEvent(Of T)
+  fullName: Qommon.Events.AsynchronousEvent<T>
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T)
+  nameWithType: AsynchronousEvent<T>
+  nameWithType.vb: AsynchronousEvent(Of T)
+- uid: Qommon.Events.AsynchronousEvent`1.#ctor
+  name: AsynchronousEvent()
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1__ctor
+  commentId: M:Qommon.Events.AsynchronousEvent`1.#ctor
+  fullName: Qommon.Events.AsynchronousEvent<T>.AsynchronousEvent()
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).AsynchronousEvent()
+  nameWithType: AsynchronousEvent<T>.AsynchronousEvent()
+  nameWithType.vb: AsynchronousEvent(Of T).AsynchronousEvent()
+- uid: Qommon.Events.AsynchronousEvent`1.#ctor(System.Func{System.Exception,System.Threading.Tasks.Task})
+  name: AsynchronousEvent(Func<Exception, Task>)
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1__ctor_System_Func_System_Exception_System_Threading_Tasks_Task__
+  commentId: M:Qommon.Events.AsynchronousEvent`1.#ctor(System.Func{System.Exception,System.Threading.Tasks.Task})
+  name.vb: AsynchronousEvent(Func(Of Exception, Task))
+  fullName: Qommon.Events.AsynchronousEvent<T>.AsynchronousEvent(System.Func<System.Exception, System.Threading.Tasks.Task>)
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).AsynchronousEvent(System.Func(Of System.Exception, System.Threading.Tasks.Task))
+  nameWithType: AsynchronousEvent<T>.AsynchronousEvent(Func<Exception, Task>)
+  nameWithType.vb: AsynchronousEvent(Of T).AsynchronousEvent(Func(Of Exception, Task))
+- uid: Qommon.Events.AsynchronousEvent`1.#ctor*
+  name: AsynchronousEvent
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1__ctor_
+  commentId: Overload:Qommon.Events.AsynchronousEvent`1.#ctor
+  isSpec: "True"
+  fullName: Qommon.Events.AsynchronousEvent<T>.AsynchronousEvent
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).AsynchronousEvent
+  nameWithType: AsynchronousEvent<T>.AsynchronousEvent
+  nameWithType.vb: AsynchronousEvent(Of T).AsynchronousEvent
+- uid: Qommon.Events.AsynchronousEvent`1.Hook(Qommon.Events.AsynchronousEventHandler{`0})
+  name: Hook(AsynchronousEventHandler<T>)
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_Hook_Qommon_Events_AsynchronousEventHandler__0__
+  commentId: M:Qommon.Events.AsynchronousEvent`1.Hook(Qommon.Events.AsynchronousEventHandler{`0})
+  name.vb: Hook(AsynchronousEventHandler(Of T))
+  fullName: Qommon.Events.AsynchronousEvent<T>.Hook(Qommon.Events.AsynchronousEventHandler<T>)
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).Hook(Qommon.Events.AsynchronousEventHandler(Of T))
+  nameWithType: AsynchronousEvent<T>.Hook(AsynchronousEventHandler<T>)
+  nameWithType.vb: AsynchronousEvent(Of T).Hook(AsynchronousEventHandler(Of T))
+- uid: Qommon.Events.AsynchronousEvent`1.Hook*
+  name: Hook
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_Hook_
+  commentId: Overload:Qommon.Events.AsynchronousEvent`1.Hook
+  isSpec: "True"
+  fullName: Qommon.Events.AsynchronousEvent<T>.Hook
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).Hook
+  nameWithType: AsynchronousEvent<T>.Hook
+  nameWithType.vb: AsynchronousEvent(Of T).Hook
+- uid: Qommon.Events.AsynchronousEvent`1.InvokeAsync(`0)
+  name: InvokeAsync(T)
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_InvokeAsync__0_
+  commentId: M:Qommon.Events.AsynchronousEvent`1.InvokeAsync(`0)
+  fullName: Qommon.Events.AsynchronousEvent<T>.InvokeAsync(T)
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).InvokeAsync(T)
+  nameWithType: AsynchronousEvent<T>.InvokeAsync(T)
+  nameWithType.vb: AsynchronousEvent(Of T).InvokeAsync(T)
+- uid: Qommon.Events.AsynchronousEvent`1.InvokeAsync*
+  name: InvokeAsync
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_InvokeAsync_
+  commentId: Overload:Qommon.Events.AsynchronousEvent`1.InvokeAsync
+  isSpec: "True"
+  fullName: Qommon.Events.AsynchronousEvent<T>.InvokeAsync
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).InvokeAsync
+  nameWithType: AsynchronousEvent<T>.InvokeAsync
+  nameWithType.vb: AsynchronousEvent(Of T).InvokeAsync
+- uid: Qommon.Events.AsynchronousEvent`1.Unhook(Qommon.Events.AsynchronousEventHandler{`0})
+  name: Unhook(AsynchronousEventHandler<T>)
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_Unhook_Qommon_Events_AsynchronousEventHandler__0__
+  commentId: M:Qommon.Events.AsynchronousEvent`1.Unhook(Qommon.Events.AsynchronousEventHandler{`0})
+  name.vb: Unhook(AsynchronousEventHandler(Of T))
+  fullName: Qommon.Events.AsynchronousEvent<T>.Unhook(Qommon.Events.AsynchronousEventHandler<T>)
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).Unhook(Qommon.Events.AsynchronousEventHandler(Of T))
+  nameWithType: AsynchronousEvent<T>.Unhook(AsynchronousEventHandler<T>)
+  nameWithType.vb: AsynchronousEvent(Of T).Unhook(AsynchronousEventHandler(Of T))
+- uid: Qommon.Events.AsynchronousEvent`1.Unhook*
+  name: Unhook
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_Unhook_
+  commentId: Overload:Qommon.Events.AsynchronousEvent`1.Unhook
+  isSpec: "True"
+  fullName: Qommon.Events.AsynchronousEvent<T>.Unhook
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).Unhook
+  nameWithType: AsynchronousEvent<T>.Unhook
+  nameWithType.vb: AsynchronousEvent(Of T).Unhook
+- uid: Qommon.Events.AsynchronousEvent`1.UnhookAll
+  name: UnhookAll()
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_UnhookAll
+  commentId: M:Qommon.Events.AsynchronousEvent`1.UnhookAll
+  fullName: Qommon.Events.AsynchronousEvent<T>.UnhookAll()
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).UnhookAll()
+  nameWithType: AsynchronousEvent<T>.UnhookAll()
+  nameWithType.vb: AsynchronousEvent(Of T).UnhookAll()
+- uid: Qommon.Events.AsynchronousEvent`1.UnhookAll*
+  name: UnhookAll
+  href: api/Qommon.Events.AsynchronousEvent-1.html#Qommon_Events_AsynchronousEvent_1_UnhookAll_
+  commentId: Overload:Qommon.Events.AsynchronousEvent`1.UnhookAll
+  isSpec: "True"
+  fullName: Qommon.Events.AsynchronousEvent<T>.UnhookAll
+  fullName.vb: Qommon.Events.AsynchronousEvent(Of T).UnhookAll
+  nameWithType: AsynchronousEvent<T>.UnhookAll
+  nameWithType.vb: AsynchronousEvent(Of T).UnhookAll
+- uid: Qommon.Events.AsynchronousEventHandler`1
+  name: AsynchronousEventHandler<T>
+  href: api/Qommon.Events.AsynchronousEventHandler-1.html
+  commentId: T:Qommon.Events.AsynchronousEventHandler`1
+  name.vb: AsynchronousEventHandler(Of T)
+  fullName: Qommon.Events.AsynchronousEventHandler<T>
+  fullName.vb: Qommon.Events.AsynchronousEventHandler(Of T)
+  nameWithType: AsynchronousEventHandler<T>
+  nameWithType.vb: AsynchronousEventHandler(Of T)
