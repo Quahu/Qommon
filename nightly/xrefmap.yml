@@ -460,6 +460,210 @@ references:
   fullName.vb: Qommon.Collections.ReadOnlyList(Of T).Item
   nameWithType: ReadOnlyList<T>.Item
   nameWithType.vb: ReadOnlyList(Of T).Item
+- uid: Qommon.Collections.ReadOnlySet`1
+  name: ReadOnlySet<T>
+  href: api/Qommon.Collections.ReadOnlySet-1.html
+  commentId: T:Qommon.Collections.ReadOnlySet`1
+  name.vb: ReadOnlySet(Of T)
+  fullName: Qommon.Collections.ReadOnlySet<T>
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T)
+  nameWithType: ReadOnlySet<T>
+  nameWithType.vb: ReadOnlySet(Of T)
+- uid: Qommon.Collections.ReadOnlySet`1.#ctor(System.Collections.Generic.ISet{`0})
+  name: ReadOnlySet(ISet<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1__ctor_System_Collections_Generic_ISet__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.#ctor(System.Collections.Generic.ISet{`0})
+  name.vb: ReadOnlySet(ISet(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.ReadOnlySet(System.Collections.Generic.ISet<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).ReadOnlySet(System.Collections.Generic.ISet(Of T))
+  nameWithType: ReadOnlySet<T>.ReadOnlySet(ISet<T>)
+  nameWithType.vb: ReadOnlySet(Of T).ReadOnlySet(ISet(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.#ctor*
+  name: ReadOnlySet
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1__ctor_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.#ctor
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.ReadOnlySet
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).ReadOnlySet
+  nameWithType: ReadOnlySet<T>.ReadOnlySet
+  nameWithType.vb: ReadOnlySet(Of T).ReadOnlySet
+- uid: Qommon.Collections.ReadOnlySet`1.Contains(`0)
+  name: Contains(T)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Contains__0_
+  commentId: M:Qommon.Collections.ReadOnlySet`1.Contains(`0)
+  fullName: Qommon.Collections.ReadOnlySet<T>.Contains(T)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Contains(T)
+  nameWithType: ReadOnlySet<T>.Contains(T)
+  nameWithType.vb: ReadOnlySet(Of T).Contains(T)
+- uid: Qommon.Collections.ReadOnlySet`1.Contains*
+  name: Contains
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Contains_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.Contains
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.Contains
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Contains
+  nameWithType: ReadOnlySet<T>.Contains
+  nameWithType.vb: ReadOnlySet(Of T).Contains
+- uid: Qommon.Collections.ReadOnlySet`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(T[], Int32)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_CopyTo__0___System_Int32_
+  commentId: M:Qommon.Collections.ReadOnlySet`1.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  fullName: Qommon.Collections.ReadOnlySet<T>.CopyTo(T[], System.Int32)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).CopyTo(T(), System.Int32)
+  nameWithType: ReadOnlySet<T>.CopyTo(T[], Int32)
+  nameWithType.vb: ReadOnlySet(Of T).CopyTo(T(), Int32)
+- uid: Qommon.Collections.ReadOnlySet`1.CopyTo*
+  name: CopyTo
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_CopyTo_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.CopyTo
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.CopyTo
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).CopyTo
+  nameWithType: ReadOnlySet<T>.CopyTo
+  nameWithType.vb: ReadOnlySet(Of T).CopyTo
+- uid: Qommon.Collections.ReadOnlySet`1.Count
+  name: Count
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Count
+  commentId: P:Qommon.Collections.ReadOnlySet`1.Count
+  fullName: Qommon.Collections.ReadOnlySet<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Count
+  nameWithType: ReadOnlySet<T>.Count
+  nameWithType.vb: ReadOnlySet(Of T).Count
+- uid: Qommon.Collections.ReadOnlySet`1.Count*
+  name: Count
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Count_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.Count
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.Count
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Count
+  nameWithType: ReadOnlySet<T>.Count
+  nameWithType.vb: ReadOnlySet(Of T).Count
+- uid: Qommon.Collections.ReadOnlySet`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_GetEnumerator
+  commentId: M:Qommon.Collections.ReadOnlySet`1.GetEnumerator
+  fullName: Qommon.Collections.ReadOnlySet<T>.GetEnumerator()
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).GetEnumerator()
+  nameWithType: ReadOnlySet<T>.GetEnumerator()
+  nameWithType.vb: ReadOnlySet(Of T).GetEnumerator()
+- uid: Qommon.Collections.ReadOnlySet`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_GetEnumerator_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.GetEnumerator
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.GetEnumerator
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).GetEnumerator
+  nameWithType: ReadOnlySet<T>.GetEnumerator
+  nameWithType.vb: ReadOnlySet(Of T).GetEnumerator
+- uid: Qommon.Collections.ReadOnlySet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsProperSubsetOf(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsProperSubsetOf_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name.vb: IsProperSubsetOf(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsProperSubsetOf(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsProperSubsetOf(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.IsProperSubsetOf(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).IsProperSubsetOf(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.IsProperSubsetOf*
+  name: IsProperSubsetOf
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsProperSubsetOf_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.IsProperSubsetOf
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsProperSubsetOf
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsProperSubsetOf
+  nameWithType: ReadOnlySet<T>.IsProperSubsetOf
+  nameWithType.vb: ReadOnlySet(Of T).IsProperSubsetOf
+- uid: Qommon.Collections.ReadOnlySet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsProperSupersetOf(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsProperSupersetOf_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name.vb: IsProperSupersetOf(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsProperSupersetOf(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsProperSupersetOf(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.IsProperSupersetOf(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).IsProperSupersetOf(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.IsProperSupersetOf*
+  name: IsProperSupersetOf
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsProperSupersetOf_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.IsProperSupersetOf
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsProperSupersetOf
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsProperSupersetOf
+  nameWithType: ReadOnlySet<T>.IsProperSupersetOf
+  nameWithType.vb: ReadOnlySet(Of T).IsProperSupersetOf
+- uid: Qommon.Collections.ReadOnlySet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsSubsetOf(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsSubsetOf_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})
+  name.vb: IsSubsetOf(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsSubsetOf(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsSubsetOf(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.IsSubsetOf(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).IsSubsetOf(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.IsSubsetOf*
+  name: IsSubsetOf
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsSubsetOf_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.IsSubsetOf
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsSubsetOf
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsSubsetOf
+  nameWithType: ReadOnlySet<T>.IsSubsetOf
+  nameWithType.vb: ReadOnlySet(Of T).IsSubsetOf
+- uid: Qommon.Collections.ReadOnlySet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name: IsSupersetOf(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsSupersetOf_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})
+  name.vb: IsSupersetOf(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsSupersetOf(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsSupersetOf(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.IsSupersetOf(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).IsSupersetOf(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.IsSupersetOf*
+  name: IsSupersetOf
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_IsSupersetOf_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.IsSupersetOf
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.IsSupersetOf
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).IsSupersetOf
+  nameWithType: ReadOnlySet<T>.IsSupersetOf
+  nameWithType.vb: ReadOnlySet(Of T).IsSupersetOf
+- uid: Qommon.Collections.ReadOnlySet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  name: Overlaps(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Overlaps_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Overlaps(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.Overlaps(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Overlaps(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.Overlaps(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).Overlaps(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.Overlaps*
+  name: Overlaps
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_Overlaps_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.Overlaps
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.Overlaps
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).Overlaps
+  nameWithType: ReadOnlySet<T>.Overlaps
+  nameWithType.vb: ReadOnlySet(Of T).Overlaps
+- uid: Qommon.Collections.ReadOnlySet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  name: SetEquals(IEnumerable<T>)
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_SetEquals_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Qommon.Collections.ReadOnlySet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})
+  name.vb: SetEquals(IEnumerable(Of T))
+  fullName: Qommon.Collections.ReadOnlySet<T>.SetEquals(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).SetEquals(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ReadOnlySet<T>.SetEquals(IEnumerable<T>)
+  nameWithType.vb: ReadOnlySet(Of T).SetEquals(IEnumerable(Of T))
+- uid: Qommon.Collections.ReadOnlySet`1.SetEquals*
+  name: SetEquals
+  href: api/Qommon.Collections.ReadOnlySet-1.html#Qommon_Collections_ReadOnlySet_1_SetEquals_
+  commentId: Overload:Qommon.Collections.ReadOnlySet`1.SetEquals
+  isSpec: "True"
+  fullName: Qommon.Collections.ReadOnlySet<T>.SetEquals
+  fullName.vb: Qommon.Collections.ReadOnlySet(Of T).SetEquals
+  nameWithType: ReadOnlySet<T>.SetEquals
+  nameWithType.vb: ReadOnlySet(Of T).SetEquals
 - uid: Qommon.Events
   name: Qommon.Events
   href: api/Qommon.Events.html
