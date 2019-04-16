@@ -22,7 +22,7 @@ namespace Qommon.Collections
             _dictionary = dictionary;
         }
 
-        public TValue this[TKey key] 
+        public TValue this[TKey key]
             => _dictionary[key];
 
         public bool ContainsKey(TKey key)
