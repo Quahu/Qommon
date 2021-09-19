@@ -1,14 +1,35 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Qommon.targets" />
   <PropertyGroup>
-    <VersionPrefix>1.0.1</VersionPrefix>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
-    <LangVersion>7.3</LangVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Authors>Quahu</Authors>
-    <Description>Common stuff used in my libraries.</Description>
-    <RepositoryUrl>https://github.com/Quahu/Qommon</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Quahu/Qommon</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/Quahu/Qommon/blob/master/LICENSE</PackageLicenseUrl>
-    <RepositoryType>Git</RepositoryType>
+    <RootNamespace>Qommon</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <None Update="Guard\Generated\Throw.Collection.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Throw.Collection.Generated.cs</LastGenOutput>
+    </None>
+    <None Update="Guard\Generated\Guard.Collection.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
+    </None>
+    <None Update="Guard\Generated\Guard.Comparable.Numeric.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Guard.Comparable.Numeric.Generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Guard\Generated\Throw.Collection.Generated.cs">
+      <DependentUpon>Throw.Collection.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Guard\Generated\Guard.Comparable.Numeric.Generated.cs">
+      <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Guard.Collection.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

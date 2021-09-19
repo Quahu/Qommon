@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Threading.Tasks;
 
 namespace Qommon.Events
@@ -7,47 +8,70 @@ namespace Qommon.Events
     ///     Represents an asynchronous event handler used by the <see cref="AsynchronousEvent{T}"/>.
     /// </summary>
     /// <typeparam name="T"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this handler. </typeparam>
+    /// <param name="sender"> The instance from which the event came from. </param>
     /// <param name="e"> The <see cref="EventArgs"/> object containing the event data. </param>
-    public delegate Task AsynchronousEventHandler<T>(T e) where T : EventArgs;
+    public delegate ValueTask AsynchronousEventHandler<T>(object sender, T e)
+        where T : EventArgs;
 
     /// <summary>
     ///     Represents an asynchronous event handler caller.
     /// </summary>
-    /// <typeparam name="T"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this event. </typeparam>
-    public sealed class AsynchronousEvent<T> where T : EventArgs
+    /// <typeparam name="TEventArgs"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this event. </typeparam>
+    public sealed class AsynchronousEvent<TEventArgs> : IAsynchronousEvent
+        where TEventArgs : EventArgs
     {
-        private event AsynchronousEventHandler<T> Delegate;
+        /// <summary>
+        ///     Gets the amount of handlers this <see cref="AsynchronousEvent{T}"/> holds.
+        /// </summary>
+        public int Count
+        {
+            get
+            {
+                lock (this)
+                {
+                    return _handlers.Count;
+                }
+            }
+        }
 
-        private readonly object _lock = new object();
-        private readonly Func<Exception, Task> _errorHandler;
+        private ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> _handlers;
+        private readonly Action<Exception> _exceptionHandler;
 
         /// <summary>
-        ///     Initialises a new <see cref="AsynchronousEvent{T}"/>.
+        ///     Instantiates a new <see cref="AsynchronousEvent{T}"/>.
         /// </summary>
         public AsynchronousEvent()
-        { }
+        {
+            _handlers = ImmutableHashSet<AsynchronousEventHandler<TEventArgs>>.Empty;
+        }
 
         /// <summary>
-        ///     Initialises a new <see cref="AsynchronousEvent{T}"/> with the specified <see cref="Func{T, TResult}"/> error handler.
+        ///     Instantiates a new <see cref="AsynchronousEvent{T}"/> with the specified <see cref="Func{T, TResult}"/> error handler.
         /// </summary>
-        /// <param name="errorHandler"> The error handler for exceptions occurring in event handlers. </param>
-        public AsynchronousEvent(Func<Exception, Task> errorHandler)
+        /// <param name="exceptionHandler"> The exception handler for exceptions occurring in event handlers. </param>
+        public AsynchronousEvent(Action<Exception> exceptionHandler)
+            : this()
         {
-            _errorHandler = errorHandler;
+            _exceptionHandler = exceptionHandler;
         }
 
         /// <summary>
         ///     Hooks an <see cref="AsynchronousEventHandler{T}"/> up to this <see cref="AsynchronousEvent{T}"/>.
         /// </summary>
         /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to hook up. </param>
-        public void Hook(AsynchronousEventHandler<T> handler)
+        public void Hook(AsynchronousEventHandler<TEventArgs> handler)
         {
             if (handler == null)
                 throw new ArgumentNullException(nameof(handler));
 
-            lock (_lock)
+            lock (this)
             {
-                Delegate += handler;
+                var currentHandlers = _handlers;
+                var newHandlers = currentHandlers.Add(handler);
+                if (currentHandlers == newHandlers)
+                    throw new ArgumentException($"The event handler {handler} is already hooked to this event. Did you hook it up twice by mistake?");
+
+                _handlers = newHandlers;
             }
         }
 
@@ -55,14 +79,19 @@ namespace Qommon.Events
         ///     Unhooks an <see cref="AsynchronousEventHandler{T}"/> from this <see cref="AsynchronousEvent{T}"/>.
         /// </summary>
         /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to unhook. </param>
-        public void Unhook(AsynchronousEventHandler<T> handler)
+        public void Unhook(AsynchronousEventHandler<TEventArgs> handler)
         {
             if (handler == null)
                 throw new ArgumentNullException(nameof(handler));
 
-            lock (_lock)
+            lock (this)
             {
-                Delegate -= handler;
+                var currentHandlers = _handlers;
+                var newHandlers = currentHandlers.Remove(handler);
+                if (currentHandlers == newHandlers)
+                    throw new ArgumentException($"The event handler {handler} was never hooked to this event.");
+
+                _handlers = newHandlers;
             }
         }
 
@@ -71,43 +100,69 @@ namespace Qommon.Events
         /// </summary>
         public void UnhookAll()
         {
-            lock (_lock)
+            lock (this)
             {
-                Delegate = null;
+                _handlers = _handlers.Clear();
             }
         }
 
         /// <summary>
         ///     Invokes this <see cref="AsynchronousEventHandler{T}"/>, sequentially invoking each hooked up <see cref="AsynchronousEventHandler{T}"/>.
         /// </summary>
+        /// <param name="sender"> The sender invoking this event. </param>
         /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
-        public async Task InvokeAsync(T e)
+        public async ValueTask InvokeAsync(object sender, TEventArgs e)
         {
-            Delegate[] list;
-            lock (_lock)
+            ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
+            lock (this)
             {
-                list = Delegate?.GetInvocationList();
+                handlers = _handlers;
             }
 
-            if (list == null)
-                return;
-
-            for (var i = 0; i < list.Length; i++)
+            foreach (var handler in handlers)
             {
-                var task = ((AsynchronousEventHandler<T>) list[i])(e);
-                if (task == null)
-                    continue;
-
                 try
                 {
-                    await task.ConfigureAwait(false);
+                    await handler.Invoke(sender, e).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
-                    if (_errorHandler != null)
-                        await _errorHandler(ex).ConfigureAwait(false);
+                    _exceptionHandler?.Invoke(ex);
                 }
             }
         }
+
+        /// <summary>
+        ///     Invokes this <see cref="AsynchronousEventHandler{T}"/>, sequentially invoking each hooked up <see cref="AsynchronousEventHandler{T}"/>
+        ///     without awaiting their completion.
+        /// </summary>
+        /// <param name="sender"> The sender invoking this event. </param>
+        /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
+        public void Invoke(object sender, TEventArgs e)
+        {
+            ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
+            lock (this)
+            {
+                handlers = _handlers;
+            }
+
+            foreach (var handler in handlers)
+            {
+                try
+                {
+                    _ = handler.Invoke(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    _exceptionHandler?.Invoke(ex);
+                }
+            }
+        }
+
+        ValueTask IAsynchronousEvent.InvokeAsync(object sender, EventArgs e)
+            => InvokeAsync(sender, (TEventArgs) e);
+
+        void IAsynchronousEvent.Invoke(object sender, EventArgs e)
+            => Invoke(sender, (TEventArgs) e);
     }
 }
