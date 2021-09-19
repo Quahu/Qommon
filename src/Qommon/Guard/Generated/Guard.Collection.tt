@@ -210,7 +210,7 @@ namespace Qommon
                 return;
 
 <#
-        if (item.HasCountProperty)
+        if (item.HasCount)
         {
 #>
             Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Cast #>source, destination.<#= item.Size #>, name);
@@ -240,7 +240,7 @@ namespace Qommon
                 return;
 
 <#
-        if (item.HasCountProperty)
+        if (item.HasCount)
         {
 #>
             Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Cast #>source, destination.<#= item.Size #>, name);
