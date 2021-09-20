@@ -204,7 +204,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is != the one of <paramref name="destination"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
+        public static void HasSizeEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("source")] string name = null)
         {
             if (source.<#= item.Size #> == destination.<#= item.Size #>)
                 return;
@@ -234,7 +234,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is > the one of <paramref name="destination"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeLessThanOrEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
+        public static void HasSizeLessThanOrEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("source")] string name = null)
         {
             if (source.<#= item.Size #> <= destination.<#= item.Size #>)
                 return;
