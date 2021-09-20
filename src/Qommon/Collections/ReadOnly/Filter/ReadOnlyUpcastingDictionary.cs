@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Qommon.Collections
 {
-    internal sealed class ReadOnlyUpcastingDictionary<TKey, TOriginalValue, TNewValue> : IReadOnlyDictionary<TKey, TNewValue>
+    public class ReadOnlyUpcastingDictionary<TKey, TOriginalValue, TNewValue> : IReadOnlyDictionary<TKey, TNewValue>
         where TOriginalValue : class, TNewValue
     {
         public IEnumerable<TKey> Keys => _dictionary.Keys;
@@ -19,8 +19,7 @@ namespace Qommon.Collections
             _dictionary = dictionary;
         }
 
-        public TNewValue this[TKey key]
-            => _dictionary[key];
+        public TNewValue this[TKey key] => _dictionary[key];
 
         public bool ContainsKey(TKey key)
             => _dictionary.ContainsKey(key);

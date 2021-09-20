@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Qommon.Collections
 {
-    internal sealed class ReadOnlyOfTypeCollection<TOriginal, TNew> : IReadOnlyCollection<TNew>
+    public class ReadOnlyOfTypeCollection<TOriginal, TNew> : IReadOnlyCollection<TNew>
     {
         public int Count => this.Count();
 

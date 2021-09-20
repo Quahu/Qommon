@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Qommon.Collections
 {
-    internal sealed class ReadOnlyPredicateCollection<T> : IReadOnlyCollection<T>
+    public class ReadOnlyPredicateCollection<T> : IReadOnlyCollection<T>
     {
         public int Count => this.Count();
 

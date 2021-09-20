@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Qommon.Collections
 {
-    internal sealed class ReadOnlyOfTypeDictionary<TKey, TOriginal, TNew> : IReadOnlyDictionary<TKey, TNew>
+    public class ReadOnlyOfTypeDictionary<TKey, TOriginal, TNew> : IReadOnlyDictionary<TKey, TNew>
         // where TNew : TOriginal
     {
         public IEnumerable<TKey> Keys => new ReadOnlyPredicateCollection<TKey>(_dictionary.Keys, ContainsKey);
