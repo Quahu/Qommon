@@ -14,69 +14,47 @@ namespace Qommon
 #>
             [DoesNotReturn]
             public static void ArgumentExceptionForIsEmpty<T>(<#= item.Type #> <#= item.Name #>, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must be empty, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must be empty, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeNotEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size not equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size not equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeGreaterThan<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size over {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size over {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeGreaterThanOrEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size of at least {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size of at least {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeLessThan<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeLessThanOrEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, string name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than or equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"Parameter {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than or equal to {size}, had a size of {GetValueString(<#= item.Name #>.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, string name)
-            {
-                throw new ArgumentException($"The source {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size equal to {GetValueString(destination.<#= item.Size #>)} (the destination), had a size of {GetValueString(source.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"The source {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size equal to {GetValueString(destination.<#= item.Size #>)} (the destination), had a size of {GetValueString(source.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeLessThanOrEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, string name)
-            {
-                throw new ArgumentException($"The source {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than or equal to {GetValueString(destination.<#= item.Size #>)} (the destination), had a size of {GetValueString(source.<#= item.Size #>)}.", name);
-            }
+                => throw new ArgumentException($"The source {GetNameString(name)} ({typeof(<#= item.Type #>).ToTypeString()}) must have a size less than or equal to {GetValueString(destination.<#= item.Size #>)} (the destination), had a size of {GetValueString(source.<#= item.Size #>)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentOutOfRangeExceptionForIsInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, string name)
-            {
-                throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must be in the range given by <0> and {GetValueString(<#= item.Name #>.<#= item.Size #>)} to be a valid index for the target collection ({typeof(<#= item.Type #>).ToTypeString()}), was {GetValueString(index)}");
-            }
+                => throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must be in the range given by <0> and {GetValueString(<#= item.Name #>.<#= item.Size #>)} to be a valid index for the target collection ({typeof(<#= item.Type #>).ToTypeString()}), was {GetValueString(index)}");
 
             [DoesNotReturn]
             public static void ArgumentOutOfRangeExceptionForIsNotInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, string name)
-            {
-                throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must not be in the range given by <0> and {GetValueString(<#= item.Name #>.<#= item.Size #>)} to be an invalid index for the target collection ({typeof(<#= item.Type #>).ToTypeString()}), was {GetValueString(index)}");
-            }
+                => throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must not be in the range given by <0> and {GetValueString(<#= item.Name #>.<#= item.Size #>)} to be an invalid index for the target collection ({typeof(<#= item.Type #>).ToTypeString()}), was {GetValueString(index)}");
 <#
     });
 #>

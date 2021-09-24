@@ -62,6 +62,9 @@ namespace Qommon.Pooling
         public Memory<T> AsMemory(int start)
             => _segment.AsMemory(start);
 
+        public Memory<T> AsMemory(int start, int length)
+            => _segment.AsMemory(start, length);
+
         public Span<T> AsSpan()
             => _segment;
 
@@ -88,6 +91,7 @@ namespace Qommon.Pooling
         public static RentedArray<T> Rent(int length, ArrayPool<T> pool)
         {
             Guard.IsNotNull(pool);
+
             return new(new(pool.Rent(length), 0, length), pool);
         }
 
