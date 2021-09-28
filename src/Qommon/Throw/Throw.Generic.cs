@@ -84,7 +84,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string name, string message)
+        public static T ArgumentException<T>(string message, string name)
             => throw new ArgumentException(message, name);
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string name, string message, Exception innerException)
+        public static T ArgumentException<T>(string message, string name, Exception innerException)
             => throw new ArgumentException(message, name, innerException);
 
         /// <summary>

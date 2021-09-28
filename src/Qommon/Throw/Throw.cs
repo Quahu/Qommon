@@ -71,22 +71,22 @@ namespace Qommon
         /// <summary>
         /// Throws a new <see cref="System.ArgumentException"/>.
         /// </summary>
-        /// <param name="name">The argument name.</param>
         /// <param name="message">The message to include in the exception.</param>
+        /// <param name="name">The argument name.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string name, string message)
+        public static void ArgumentException(string message, string name)
             => throw new ArgumentException(message, name);
 
         /// <summary>
         /// Throws a new <see cref="System.ArgumentException"/>.
         /// </summary>
-        /// <param name="name">The argument name.</param>
         /// <param name="message">The message to include in the exception.</param>
+        /// <param name="name">The argument name.</param>
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string name, string message, Exception innerException)
+        public static void ArgumentException(string message, string name, Exception innerException)
             => throw new ArgumentException(message, name, innerException);
 
         /// <summary>
