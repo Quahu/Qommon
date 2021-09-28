@@ -287,5 +287,81 @@ namespace Qommon
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, text, name);
         }
+
+        /// <summary>
+        ///     Asserts that the text's length must be in the given interval.
+        /// </summary>
+        /// <param name="text"> The input text to test. </param>
+        /// <param name="minimum"> The exclusive minimum length. </param>
+        /// <param name="maximum"> The exclusive maximum length. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if the length of <paramref name="text"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void HasSizeBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        {
+            if (text.Length > minimum && text.Length < maximum)
+                return;
+
+            Throw.ArgumentExceptionForHasSizeBetween(text, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the text's length must not be in the given interval.
+        /// </summary>
+        /// <param name="text"> The input text to test. </param>
+        /// <param name="minimum"> The exclusive minimum length. </param>
+        /// <param name="maximum"> The exclusive maximum length. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if the length of <paramref name="text"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void HasSizeNotBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        {
+            if (text.Length <= minimum || text.Length >= maximum)
+                return;
+
+            Throw.ArgumentExceptionForHasSizeNotBetween(text, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the text's length must be in the given interval.
+        /// </summary>
+        /// <param name="text"> The input text to test. </param>
+        /// <param name="minimum"> The inclusive minimum length. </param>
+        /// <param name="maximum"> The inclusive maximum length. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if the length of <paramref name="text"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void HasSizeBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        {
+            if (text.Length >= minimum && text.Length <= maximum)
+                return;
+
+            Throw.ArgumentExceptionForHasSizeBetweenOrEqualTo(text, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the text's length must not be in the given interval.
+        /// </summary>
+        /// <param name="text"> The input text to test. </param>
+        /// <param name="minimum"> The inclusive minimum length. </param>
+        /// <param name="maximum"> The inclusive maximum length. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if the length of <paramref name="text"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void HasSizeNotBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        {
+            if (text.Length < minimum || text.Length > maximum)
+                return;
+
+            Throw.ArgumentExceptionForHasSizeNotBetweenOrEqualTo(text, minimum, maximum, name);
+        }
     }
 }

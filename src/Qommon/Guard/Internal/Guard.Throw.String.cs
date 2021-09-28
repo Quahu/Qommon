@@ -78,6 +78,22 @@ namespace Qommon
             [DoesNotReturn]
             public static void ArgumentOutOfRangeExceptionForIsNotInRangeFor(int index, string text, string name)
                 => throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must not be in the range given by <0> and {GetValueString(text.Length)} to be an invalid index for the target string, was {GetValueString(index)}.");
+
+            [DoesNotReturn]
+            public static void ArgumentExceptionForHasSizeBetween(string text, int minimum, int maximum, string name)
+                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must have size between {GetValueString(minimum)} and {GetValueString(maximum)}, had a size of {text.Length} and was {GetValueString(text)}.", name);
+
+            [DoesNotReturn]
+            public static void ArgumentExceptionForHasSizeNotBetween(string text, int minimum, int maximum, string name)
+                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not have size between {GetValueString(minimum)} and {GetValueString(maximum)}, had a size of {text.Length} and was {GetValueString(text)}.", name);
+
+            [DoesNotReturn]
+            public static void ArgumentExceptionForHasSizeBetweenOrEqualTo(string text, int minimum, int maximum, string name)
+                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must have size between or equal to {GetValueString(minimum)} and {GetValueString(maximum)}, had a size of {text.Length} and was {GetValueString(text)}.", name);
+
+            [DoesNotReturn]
+            public static void ArgumentExceptionForHasSizeNotBetweenOrEqualTo(string text, int minimum, int maximum, string name)
+                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not have size between or equal to {GetValueString(minimum)} and {GetValueString(maximum)}, had a size of {text.Length} and was {GetValueString(text)}.", name);
         }
     }
 }
