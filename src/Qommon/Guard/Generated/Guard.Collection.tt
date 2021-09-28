@@ -23,7 +23,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> == 0)
                 return;
 
-            Throw.ArgumentExceptionForIsEmpty(<#= item.Cast #><#= item.Name #>, name);
+            Throw.ArgumentExceptionForIsEmpty(<#= item.Name #>, name);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Qommon
             if (!foundNull)
                 return;
 
-            Throw.ArgumentExceptionForIsEmpty(<#= item.Cast #><#= item.Name #>, name);
+            Throw.ArgumentExceptionForIsEmpty(<#= item.Name #>, name);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> == size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> != size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeNotEqualTo(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeNotEqualTo(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> > size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeGreaterThan(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeGreaterThan(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> >= size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeGreaterThanOrEqualTo(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeGreaterThanOrEqualTo(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> < size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeLessThan(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeLessThan(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Qommon
             if (<#= item.Name #>.<#= item.Size #> <= size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(<#= item.Cast #><#= item.Name #>, size, name);
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(<#= item.Name #>, size, name);
         }
 
         /// <summary>
@@ -209,20 +209,7 @@ namespace Qommon
             if (source.<#= item.Size #> == destination.<#= item.Size #>)
                 return;
 
-<#
-        if (item.HasCount)
-        {
-#>
-            Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Cast #>source, destination.<#= item.Size #>, name);
-<#
-        }
-        else
-        {
-#>
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, <#= item.Cast #>destination, name);
-<#
-        }
-#>
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.<#= item.Size #>, name);
         }
 
         /// <summary>
@@ -239,20 +226,7 @@ namespace Qommon
             if (source.<#= item.Size #> <= destination.<#= item.Size #>)
                 return;
 
-<#
-        if (item.HasCount)
-        {
-#>
-            Throw.ArgumentExceptionForHasSizeEqualTo(<#= item.Cast #>source, destination.<#= item.Size #>, name);
-<#
-        }
-        else
-        {
-#>
-            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, <#= item.Cast #>destination, name);
-<#
-        }
-#>
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, destination, name);
         }
 
         /// <summary>
@@ -266,10 +240,10 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
-            if ((uint)index < (uint)<#= item.Name #>.<#= item.Size #>)
+            if ((uint) index < (uint) <#= item.Name #>.<#= item.Size #>)
                 return;
 
-            Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, <#= item.Cast #><#= item.Name #>, name);
+            Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, <#= item.Name #>, name);
         }
 
         /// <summary>
@@ -283,10 +257,10 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
-            if ((uint)index >= (uint)<#= item.Name #>.<#= item.Size #>)
+            if ((uint) index >= (uint) <#= item.Name #>.<#= item.Size #>)
                 return;
 
-            Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, <#= item.Cast #><#= item.Name #>, name);
+            Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, <#= item.Name #>, name);
         }
 <#
     });

@@ -181,7 +181,7 @@ namespace Qommon
             if (source.Length == destination.Length)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Length, name);
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, Span<T> span, [CallerArgumentExpression("span")] string name = null)
         {
-            if ((uint)index < (uint)span.Length)
+            if ((uint) index < (uint) span.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, span, name);
@@ -229,7 +229,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, Span<T> span, [CallerArgumentExpression("span")] string name = null)
         {
-            if ((uint)index >= (uint)span.Length)
+            if ((uint) index >= (uint) span.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, span, name);
@@ -410,7 +410,7 @@ namespace Qommon
             if (source.Length == destination.Length)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Length, name);
         }
 
         /// <summary>
@@ -441,7 +441,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, ReadOnlySpan<T> span, [CallerArgumentExpression("span")] string name = null)
         {
-            if ((uint)index < (uint)span.Length)
+            if ((uint) index < (uint) span.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, span, name);
@@ -458,7 +458,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, ReadOnlySpan<T> span, [CallerArgumentExpression("span")] string name = null)
         {
-            if ((uint)index >= (uint)span.Length)
+            if ((uint) index >= (uint) span.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, span, name);
@@ -639,7 +639,7 @@ namespace Qommon
             if (source.Length == destination.Length)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Length, name);
         }
 
         /// <summary>
@@ -670,7 +670,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, Memory<T> memory, [CallerArgumentExpression("memory")] string name = null)
         {
-            if ((uint)index < (uint)memory.Length)
+            if ((uint) index < (uint) memory.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, memory, name);
@@ -687,7 +687,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, Memory<T> memory, [CallerArgumentExpression("memory")] string name = null)
         {
-            if ((uint)index >= (uint)memory.Length)
+            if ((uint) index >= (uint) memory.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, memory, name);
@@ -868,7 +868,7 @@ namespace Qommon
             if (source.Length == destination.Length)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Length, name);
         }
 
         /// <summary>
@@ -899,7 +899,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, ReadOnlyMemory<T> memory, [CallerArgumentExpression("memory")] string name = null)
         {
-            if ((uint)index < (uint)memory.Length)
+            if ((uint) index < (uint) memory.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, memory, name);
@@ -916,7 +916,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, ReadOnlyMemory<T> memory, [CallerArgumentExpression("memory")] string name = null)
         {
-            if ((uint)index >= (uint)memory.Length)
+            if ((uint) index >= (uint) memory.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, memory, name);
@@ -1097,7 +1097,7 @@ namespace Qommon
             if (source.Length == destination.Length)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Length, name);
         }
 
         /// <summary>
@@ -1128,7 +1128,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, T[] array, [CallerArgumentExpression("array")] string name = null)
         {
-            if ((uint)index < (uint)array.Length)
+            if ((uint) index < (uint) array.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, array, name);
@@ -1145,7 +1145,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, T[] array, [CallerArgumentExpression("array")] string name = null)
         {
-            if ((uint)index >= (uint)array.Length)
+            if ((uint) index >= (uint) array.Length)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, array, name);
@@ -1164,7 +1164,7 @@ namespace Qommon
             if (list.Count == 0)
                 return;
 
-            Throw.ArgumentExceptionForIsEmpty((ICollection<T>)list, name);
+            Throw.ArgumentExceptionForIsEmpty(list, name);
         }
 
         /// <summary>
@@ -1207,7 +1207,7 @@ namespace Qommon
             if (!foundNull)
                 return;
 
-            Throw.ArgumentExceptionForIsEmpty((ICollection<T>)list, name);
+            Throw.ArgumentExceptionForIsEmpty(list, name);
         }
 
         /// <summary>
@@ -1224,7 +1224,7 @@ namespace Qommon
             if (list.Count == size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(list, size, name);
         }
 
         /// <summary>
@@ -1241,7 +1241,7 @@ namespace Qommon
             if (list.Count != size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeNotEqualTo((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeNotEqualTo(list, size, name);
         }
 
         /// <summary>
@@ -1258,7 +1258,7 @@ namespace Qommon
             if (list.Count > size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeGreaterThan((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeGreaterThan(list, size, name);
         }
 
         /// <summary>
@@ -1275,7 +1275,7 @@ namespace Qommon
             if (list.Count >= size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeGreaterThanOrEqualTo((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeGreaterThanOrEqualTo(list, size, name);
         }
 
         /// <summary>
@@ -1292,7 +1292,7 @@ namespace Qommon
             if (list.Count < size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeLessThan((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeLessThan(list, size, name);
         }
 
         /// <summary>
@@ -1309,7 +1309,7 @@ namespace Qommon
             if (list.Count <= size)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo((ICollection<T>)list, size, name);
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(list, size, name);
         }
 
         /// <summary>
@@ -1326,7 +1326,7 @@ namespace Qommon
             if (source.Count == destination.Count)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo((ICollection<T>)source, destination.Count, name);
+            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Count, name);
         }
 
         /// <summary>
@@ -1343,7 +1343,7 @@ namespace Qommon
             if (source.Count <= destination.Count)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo((ICollection<T>)source, destination.Count, name);
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, destination, name);
         }
 
         /// <summary>
@@ -1357,10 +1357,10 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, List<T> list, [CallerArgumentExpression("list")] string name = null)
         {
-            if ((uint)index < (uint)list.Count)
+            if ((uint) index < (uint) list.Count)
                 return;
 
-            Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, (ICollection<T>)list, name);
+            Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, list, name);
         }
 
         /// <summary>
@@ -1374,10 +1374,10 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, List<T> list, [CallerArgumentExpression("list")] string name = null)
         {
-            if ((uint)index >= (uint)list.Count)
+            if ((uint) index >= (uint) list.Count)
                 return;
 
-            Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, (ICollection<T>)list, name);
+            Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, list, name);
         }
 
         /// <summary>
@@ -1572,7 +1572,7 @@ namespace Qommon
             if (source.Count <= destination.Count)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Count, name);
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, destination, name);
         }
 
         /// <summary>
@@ -1586,7 +1586,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, ICollection<T> collection, [CallerArgumentExpression("collection")] string name = null)
         {
-            if ((uint)index < (uint)collection.Count)
+            if ((uint) index < (uint) collection.Count)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, collection, name);
@@ -1603,7 +1603,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, ICollection<T> collection, [CallerArgumentExpression("collection")] string name = null)
         {
-            if ((uint)index >= (uint)collection.Count)
+            if ((uint) index >= (uint) collection.Count)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, collection, name);
@@ -1801,7 +1801,7 @@ namespace Qommon
             if (source.Count <= destination.Count)
                 return;
 
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination.Count, name);
+            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, destination, name);
         }
 
         /// <summary>
@@ -1815,7 +1815,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, IReadOnlyCollection<T> collection, [CallerArgumentExpression("collection")] string name = null)
         {
-            if ((uint)index < (uint)collection.Count)
+            if ((uint) index < (uint) collection.Count)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsInRangeFor(index, collection, name);
@@ -1832,7 +1832,7 @@ namespace Qommon
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, IReadOnlyCollection<T> collection, [CallerArgumentExpression("collection")] string name = null)
         {
-            if ((uint)index >= (uint)collection.Count)
+            if ((uint) index >= (uint) collection.Count)
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotInRangeFor(index, collection, name);

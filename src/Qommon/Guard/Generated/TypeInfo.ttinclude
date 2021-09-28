@@ -17,35 +17,31 @@
 
         public string DestinationType { get; }
 
-        public string Cast { get; }
-
         public EnumerableTypeInfo(
             string type,
             string xmlType,
             string name,
             string size,
-            string destinationType,
-            string cast)
+            string destinationType)
         {
             Type = type;
             XmlType = xmlType;
             Name = name;
             Size = size;
             DestinationType = destinationType;
-            Cast = cast;
         }
     }
 
     private static readonly EnumerableTypeInfo[] EnumerableTypes = new[]
     {
-        new EnumerableTypeInfo("Span<T>", "<see cref=\"Span{T}\"/>", "span", "Length", "Span<T>", ""),
-        new EnumerableTypeInfo("ReadOnlySpan<T>", "<see cref=\"ReadOnlySpan{T}\"/>", "span", "Length", "Span<T>", ""),
-        new EnumerableTypeInfo("Memory<T>", "<see cref=\"Memory{T}\"/>", "memory", "Length", "Memory<T>", ""),
-        new EnumerableTypeInfo("ReadOnlyMemory<T>", "<see cref=\"ReadOnlyMemory{T}\"/>", "memory", "Length", "Memory<T>", ""),
-        new EnumerableTypeInfo("T[]", "<see typeparamref=\"T\"/> array", "array", "Length", "T[]", ""),
-        new EnumerableTypeInfo("List<T>", "<see cref=\"List{T}\"/>", "list", "Count", "List<T>", "(ICollection<T>)"),
-        new EnumerableTypeInfo("ICollection<T>", "<see cref=\"ICollection{T}\"/>", "collection", "Count", "ICollection<T>", ""),
-        new EnumerableTypeInfo("IReadOnlyCollection<T>", "<see cref=\"IReadOnlyCollection{T}\"/>", "collection", "Count", "ICollection<T>", ""),
+        new EnumerableTypeInfo("Span<T>", "<see cref=\"Span{T}\"/>", "span", "Length", "Span<T>"),
+        new EnumerableTypeInfo("ReadOnlySpan<T>", "<see cref=\"ReadOnlySpan{T}\"/>", "span", "Length", "Span<T>"),
+        new EnumerableTypeInfo("Memory<T>", "<see cref=\"Memory{T}\"/>", "memory", "Length", "Memory<T>"),
+        new EnumerableTypeInfo("ReadOnlyMemory<T>", "<see cref=\"ReadOnlyMemory{T}\"/>", "memory", "Length", "Memory<T>"),
+        new EnumerableTypeInfo("T[]", "<see typeparamref=\"T\"/> array", "array", "Length", "T[]"),
+        new EnumerableTypeInfo("List<T>", "<see cref=\"List{T}\"/>", "list", "Count", "List<T>"),
+        new EnumerableTypeInfo("ICollection<T>", "<see cref=\"ICollection{T}\"/>", "collection", "Count", "ICollection<T>"),
+        new EnumerableTypeInfo("IReadOnlyCollection<T>", "<see cref=\"IReadOnlyCollection{T}\"/>", "collection", "Count", "ICollection<T>"),
     };
 
     private static readonly (string Name, string Prefix)[] NumericTypes = new[]
