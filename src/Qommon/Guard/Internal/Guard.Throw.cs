@@ -21,7 +21,7 @@ namespace Qommon
             }
 
             [Pure]
-            private static string GetValueString(object value)
+            private static string GetValueString<T>(T value)
             {
                 return value switch
                 {
