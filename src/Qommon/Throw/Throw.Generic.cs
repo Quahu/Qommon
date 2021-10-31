@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -325,6 +326,36 @@ namespace Qommon
         [DoesNotReturn]
         public static T FormatException<T>(string message, Exception innerException)
             => throw new FormatException(message, innerException);
+
+        /// <summary>
+        /// Throws a new <see cref="System.Collections.Generic.KeyNotFoundException"/>.
+        /// </summary>
+        /// <exception cref="System.FormatException">Thrown with no parameters.</exception>
+        /// <returns>This method always throws, so it actually never returns a value.</returns>
+        [DoesNotReturn]
+        public static T KeyNotFoundException<T>()
+            => throw new KeyNotFoundException();
+
+        /// <summary>
+        /// Throws a new <see cref="System.Collections.Generic.KeyNotFoundException"/>.
+        /// </summary>
+        /// <param name="message">The message to include in the exception.</param>
+        /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
+        /// <returns>This method always throws, so it actually never returns a value.</returns>
+        [DoesNotReturn]
+        public static T KeyNotFoundException<T>(string message)
+            => throw new KeyNotFoundException(message);
+
+        /// <summary>
+        /// Throws a new <see cref="System.Collections.Generic.KeyNotFoundException"/>.
+        /// </summary>
+        /// <param name="message">The message to include in the exception.</param>
+        /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
+        /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
+        /// <returns>This method always throws, so it actually never returns a value.</returns>
+        [DoesNotReturn]
+        public static T KeyNotFoundException<T>(string message, Exception innerException)
+            => throw new KeyNotFoundException(message, innerException);
 
         /// <summary>
         /// Throws a new <see cref="System.InsufficientMemoryException"/>.
