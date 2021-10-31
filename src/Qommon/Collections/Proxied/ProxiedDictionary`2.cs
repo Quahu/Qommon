@@ -17,13 +17,13 @@ namespace Qommon.Collections.Proxied
         /// <inheritdoc/>
         public virtual ICollection<TValue> Values => Dictionary.Values;
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="ICollection{T}.Count"/>
         public virtual int Count => Dictionary.Count;
 
         /// <inheritdoc/>
         public virtual bool IsReadOnly => Dictionary.IsReadOnly;
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="IDictionary{TKey,TValue}.this"/>
         public virtual TValue this[TKey key]
         {
             get => Dictionary[key];
@@ -38,6 +38,16 @@ namespace Qommon.Collections.Proxied
         ///     Gets the wrapped dictionary.
         /// </summary>
         protected IDictionary<TKey, TValue> Dictionary { get; }
+
+        /// <summary>
+        ///     Instantiates a new <see cref="ProxiedDictionary{TKey, TValue}"/> wrapping a <see cref="Dictionary{TKey,TValue}"/>.
+        /// </summary>
+        /// <param name="capacity"> The initial capacity of the dictionary. </param>
+        /// <param name="comparer"> The equality comparer for the dictionary keys. </param>
+        protected ProxiedDictionary(int capacity = 0, IEqualityComparer<TKey> comparer = null)
+        {
+            Dictionary = new Dictionary<TKey, TValue>(capacity, comparer);
+        }
 
         /// <summary>
         ///     Instantiates a new <see cref="ProxiedDictionary{TKey, TValue}"/>.
@@ -58,7 +68,7 @@ namespace Qommon.Collections.Proxied
         public virtual void Clear()
             => Dictionary.Clear();
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="IDictionary{TKey,TValue}.ContainsKey"/>
         public virtual bool ContainsKey(TKey key)
             => Dictionary.ContainsKey(key);
 
@@ -70,7 +80,7 @@ namespace Qommon.Collections.Proxied
         public virtual bool Remove(TKey key)
             => Dictionary.Remove(key);
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="IDictionary{TKey,TValue}.TryGetValue"/>
         public virtual bool TryGetValue(TKey key, out TValue value)
             => Dictionary.TryGetValue(key, out value);
 

@@ -70,8 +70,7 @@ namespace Qommon
                         genericTypeDefinition == typeof(ValueTuple<,,,,,,>) ||
                         genericTypeDefinition == typeof(ValueTuple<,,,,,,,>))
                     {
-                        var formattedTypes = type.GetGenericArguments().Select(t => FormatDisplayString(t, 0, t.GetGenericArguments()));
-
+                        var formattedTypes = type.GetGenericArguments().Select(type => FormatDisplayString(type, 0, type.GetGenericArguments()));
                         return $"({string.Join(", ", formattedTypes)})";
                     }
                 }
@@ -83,7 +82,7 @@ namespace Qommon
                     var genericArgumentsCount = int.Parse(tokens[1]);
                     var typeArgumentsOffset = typeArguments.Length - genericTypeOffset - genericArgumentsCount;
                     var currentTypeArguments = typeArguments.Slice(typeArgumentsOffset, genericArgumentsCount).ToArray();
-                    var formattedTypes = currentTypeArguments.Select(t => FormatDisplayString(t, 0, t.GetGenericArguments()));
+                    var formattedTypes = currentTypeArguments.Select(type => FormatDisplayString(type, 0, type.GetGenericArguments()));
 
                     displayName = $"{tokens[0]}<{string.Join(", ", formattedTypes)}>";
                     genericTypeOffset += genericArgumentsCount;
@@ -105,25 +104,25 @@ namespace Qommon
                 return $"{FormatDisplayString(closedDeclaringType, genericTypeOffset, typeArguments)}.{displayName}";
             }
 
-            return DisplayNames.GetValue(type, t =>
+            return DisplayNames.GetValue(type, type =>
             {
-                if (t.IsByRef)
+                if (type.IsByRef)
                 {
-                    t = t.GetElementType();
-                    return $"{FormatDisplayString(t, 0, t.GetGenericArguments())}&";
+                    type = type.GetElementType();
+                    return $"{FormatDisplayString(type, 0, type.GetGenericArguments())}&";
                 }
 
-                if (!t.IsPointer)
-                    return FormatDisplayString(t, 0, t.GetGenericArguments());
+                if (!type.IsPointer)
+                    return FormatDisplayString(type, 0, type.GetGenericArguments());
 
                 var depth = 0;
-                while (t.IsPointer)
+                while (type.IsPointer)
                 {
                     depth++;
-                    t = t.GetElementType();
+                    type = type.GetElementType();
                 }
 
-                return $"{FormatDisplayString(t, 0, t.GetGenericArguments())}{new string('*', depth)}";
+                return $"{FormatDisplayString(type, 0, type.GetGenericArguments())}{new string('*', depth)}";
             });
         }
     }

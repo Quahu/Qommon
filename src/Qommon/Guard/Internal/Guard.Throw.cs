@@ -23,12 +23,13 @@ namespace Qommon
             [Pure]
             private static string GetValueString<T>(T value)
             {
-                return value switch
-                {
-                    string _ => $"\"{value}\"",
-                    null => "null",
-                    _ => $"<{value}>"
-                };
+                if (value is null)
+                    return "null";
+
+                if (value is string stringValue)
+                    return string.Concat("\"", stringValue, "\"");
+
+                return string.Concat("<", value.ToString(), ">");
             }
 
             [DoesNotReturn]
