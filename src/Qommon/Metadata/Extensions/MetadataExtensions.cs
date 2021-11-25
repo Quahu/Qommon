@@ -1,10 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using Qommon.Collections;
 using Qommon.Collections.Synchronized;
 
 namespace Qommon.Metadata
 {
+    /// <summary>
+    ///     Represents metadata extension methods.
+    /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class MetadataExtensions
     {
         /// <summary>
@@ -72,7 +78,7 @@ namespace Qommon.Metadata
                     }
                     catch (Exception ex)
                     {
-                        Throw.ArgumentException("Failed to convert the metadata value to the type parameter.", nameof(T));
+                        Throw.ArgumentException("Failed to convert the metadata value to the type parameter.", nameof(T), ex);
                     }
                 }
             }
@@ -215,7 +221,7 @@ namespace Qommon.Metadata
             Guard.IsNotNull(key);
 
             var dictionary = metadata.Metadata;
-            if (dictionary == null)
+            if (dictionary == null || dictionary.IsReadOnly)
                 return false;
 
             return dictionary.Remove(key);
@@ -236,7 +242,7 @@ namespace Qommon.Metadata
             Guard.IsNotNull(key);
 
             var dictionary = metadata.Metadata;
-            if (dictionary == null)
+            if (dictionary == null || dictionary.IsReadOnly)
             {
                 value = null;
                 return false;
@@ -285,7 +291,7 @@ namespace Qommon.Metadata
             if (dictionary == null)
                 return new Dictionary<string, object>();
 
-            return dictionary.ToDictionary(x => x.Key, x => x.Value, comparer);
+            return dictionary.ToDictionary(comparer);
         }
 
         /// <summary>
