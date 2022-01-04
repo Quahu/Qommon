@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Buffers;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Qommon.Pooling
@@ -26,6 +27,10 @@ namespace Qommon.Pooling
             _pool = pool;
             _clearArray = clearArray;
         }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public ref T GetPinnableReference()
+            => ref _segment.AsSpan().GetPinnableReference();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Dispose()
