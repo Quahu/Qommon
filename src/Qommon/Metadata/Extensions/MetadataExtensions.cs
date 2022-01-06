@@ -57,11 +57,10 @@ namespace Qommon.Metadata
             {
                 if (rawValue is null)
                 {
-                    if (!typeof(T).IsValueType)
+                    if (typeof(T).TryGetNullableUnderlyingType(out _))
                         return default;
 
-                    var nullableType = Nullable.GetUnderlyingType(typeof(T));
-                    if (nullableType != null)
+                    if (!typeof(T).IsValueType)
                         return default;
 
                     Throw.ArgumentException("The type parameter is not nullable and the returned metadata value is null.", nameof(T));
@@ -107,14 +106,13 @@ namespace Qommon.Metadata
             {
                 if (rawValue is null)
                 {
-                    if (!typeof(T).IsValueType)
+                    if (typeof(T).TryGetNullableUnderlyingType(out _))
                     {
                         value = default;
                         return true;
                     }
 
-                    var nullableType = Nullable.GetUnderlyingType(typeof(T));
-                    if (nullableType != null)
+                    if (!typeof(T).IsValueType)
                     {
                         value = default;
                         return true;

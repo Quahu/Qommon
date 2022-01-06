@@ -13,6 +13,20 @@ namespace Qommon
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class TypeExtensions
     {
+        /// <summary>
+        ///     Attempts to retrieve the underlying type of a <see cref="Nullable{T}"/>.
+        /// </summary>
+        /// <param name="type"> The type to get the underlying type for. </param>
+        /// <param name="underlyingType"> The underlying type. </param>
+        /// <returns>
+        ///     <see langword="true"/> if the type has an underlying type.
+        /// </returns>
+        public static bool TryGetNullableUnderlyingType(this Type type, out Type underlyingType)
+        {
+            underlyingType = Nullable.GetUnderlyingType(type);
+            return underlyingType != null;
+        }
+
         private static readonly Dictionary<Type, string> BuiltInTypes = new()
         {
             [typeof(bool)] = "bool",
