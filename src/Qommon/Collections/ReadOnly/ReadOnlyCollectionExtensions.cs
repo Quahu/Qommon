@@ -1,24 +1,25 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Qommon.Collections.ReadOnly;
 
 namespace Qommon.Collections
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class ReadOnlyCollectionExtensions
     {
-        public static IReadOnlyDictionary<TKey, TValue> ReadOnly<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
-            => new ReadOnlyDictionary<TKey, TValue>(dictionary);
+        public static IReadOnlyCollection<T> ReadOnly<T>(this ICollection<T> collection)
+            => new ReadOnlyCollection<T>(collection);
 
         public static IReadOnlyList<T> ReadOnly<T>(this IList<T> list)
             => new ReadOnlyList<T>(list);
 
+        public static IReadOnlyDictionary<TKey, TValue> ReadOnly<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
+            => new ReadOnlyDictionary<TKey, TValue>(dictionary);
+
         public static IReadOnlySet<T> ReadOnly<T>(this ISet<T> set)
             => new ReadOnlySet<T>(set);
-
-        public static IReadOnlyCollection<T> ReadOnly<T>(this ICollection<T> collection)
-            => new ReadOnlyCollection<T>(collection);
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source,
             IEqualityComparer<TKey> comparer = null)

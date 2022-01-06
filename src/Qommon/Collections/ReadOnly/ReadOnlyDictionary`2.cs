@@ -1,75 +1,51 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using Qommon.Collections.Proxied;
 
-namespace Qommon.Collections
+namespace Qommon.Collections.ReadOnly
 {
-    public sealed class ReadOnlyDictionary<TKey, TValue> : IDictionary<TKey, TValue>, IReadOnlyDictionary<TKey, TValue>
+    internal sealed class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
     {
         public static readonly IReadOnlyDictionary<TKey, TValue> Empty = new Dictionary<TKey, TValue>(0).ReadOnly();
 
-        public IReadOnlyCollection<TKey> Keys => _dictionary.Keys.ReadOnly();
+        /// <inheritdoc/>
+        public override bool IsReadOnly => true;
 
-        public IReadOnlyCollection<TValue> Values => _dictionary.Values.ReadOnly();
+        /// <inheritdoc/>
+        public override ICollection<TKey> Keys => Dictionary.Keys.ReadOnly() as ICollection<TKey>;
 
-        public int Count => _dictionary.Count;
+        /// <inheritdoc/>
+        public override ICollection<TValue> Values => Dictionary.Values.ReadOnly() as ICollection<TValue>;
 
-        public TValue this[TKey key]
+        /// <inheritdoc/>
+        public override TValue this[TKey key]
         {
-            get => _dictionary[key];
+            get => Dictionary[key];
             set => throw new NotSupportedException();
         }
 
-        private readonly IDictionary<TKey, TValue> _dictionary;
-
         public ReadOnlyDictionary(IDictionary<TKey, TValue> dictionary)
-        {
-            Guard.IsNotNull(dictionary);
+            : base(dictionary)
+        { }
 
-            _dictionary = dictionary;
-        }
-
-        public bool ContainsKey(TKey key)
-            => _dictionary.ContainsKey(key);
-
-        public bool TryGetValue(TKey key, out TValue value)
-            => _dictionary.TryGetValue(key, out value);
-
-        public bool Contains(KeyValuePair<TKey, TValue> item)
-            => _dictionary.Contains(item);
-
-        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
-            => _dictionary.CopyTo(array, arrayIndex);
-
-        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
-            => _dictionary.GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
-
-        ICollection<TKey> IDictionary<TKey, TValue>.Keys => Keys as ICollection<TKey>;
-
-        ICollection<TValue> IDictionary<TKey, TValue>.Values => Values as ICollection<TValue>;
-
-        IEnumerable<TKey> IReadOnlyDictionary<TKey, TValue>.Keys => Keys;
-
-        IEnumerable<TValue> IReadOnlyDictionary<TKey, TValue>.Values => Values;
-
-        bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => true;
-
-        void IDictionary<TKey, TValue>.Add(TKey key, TValue value)
+        /// <inheritdoc/>
+        public override bool Add(KeyValuePair<TKey, TValue> item)
             => throw new NotSupportedException();
 
-        bool IDictionary<TKey, TValue>.Remove(TKey key)
+        /// <inheritdoc/>
+        public override void Clear()
             => throw new NotSupportedException();
 
-        void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item)
+        /// <inheritdoc/>
+        public override bool Remove(KeyValuePair<TKey, TValue> item)
             => throw new NotSupportedException();
 
-        void ICollection<KeyValuePair<TKey, TValue>>.Clear()
+        /// <inheritdoc/>
+        public override void Add(TKey key, TValue value)
             => throw new NotSupportedException();
 
-        bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
+        /// <inheritdoc/>
+        public override bool Remove(TKey key)
             => throw new NotSupportedException();
     }
 }

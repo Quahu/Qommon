@@ -1,45 +1,30 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using Qommon.Collections.Proxied;
 
-namespace Qommon.Collections
+namespace Qommon.Collections.ReadOnly
 {
-    public sealed class ReadOnlyCollection<T> : ICollection<T>, IReadOnlyCollection<T>
+    internal sealed class ReadOnlyCollection<T> : ProxiedCollection<T>
     {
         public static readonly IReadOnlyCollection<T> Empty = Array.Empty<T>().ReadOnly();
 
-        public int Count => _collection.Count;
-
-        private readonly ICollection<T> _collection;
+        /// <inheritdoc/>
+        public override bool IsReadOnly => true;
 
         public ReadOnlyCollection(ICollection<T> collection)
-        {
-            Guard.IsNotNull(collection);
+            : base(collection)
+        { }
 
-            _collection = collection;
-        }
-
-        public bool Contains(T item)
-            => _collection.Contains(item);
-
-        public void CopyTo(T[] array, int arrayIndex)
-            => _collection.CopyTo(array, arrayIndex);
-
-        public IEnumerator<T> GetEnumerator()
-            => _collection.GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
-
-        bool ICollection<T>.IsReadOnly => true;
-
-        void ICollection<T>.Add(T item)
+        /// <inheritdoc/>
+        public override bool Add(T item)
             => throw new NotSupportedException();
 
-        void ICollection<T>.Clear()
+        /// <inheritdoc/>
+        public override void Clear()
             => throw new NotSupportedException();
 
-        bool ICollection<T>.Remove(T item)
+        /// <inheritdoc/>
+        public override bool Remove(T item)
             => throw new NotSupportedException();
     }
 }
