@@ -33,11 +33,11 @@ namespace Qommon.Collections
         /// </returns>
         public static object[] GetArray(this IEnumerable source)
         {
-            if (source is IEnumerable<object> genericSource)
-                return genericSource.GetArray();
-
             if (source == null)
                 return Array.Empty<object>();
+
+            if (source is IEnumerable<object> genericSource)
+                return genericSource.GetArray();
 
             return source.Cast<object>().GetArray();
         }
