@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Qommon.Collections
 {
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class ListExtensions
     {
         /// <summary>

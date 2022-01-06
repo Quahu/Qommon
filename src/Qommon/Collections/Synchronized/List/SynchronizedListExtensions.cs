@@ -1,5 +1,8 @@
+using System.ComponentModel;
+
 namespace Qommon.Collections.Synchronized
 {
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class SynchronizedListExtensions
     {
         public static T[] ToArray<T>(this ISynchronizedList<T> list)

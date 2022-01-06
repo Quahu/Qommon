@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Qommon.Collections
@@ -9,6 +10,7 @@ namespace Qommon.Collections
     ///     Represents a generic list of items almost identical to the <see cref="List{T}"/> except it exposes the underlying array containing the elements.
     /// </summary>
     /// <typeparam name="T"> The type of items. </typeparam>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class FastList<T> : IList<T>, IReadOnlyList<T>
     {
         public T[] Items => _items;

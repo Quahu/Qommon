@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Qommon
 {
     /// <summary>
     ///     Defines extension methods for <see cref="Optional{T}"/>.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class OptionalExtensions
     {
         public static T? GetValueOrNullable<T>(this Optional<T> optional)

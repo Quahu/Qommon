@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Qommon.Collections.Synchronized
 {
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class SynchronizedCollectionExtensions
     {
         public static ISynchronizedDictionary<TKey, TValue> Synchronized<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)

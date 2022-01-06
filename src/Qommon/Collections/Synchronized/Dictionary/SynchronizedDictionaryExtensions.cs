@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Qommon.Collections.Synchronized
 {
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class SynchronizedDictionaryExtensions
     {
         public static KeyValuePair<TKey, TValue>[] ToArray<TKey, TValue>(this ISynchronizedDictionary<TKey, TValue> dictionary)

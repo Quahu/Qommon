@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Qommon
 {
+    /// <summary>
+    ///     Represents <see cref="Type"/> extensions.
+    /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class TypeExtensions
     {
         private static readonly Dictionary<Type, string> BuiltInTypes = new()
