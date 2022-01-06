@@ -8,14 +8,9 @@ namespace Qommon.Collections.Proxied
     ///     by wrapping an <see cref="IList{T}"/> with virtual implementations making overriding individual members very simple.
     /// </summary>
     /// <typeparam name="T"> The type of values in the list. </typeparam>
-    public abstract class ProxiedList<T> : IList<T>, IReadOnlyList<T>
+    public class ProxiedList<T> : ProxiedCollection<T>,
+        IList<T>, IList, IReadOnlyList<T>
     {
-        /// <inheritdoc cref="ICollection{T}.Count"/>
-        public virtual int Count => List.Count;
-
-        /// <inheritdoc/>
-        public virtual bool IsReadOnly => List.IsReadOnly;
-
         /// <inheritdoc cref="IList{T}.this"/>
         public virtual T this[int index]
         {
@@ -26,47 +21,23 @@ namespace Qommon.Collections.Proxied
         /// <summary>
         ///     Gets the wrapped list.
         /// </summary>
-        protected IList<T> List { get; }
+        protected virtual IList<T> List => Collection as IList<T>;
 
         /// <summary>
         ///     Instantiates a new <see cref="ProxiedList{T}"/> wrapping a <see cref="List{T}"/>.
         /// </summary>
         /// <param name="capacity"> The initial capacity of the list. </param>
         protected ProxiedList(int capacity = 0)
-        {
-            List = new List<T>(capacity);
-        }
+            : base(new List<T>(capacity))
+        { }
 
         /// <summary>
         ///     Instantiates a new <see cref="ProxiedList{T}"/>.
         /// </summary>
         /// <param name="list"> The list to wrap. </param>
-        protected ProxiedList(IList<T> list)
-        {
-            Guard.IsNotNull(list);
-
-            List = list;
-        }
-
-        /// <inheritdoc/>
-        public virtual void Add(T item)
-            => List.Add(item);
-
-        /// <inheritdoc/>
-        public virtual void Clear()
-            => List.Clear();
-
-        /// <inheritdoc/>
-        public virtual bool Contains(T item)
-            => List.Contains(item);
-
-        /// <inheritdoc/>
-        public virtual void CopyTo(T[] array, int arrayIndex)
-            => List.CopyTo(array, arrayIndex);
-
-        /// <inheritdoc/>
-        public virtual bool Remove(T item)
-            => List.Remove(item);
+        public ProxiedList(IList<T> list)
+            : base(list)
+        { }
 
         /// <inheritdoc/>
         public virtual int IndexOf(T item)
@@ -76,15 +47,42 @@ namespace Qommon.Collections.Proxied
         public virtual void Insert(int index, T item)
             => List.Insert(index, item);
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="IList{T}.RemoveAt"/>
         public virtual void RemoveAt(int index)
             => List.RemoveAt(index);
 
-        /// <inheritdoc/>
-        public virtual IEnumerator<T> GetEnumerator()
-            => List.GetEnumerator();
+        bool IList.IsFixedSize => (List as IList)?.IsFixedSize ?? false;
 
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
+        object IList.this[int index]
+        {
+            get => this[index];
+            set => this[index] = (T) value;
+        }
+
+        int IList.Add(object value)
+        {
+            Add((T) value);
+            return Count - 1; // Violates the IList contract, but in practice doesn't matter
+        }
+
+        bool IList.Contains(object value)
+        {
+            return Contains((T) value);
+        }
+
+        int IList.IndexOf(object value)
+        {
+            return IndexOf((T) value);
+        }
+
+        void IList.Insert(int index, object value)
+        {
+            Insert(index, (T) value);
+        }
+
+        void IList.Remove(object value)
+        {
+            Remove((T) value);
+        }
     }
 }
