@@ -7,16 +7,6 @@ namespace Qommon.Collections.Synchronized
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class SynchronizedDictionaryExtensions
     {
-        public static KeyValuePair<TKey, TValue>[] ToArray<TKey, TValue>(this ISynchronizedDictionary<TKey, TValue> dictionary)
-        {
-            lock (dictionary)
-            {
-                var array = new KeyValuePair<TKey, TValue>[dictionary.Count];
-                dictionary.CopyTo(array, 0);
-                return array;
-            }
-        }
-
         public static TValue GetValueOrDefault<TKey, TValue>(this ISynchronizedDictionary<TKey, TValue> dictionary, TKey key)
             => dictionary.TryGetValue(key, out var value)
                 ? value

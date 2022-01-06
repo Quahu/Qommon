@@ -5,8 +5,10 @@ namespace Qommon.Collections.Synchronized
 {
     public interface ISynchronizedList<T> : IList<T>
     {
+        T[] ToArray();
+
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
-            => (this.ToArray() as IList<T>).GetEnumerator();
+            => (ToArray() as IList<T>).GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator()
             => GetEnumerator();

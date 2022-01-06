@@ -20,6 +20,8 @@ namespace Qommon.Collections.Synchronized
 
         bool TryRemove(TKey key, out TValue value);
 
+        KeyValuePair<TKey, TValue>[] ToArray();
+
         IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator()
             => (this.ToArray() as IList<KeyValuePair<TKey, TValue>>).GetEnumerator();
 

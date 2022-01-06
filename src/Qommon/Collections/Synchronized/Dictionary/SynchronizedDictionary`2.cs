@@ -1,92 +1,81 @@
 ﻿using System.Collections.Generic;
+using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.Synchronized
 {
-    public class SynchronizedDictionary<TKey, TValue> : ISynchronizedDictionary<TKey, TValue>, IReadOnlyDictionary<TKey, TValue>
+    public class SynchronizedDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>,
+        ISynchronizedDictionary<TKey, TValue>
     {
-        public TKey[] Keys
+        public override ICollection<TKey> Keys
         {
             get
             {
                 lock (this)
                 {
-                    var array = new TKey[_dictionary.Count];
-                    _dictionary.Keys.CopyTo(array, 0);
+                    var array = new TKey[Dictionary.Count];
+                    Dictionary.Keys.CopyTo(array, 0);
                     return array;
                 }
             }
         }
 
-        public TValue[] Values
+        public override ICollection<TValue> Values
         {
             get
             {
                 lock (this)
                 {
-                    var array = new TValue[_dictionary.Count];
-                    _dictionary.Values.CopyTo(array, 0);
+                    var array = new TValue[Dictionary.Count];
+                    Dictionary.Values.CopyTo(array, 0);
                     return array;
                 }
             }
         }
 
-        public int Count
+        public override int Count
         {
             get
             {
                 lock (this)
                 {
-                    return _dictionary.Count;
+                    return Dictionary.Count;
                 }
             }
         }
 
-        public TValue this[TKey key]
+        public override TValue this[TKey key]
         {
             get
             {
                 lock (this)
                 {
-                    return _dictionary[key];
+                    return Dictionary[key];
                 }
             }
             set
             {
                 lock (this)
                 {
-                    _dictionary[key] = value;
+                    Dictionary[key] = value;
                 }
             }
         }
 
-        bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
+        public SynchronizedDictionary(int capacity = 0, IEqualityComparer<TKey> comparer = null)
+            : base(new Dictionary<TKey, TValue>(capacity, comparer))
 
-        IEnumerable<TKey> IReadOnlyDictionary<TKey, TValue>.Keys => Keys;
-
-        IEnumerable<TValue> IReadOnlyDictionary<TKey, TValue>.Values => Values;
-
-        private readonly IDictionary<TKey, TValue> _dictionary;
-
-        public SynchronizedDictionary()
-        {
-            _dictionary = new Dictionary<TKey, TValue>();
-        }
-
-        public SynchronizedDictionary(int capacity)
-        {
-            _dictionary = new Dictionary<TKey, TValue>(capacity);
-        }
+        { }
 
         public SynchronizedDictionary(IDictionary<TKey, TValue> dictionary)
-        {
-            _dictionary = dictionary;
-        }
+            : base(dictionary)
+
+        { }
 
         public bool TryAdd(TKey key, TValue value)
         {
             lock (this)
             {
-                return _dictionary.TryAdd(key, value);
+                return Dictionary.TryAdd(key, value);
             }
         }
 
@@ -94,65 +83,73 @@ namespace Qommon.Collections.Synchronized
         {
             lock (this)
             {
-                return _dictionary.Remove(key, out value);
+                return Dictionary.Remove(key, out value);
             }
         }
 
-        public void Add(TKey key, TValue value)
+        public override void Add(TKey key, TValue value)
         {
             lock (this)
             {
-                _dictionary.Add(key, value);
+                Dictionary.Add(key, value);
             }
         }
 
-        public void Clear()
+        public override void Clear()
         {
             lock (this)
             {
-                _dictionary.Clear();
+                Dictionary.Clear();
             }
         }
 
-        public bool ContainsKey(TKey key)
+        public override bool ContainsKey(TKey key)
         {
             lock (this)
             {
-                return _dictionary.ContainsKey(key);
+                return Dictionary.ContainsKey(key);
             }
         }
 
-        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+        public override void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
         {
             lock (this)
             {
-                (_dictionary as IDictionary<TKey, TValue>).CopyTo(array, arrayIndex);
+                Dictionary.CopyTo(array, arrayIndex);
             }
         }
 
-        public bool Remove(TKey key)
+        public override bool Remove(TKey key)
         {
             lock (this)
             {
-                return _dictionary.Remove(key);
+                return Dictionary.Remove(key);
             }
         }
 
-        public bool TryGetValue(TKey key, out TValue value)
+        public override bool TryGetValue(TKey key, out TValue value)
         {
             lock (this)
             {
-                return _dictionary.TryGetValue(key, out value);
+                return Dictionary.TryGetValue(key, out value);
             }
         }
 
-        void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item)
-            => Add(item.Key, item.Value);
+        public KeyValuePair<TKey, TValue>[] ToArray()
+        {
+            lock (this)
+            {
+                var array = new KeyValuePair<TKey, TValue>[Dictionary.Count];
+                Dictionary.CopyTo(array, 0);
+                return array;
+            }
+        }
 
-        bool ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue> item)
-            => ContainsKey(item.Key);
+        public override IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+            => (ToArray() as IList<KeyValuePair<TKey, TValue>>).GetEnumerator();
 
-        bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
-            => Remove(item.Key);
+        TKey[] ISynchronizedDictionary<TKey, TValue>.Keys => Keys as TKey[];
+
+        TValue[] ISynchronizedDictionary<TKey, TValue>.Values => Values as TValue[];
     }
 }

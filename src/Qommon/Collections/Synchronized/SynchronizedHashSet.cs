@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.Synchronized
 {
     /// <summary>
     ///     A lightweight (<see langword="lock"/>-based) thread-safe implementation of <see cref="ISet{T}"/>.
     /// </summary>
-    public sealed class SynchronizedHashSet<T> : ISet<T>, IReadOnlySet<T>
+    public sealed class SynchronizedHashSet<T> : ProxiedSet<T>
     {
-        public int Count
+        public override int Count
         {
             get
             {
@@ -19,15 +19,13 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        bool ICollection<T>.IsReadOnly => false;
-
         private readonly HashSet<T> _hashSet;
 
         public SynchronizedHashSet()
             : this(0)
         { }
 
-        public SynchronizedHashSet(int capacity)
+        public SynchronizedHashSet(int capacity = 0, IEqualityComparer<T> comparer = null)
         {
             _hashSet = new HashSet<T>(capacity);
         }
@@ -37,7 +35,7 @@ namespace Qommon.Collections.Synchronized
             _hashSet = new HashSet<T>(collection);
         }
 
-        public bool Add(T item)
+        public override bool Add(T item)
         {
             lock (this)
             {
@@ -45,7 +43,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void Clear()
+        public override void Clear()
         {
             lock (this)
             {
@@ -53,7 +51,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool Contains(T item)
+        public override bool Contains(T item)
         {
             lock (this)
             {
@@ -61,7 +59,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void CopyTo(T[] array, int arrayIndex)
+        public override void CopyTo(T[] array, int arrayIndex)
         {
             lock (this)
             {
@@ -69,7 +67,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void ExceptWith(IEnumerable<T> other)
+        public override void ExceptWith(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -77,7 +75,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void IntersectWith(IEnumerable<T> other)
+        public override void IntersectWith(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -85,7 +83,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool IsProperSubsetOf(IEnumerable<T> other)
+        public override bool IsProperSubsetOf(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -93,7 +91,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool IsProperSupersetOf(IEnumerable<T> other)
+        public override bool IsProperSupersetOf(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -101,7 +99,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool IsSubsetOf(IEnumerable<T> other)
+        public override bool IsSubsetOf(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -109,7 +107,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool IsSupersetOf(IEnumerable<T> other)
+        public override bool IsSupersetOf(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -117,7 +115,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool Overlaps(IEnumerable<T> other)
+        public override bool Overlaps(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -125,7 +123,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool Remove(T item)
+        public override bool Remove(T item)
         {
             lock (this)
             {
@@ -133,7 +131,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool SetEquals(IEnumerable<T> other)
+        public override bool SetEquals(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -141,7 +139,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void SymmetricExceptWith(IEnumerable<T> other)
+        public override void SymmetricExceptWith(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -149,7 +147,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public void UnionWith(IEnumerable<T> other)
+        public override void UnionWith(IEnumerable<T> other)
         {
             lock (this)
             {
@@ -167,13 +165,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public IEnumerator<T> GetEnumerator()
+        public override IEnumerator<T> GetEnumerator()
             => (ToArray() as IReadOnlyList<T>).GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
-
-        void ICollection<T>.Add(T item)
-            => Add(item);
     }
 }

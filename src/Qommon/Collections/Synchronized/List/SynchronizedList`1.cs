@@ -1,119 +1,124 @@
 ﻿using System.Collections.Generic;
+using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.Synchronized
 {
-    public class SynchronizedList<T> : ISynchronizedList<T>
+    public class SynchronizedList<T> : ProxiedList<T>,
+        ISynchronizedList<T>
     {
-        public int Count
+        public override int Count
         {
             get
             {
                 lock (this)
                 {
-                    return _list.Count;
+                    return List.Count;
                 }
             }
         }
 
-        public T this[int index]
+        public override T this[int index]
         {
             get
             {
                 lock (this)
                 {
-                    return _list[index];
+                    return List[index];
                 }
             }
             set
             {
                 lock (this)
                 {
-                    _list[index] = value;
+                    List[index] = value;
                 }
             }
         }
 
-        bool ICollection<T>.IsReadOnly => false;
-
-        private readonly IList<T> _list;
-
-        public SynchronizedList()
-        {
-            _list = new List<T>();
-        }
-
-        public SynchronizedList(int capacity)
-        {
-            _list = new List<T>(capacity);
-        }
+        public SynchronizedList(int capacity = 0)
+            : base(capacity)
+        { }
 
         public SynchronizedList(IList<T> list)
-        {
-            _list = list;
-        }
+            : base(list)
+        { }
 
-        public void Add(T item)
+        public override bool Add(T item)
         {
             lock (this)
             {
-                _list.Add(item);
+                List.Add(item);
+                return true;
             }
         }
 
-        public void Clear()
+        public override void Clear()
         {
             lock (this)
             {
-                _list.Clear();
+                List.Clear();
             }
         }
 
-        public bool Contains(T item)
+        public override bool Contains(T item)
         {
             lock (this)
             {
-                return _list.Contains(item);
+                return List.Contains(item);
             }
         }
 
-        public void CopyTo(T[] array, int arrayIndex)
+        public override void CopyTo(T[] array, int arrayIndex)
         {
             lock (this)
             {
-                _list.CopyTo(array, arrayIndex);
+                List.CopyTo(array, arrayIndex);
             }
         }
 
-        public bool Remove(T item)
+        public override bool Remove(T item)
         {
             lock (this)
             {
-                return _list.Remove(item);
+                return List.Remove(item);
             }
         }
 
-        public int IndexOf(T item)
+        public override int IndexOf(T item)
         {
             lock (this)
             {
-                return _list.IndexOf(item);
+                return List.IndexOf(item);
             }
         }
 
-        public void Insert(int index, T item)
+        public override void Insert(int index, T item)
         {
             lock (this)
             {
-                _list.Insert(index, item);
+                List.Insert(index, item);
             }
         }
 
-        public void RemoveAt(int index)
+        public override void RemoveAt(int index)
         {
             lock (this)
             {
-                _list.RemoveAt(index);
+                List.RemoveAt(index);
             }
         }
+
+        public T[] ToArray()
+        {
+            lock (this)
+            {
+                var array = new T[List.Count];
+                List.CopyTo(array, 0);
+                return array;
+            }
+        }
+
+        public override IEnumerator<T> GetEnumerator()
+            => (ToArray() as IList<T>).GetEnumerator();
     }
 }
