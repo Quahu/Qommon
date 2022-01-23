@@ -44,7 +44,7 @@ namespace Qommon
 
             [DoesNotReturn]
             public static void ArgumentNullExceptionForIsNotNull<T>(string name)
-                => throw new ArgumentNullException(name, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must be not null.");
+                => throw new ArgumentNullException(name, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must not be null.");
 
             [DoesNotReturn]
             public static void ArgumentExceptionForIsOfType<T>(object value, string name)

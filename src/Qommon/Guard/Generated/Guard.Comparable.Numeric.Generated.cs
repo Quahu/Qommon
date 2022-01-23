@@ -233,6 +233,74 @@ namespace Qommon
         }
 
         /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="byte"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(byte value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="byte"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(byte value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="byte"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(byte value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="byte"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(byte value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
+        }
+
+        /// <summary>
         /// Asserts that the input value must be equal to a specified value.
         /// </summary>
         /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
@@ -684,6 +752,74 @@ namespace Qommon
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotBetweenOrEqualTo(value, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="short"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(short value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="short"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(short value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="short"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(short value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="short"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(short value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
         }
 
         /// <summary>
@@ -1368,6 +1504,74 @@ namespace Qommon
         }
 
         /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="int"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(int value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="int"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(int value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="int"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(int value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="int"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(int value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
+        }
+
+        /// <summary>
         /// Asserts that the input value must be equal to a specified value.
         /// </summary>
         /// <param name="value">The input <see cref="uint"/> value to test.</param>
@@ -1822,6 +2026,74 @@ namespace Qommon
         }
 
         /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="float"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(float value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="float"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(float value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="float"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(float value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="float"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(float value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
+        }
+
+        /// <summary>
         /// Asserts that the input value must be equal to a specified value.
         /// </summary>
         /// <param name="value">The input <see cref="long"/> value to test.</param>
@@ -2046,6 +2318,74 @@ namespace Qommon
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotBetweenOrEqualTo(value, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="long"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(long value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="long"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(long value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="long"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(long value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="long"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(long value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
         }
 
         /// <summary>
@@ -2503,6 +2843,74 @@ namespace Qommon
         }
 
         /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="double"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(double value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="double"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(double value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="double"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(double value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="double"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(double value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
+        }
+
+        /// <summary>
         /// Asserts that the input value must be equal to a specified value.
         /// </summary>
         /// <param name="value">The input <see cref="decimal"/> value to test.</param>
@@ -2730,6 +3138,74 @@ namespace Qommon
         }
 
         /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(decimal value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(decimal value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(decimal value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(decimal value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
+        }
+
+        /// <summary>
         /// Asserts that the input value must be equal to a specified value.
         /// </summary>
         /// <param name="value">The input <see langword="nint"/> value to test.</param>
@@ -2954,6 +3430,74 @@ namespace Qommon
                 return;
 
             Throw.ArgumentOutOfRangeExceptionForIsNotBetweenOrEqualTo(value, minimum, maximum, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be positive.
+        /// </summary>
+        /// <param name="value">The input <see langword="nint"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsPositive(nint value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value > 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be positive.
+        /// </summary>
+        /// <param name="value">The input <see langword="nint"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is > <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotPositive(nint value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value <= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotPositive(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must be negative.
+        /// </summary>
+        /// <param name="value">The input <see langword="nint"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNegative(nint value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value < 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNegative(value, name);
+        }
+
+        /// <summary>
+        ///     Asserts that the input value must not be negative.
+        /// </summary>
+        /// <param name="value">The input <see langword="nint"/> value to test.</param>
+        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     Thrown if <paramref name="value"/> is < <c>0</c>.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IsNotNegative(nint value, [CallerArgumentExpression("value")] string name = null)
+        {
+            if (value >= 0)
+                return;
+
+            Throw.ArgumentOutOfRangeExceptionForIsNotNegative(value, name);
         }
 
         /// <summary>

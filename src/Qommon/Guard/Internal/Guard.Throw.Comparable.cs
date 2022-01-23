@@ -64,6 +64,22 @@ namespace Qommon
             [DoesNotReturn]
             public static void ArgumentOutOfRangeExceptionForIsNotBetweenOrEqualTo<T>(T value, T minimum, T maximum, string name)
                 => throw new ArgumentOutOfRangeException(name, value!, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must not be between or equal to {GetValueString(minimum)} and {GetValueString(maximum)}, was {GetValueString(value)}.");
+
+            [DoesNotReturn]
+            public static void ArgumentOutOfRangeExceptionForIsPositive<T>(T value, string name)
+                => throw new ArgumentOutOfRangeException(name, value!, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must be positive, was {GetValueString(value)}.");
+
+            [DoesNotReturn]
+            public static void ArgumentOutOfRangeExceptionForIsNotPositive<T>(T value, string name)
+                => throw new ArgumentOutOfRangeException(name, value!, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must not be positive, was {GetValueString(value)}.");
+
+            [DoesNotReturn]
+            public static void ArgumentOutOfRangeExceptionForIsNegative<T>(T value, string name)
+                => throw new ArgumentOutOfRangeException(name, value!, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must be negative, was {GetValueString(value)}.");
+
+            [DoesNotReturn]
+            public static void ArgumentOutOfRangeExceptionForIsNotNegative<T>(T value, string name)
+                => throw new ArgumentOutOfRangeException(name, value!, $"Parameter {GetNameString(name)} ({typeof(T).ToTypeString()}) must not be negative, was {GetValueString(value)}.");
         }
     }
 }
