@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace Qommon.Collections
 {
+    /// <summary>
+    ///     Represents extension methods for lists.
+    /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class ListExtensions
     {
@@ -42,6 +45,40 @@ namespace Qommon.Collections
             {
                 foreach (var item in items)
                     list.Add(item);
+            }
+        }
+
+#if NET6_0_OR_GREATER
+        /// <summary>
+        ///     Shuffles the items of this list.
+        /// </summary>
+        /// <param name="list"> The list to shuffle. </param>
+        /// <typeparam name="T"> The type of the list items. </typeparam>
+        public static void Shuffle<T>(this IList<T> list)
+            => list.Shuffle(Random.Shared);
+#endif
+
+        /// <summary>
+        ///     Shuffles the items of this list using the specified <see cref="Random"/> instance.
+        /// </summary>
+        /// <param name="list"> The list to shuffle. </param>
+        /// <param name="random"> The <see cref="Random"/> instance to use. </param>
+        /// <typeparam name="T"> The type of the list items. </typeparam>
+        public static void Shuffle<T>(this IList<T> list, Random random)
+        {
+            Guard.IsNotNull(list);
+            Guard.IsNotNull(random);
+
+            var count = list.Count;
+            if (count < 2)
+                return;
+
+            for (var i = 0; i < count - 1; i++)
+            {
+                var j = random.Next(i, count);
+                var temp = list[j];
+                list[j] = list[i];
+                list[i] = temp;
             }
         }
     }
