@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Qommon.Collections.Specialized;
 
-namespace Qommon.Tests.Collections.Specialized.Bits
+namespace Qommon.Tests.Collections.Specialized
 {
     public class BitVectorTests : QommonFixture
     {
