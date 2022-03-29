@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.Synchronized
 {
     public class SynchronizedDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>,
         ISynchronizedDictionary<TKey, TValue>
+        where TKey : notnull
     {
         public override ICollection<TKey> Keys
         {
@@ -61,7 +63,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public SynchronizedDictionary(int capacity = 0, IEqualityComparer<TKey> comparer = null)
+        public SynchronizedDictionary(int capacity = 0, IEqualityComparer<TKey>? comparer = null)
             : base(new Dictionary<TKey, TValue>(capacity, comparer))
 
         { }
@@ -79,7 +81,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public bool TryRemove(TKey key, out TValue value)
+        public bool TryRemove(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             lock (this)
             {
@@ -127,7 +129,7 @@ namespace Qommon.Collections.Synchronized
             }
         }
 
-        public override bool TryGetValue(TKey key, out TValue value)
+        public override bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             lock (this)
             {
@@ -148,8 +150,8 @@ namespace Qommon.Collections.Synchronized
         public override IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
             => (ToArray() as IList<KeyValuePair<TKey, TValue>>).GetEnumerator();
 
-        TKey[] ISynchronizedDictionary<TKey, TValue>.Keys => Keys as TKey[];
+        TKey[] ISynchronizedDictionary<TKey, TValue>.Keys => (Keys as TKey[])!;
 
-        TValue[] ISynchronizedDictionary<TKey, TValue>.Values => Values as TValue[];
+        TValue[] ISynchronizedDictionary<TKey, TValue>.Values => (Values as TValue[])!;
     }
 }

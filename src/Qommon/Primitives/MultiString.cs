@@ -13,7 +13,7 @@ namespace Qommon
         /// <summary>
         ///     Gets a value representing a single <see langword="null"/> string.
         /// </summary>
-        public static MultiString Null => new((string) null);
+        public static MultiString Null => new((string?) null);
 
         /// <summary>
         ///     Gets a value representing a single empty string.
@@ -51,7 +51,7 @@ namespace Qommon
             }
         }
 
-        private readonly object _value;
+        private readonly object? _value;
 
         /// <summary>
         ///     Instantiates a new <see cref="MultiString"/> from a single string value.
@@ -66,7 +66,7 @@ namespace Qommon
         ///     Instantiates a new <see cref="MultiString"/> from a single string value.
         /// </summary>
         /// <param name="value"> The value to wrap. </param>
-        public MultiString(string value)
+        public MultiString(string? value)
         {
             _value = value?.AsMemory();
         }
@@ -91,7 +91,7 @@ namespace Qommon
 
         private void ThrowIfReadOnly(out IList<ReadOnlyMemory<char>> list)
         {
-            if ((list = _value as IList<ReadOnlyMemory<char>>) == null || list.IsReadOnly)
+            if ((list = (_value as IList<ReadOnlyMemory<char>>)!) == null || list.IsReadOnly)
                 Throw.InvalidOperationException("This multi-string is read-only.");
         }
 
@@ -104,7 +104,7 @@ namespace Qommon
         public static implicit operator MultiString(ReadOnlyMemory<char> value)
             => new(value);
 
-        public static implicit operator MultiString(string value)
+        public static implicit operator MultiString(string? value)
             => new(value);
 
         public static implicit operator MultiString(ReadOnlyMemory<char>[] values)
@@ -262,13 +262,13 @@ namespace Qommon
                 var value = _multiString._value;
                 if (state == -2)
                 {
-                    _current = (ReadOnlyMemory<char>) value;
+                    _current = (ReadOnlyMemory<char>) value!;
                     _state = -1;
                     return true;
                 }
 
                 var list = value as IList<ReadOnlyMemory<char>>;
-                if (state < list.Count)
+                if (state < list!.Count)
                 {
                     _current = list[state++];
                     _state = state;

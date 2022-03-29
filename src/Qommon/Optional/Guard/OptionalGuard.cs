@@ -15,7 +15,7 @@ namespace Disqord
         /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentException"> Thrown if <paramref name="optional"/> has no value. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasValue<T>(Optional<T> optional, string message = null, [CallerArgumentExpression("optional")] string name = null)
+        public static void HasValue<T>(Optional<T> optional, string? message = null, [CallerArgumentExpression("optional")] string? name = null)
         {
             if (optional.HasValue)
                 return;
@@ -32,7 +32,7 @@ namespace Disqord
         /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentException"> Thrown if <paramref name="optional"/> has a value. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasNoValue<T>(Optional<T> optional, string message = null, [CallerArgumentExpression("optional")] string name = null)
+        public static void HasNoValue<T>(Optional<T> optional, string? message = null, [CallerArgumentExpression("optional")] string? name = null)
         {
             if (!optional.HasValue)
                 return;
@@ -49,7 +49,7 @@ namespace Disqord
         /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentException"> Thrown if <paramref name="optional"/> has a value but it failed to pass assertions. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void CheckValue<T>(Optional<T> optional, Action<T> assert, [CallerArgumentExpression("optional")] string name = null)
+        public static void CheckValue<T>(Optional<T> optional, Action<T> assert, [CallerArgumentExpression("optional")] string? name = null)
         {
             if (!optional.HasValue)
                 return;

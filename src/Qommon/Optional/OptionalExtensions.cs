@@ -13,7 +13,7 @@ namespace Qommon
             where T : struct
             => optional.HasValue ? optional.Value : new T?();
 
-        public static T GetValueOrDefault<T>(this Optional<T> optional)
+        public static T? GetValueOrDefault<T>(this Optional<T> optional)
             => optional.HasValue ? optional.Value : default;
 
         public static T GetValueOrDefault<T>(this Optional<T> optional, T value)
@@ -25,7 +25,7 @@ namespace Qommon
         public static T GetValueOrDefault<T, TState>(this Optional<T> optional, Func<TState, T> factory, TState state)
             => optional.HasValue ? optional.Value : (factory ?? throw new ArgumentNullException(nameof(factory)))(state);
 
-        public static bool TryGetValue<T>(this Optional<T> optional, out T value)
+        public static bool TryGetValue<T>(this Optional<T> optional, out T? value)
         {
             if (optional.HasValue)
             {

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Qommon.Collections
 {
     public class ReadOnlyOfTypeDictionary<TKey, TOriginal, TNew> : IReadOnlyDictionary<TKey, TNew>
+
         // where TNew : TOriginal
     {
         public IEnumerable<TKey> Keys => new ReadOnlyPredicateCollection<TKey>(_dictionary.Keys, ContainsKey);
@@ -27,7 +29,7 @@ namespace Qommon.Collections
         public bool ContainsKey(TKey key)
             => TryGetValue(key, out _);
 
-        public bool TryGetValue(TKey key, out TNew value)
+        public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TNew value)
         {
             if (_dictionary.TryGetValue(key, out var originalValue) && originalValue is TNew newValue)
             {

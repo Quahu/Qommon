@@ -35,7 +35,7 @@ namespace Qommon.Events
         }
 
         private ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> _handlers;
-        private readonly Action<Exception> _exceptionHandler;
+        private readonly Action<Exception>? _exceptionHandler;
 
         /// <summary>
         ///     Instantiates a new <see cref="AsynchronousEvent{T}"/>.
@@ -61,8 +61,7 @@ namespace Qommon.Events
         /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to hook up. </param>
         public void Hook(AsynchronousEventHandler<TEventArgs> handler)
         {
-            if (handler == null)
-                throw new ArgumentNullException(nameof(handler));
+            Guard.IsNotNull(handler);
 
             lock (this)
             {
@@ -81,8 +80,7 @@ namespace Qommon.Events
         /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to unhook. </param>
         public void Unhook(AsynchronousEventHandler<TEventArgs> handler)
         {
-            if (handler == null)
-                throw new ArgumentNullException(nameof(handler));
+            Guard.IsNotNull(handler);
 
             lock (this)
             {

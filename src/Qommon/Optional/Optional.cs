@@ -40,7 +40,7 @@ namespace Qommon
         /// <returns>
         ///     The provided value wrapped in an <see cref="Optional{T}"/>.
         /// </returns>
-        public static Optional<T> FromNullable<T>(T value)
+        public static Optional<T> FromNullable<T>(T? value)
             where T : class
             => value ?? Optional<T>.Empty;
 
@@ -48,16 +48,16 @@ namespace Qommon
             => optional.HasValue
                 ? optional.Value != null
                     ? converter(optional.Value)
-                    : default
+                    : default!
                 : Optional<TNew>.Empty;
 
-        public static TNew ConvertOrDefault<TOld, TNew>(Optional<TOld> optional, Converter<TOld, TNew> converter)
+        public static TNew? ConvertOrDefault<TOld, TNew>(Optional<TOld> optional, Converter<TOld, TNew> converter)
             => optional.HasValue ? converter(optional.Value) : default;
 
         public static TNew ConvertOrDefault<TOld, TNew>(Optional<TOld> optional, Converter<TOld, TNew> converter, TNew defaultValue)
             => optional.HasValue ? converter(optional.Value) : defaultValue;
 
-        public static TNew ConvertOrDefault<TOld, TState, TNew>(Optional<TOld> optional, Func<TOld, TState, TNew> converter, TState state)
+        public static TNew? ConvertOrDefault<TOld, TState, TNew>(Optional<TOld> optional, Func<TOld, TState, TNew> converter, TState state)
             => optional.HasValue ? converter(optional.Value, state) : default;
 
         public static TNew ConvertOrDefault<TOld, TState, TNew>(Optional<TOld> optional, Func<TOld, TState, TNew> converter, TState state, TNew defaultValue)

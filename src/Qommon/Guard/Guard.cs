@@ -19,7 +19,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is not <see langword="null"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNull<T>(T value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNull<T>(T? value, [CallerArgumentExpression("value")] string? name = null)
             where T : class
         {
             if (value is null)
@@ -37,7 +37,7 @@ namespace Qommon
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is not <see langword="null"/>.</exception>
         /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNull<T>(T? value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNull<T>(T? value, [CallerArgumentExpression("value")] string? name = null)
             where T : struct
         {
             if (value is null)
@@ -54,7 +54,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="value"/> is <see langword="null"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotNull<T>([NotNull] T value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotNull<T>([NotNull] T? value, [CallerArgumentExpression("value")] string? name = null)
             where T : class
         {
             if (value is not null)
@@ -72,7 +72,7 @@ namespace Qommon
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="value"/> is <see langword="null"/>.</exception>
         /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotNull<T>([NotNull] T? value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotNull<T>([NotNull] T? value, [CallerArgumentExpression("value")] string? name = null)
             where T : struct
         {
             if (value is not null)
@@ -89,7 +89,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is not of type <typeparamref name="T"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsOfType<T>(object value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsOfType<T>(object value, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value.GetType() == typeof(T))
                 return;
@@ -105,7 +105,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is of type <typeparamref name="T"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotOfType<T>(object value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotOfType<T>(object value, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value.GetType() != typeof(T))
                 return;
@@ -121,7 +121,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the type of <paramref name="value"/> is not the same as <paramref name="type"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsOfType(object value, Type type, [CallerArgumentExpression("value")] string name = null)
+        public static void IsOfType(object value, Type type, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value.GetType() == type)
                 return;
@@ -137,7 +137,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the type of <paramref name="value"/> is the same as <paramref name="type"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotOfType(object value, Type type, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotOfType(object value, Type type, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value.GetType() != type)
                 return;
@@ -153,7 +153,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> can't be assigned to type <typeparamref name="T"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsAssignableToType<T>(object value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsAssignableToType<T>(object value, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value is T)
                 return;
@@ -169,7 +169,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> can be assigned to type <typeparamref name="T"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotAssignableToType<T>(object value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotAssignableToType<T>(object value, [CallerArgumentExpression("value")] string? name = null)
         {
             if (value is not T)
                 return;
@@ -185,7 +185,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> can't be assigned to <paramref name="type"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsAssignableToType(object value, Type type, [CallerArgumentExpression("value")] string name = null)
+        public static void IsAssignableToType(object value, Type type, [CallerArgumentExpression("value")] string? name = null)
         {
             if (type.IsInstanceOfType(value))
                 return;
@@ -201,7 +201,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> can be assigned to <paramref name="type"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotAssignableToType(object value, Type type, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotAssignableToType(object value, Type type, [CallerArgumentExpression("value")] string? name = null)
         {
             if (!type.IsInstanceOfType(value))
                 return;
@@ -219,7 +219,7 @@ namespace Qommon
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is not the same instance as <paramref name="target"/>.</exception>
         /// <remarks>The method is generic to prevent using it with value types.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsReferenceEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string name = null)
+        public static void IsReferenceEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string? name = null)
             where T : class
         {
             if (ReferenceEquals(value, target))
@@ -238,7 +238,7 @@ namespace Qommon
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is the same instance as <paramref name="target"/>.</exception>
         /// <remarks>The method is generic to prevent using it with value types.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsReferenceNotEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string name = null)
+        public static void IsReferenceNotEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string? name = null)
             where T : class
         {
             if (!ReferenceEquals(value, target))

@@ -13,7 +13,7 @@ namespace Qommon.Collections.Proxied
         /// <summary>
         ///     Gets the wrapped set.
         /// </summary>
-        protected virtual ISet<T> Set => Collection as ISet<T>;
+        protected virtual ISet<T> Set => (Collection as ISet<T>)!;
 
         /// <summary>
         ///     Instantiates a new <see cref="ProxiedSet{T}"/> wrapping a <see cref="HashSet{T}"/>.

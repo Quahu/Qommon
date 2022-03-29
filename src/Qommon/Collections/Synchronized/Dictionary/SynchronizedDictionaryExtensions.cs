@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Qommon.Collections.Synchronized
@@ -7,7 +6,8 @@ namespace Qommon.Collections.Synchronized
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class SynchronizedDictionaryExtensions
     {
-        public static TValue GetValueOrDefault<TKey, TValue>(this ISynchronizedDictionary<TKey, TValue> dictionary, TKey key)
+        public static TValue? GetValueOrDefault<TKey, TValue>(this ISynchronizedDictionary<TKey, TValue> dictionary, TKey key)
+            where TKey : notnull
             => dictionary.TryGetValue(key, out var value)
                 ? value
                 : default;

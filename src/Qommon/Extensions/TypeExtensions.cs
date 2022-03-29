@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -21,7 +22,7 @@ namespace Qommon
         /// <returns>
         ///     <see langword="true"/> if the type has an underlying type.
         /// </returns>
-        public static bool TryGetNullableUnderlyingType(this Type type, out Type underlyingType)
+        public static bool TryGetNullableUnderlyingType(this Type type, [NotNullWhen(true)] out Type? underlyingType)
         {
             underlyingType = Nullable.GetUnderlyingType(type);
             return underlyingType != null;
@@ -127,7 +128,7 @@ namespace Qommon
             {
                 if (type.IsByRef)
                 {
-                    type = type.GetElementType();
+                    type = type.GetElementType()!;
                     return $"{FormatDisplayString(type, 0, type.GetGenericArguments())}&";
                 }
 
@@ -138,7 +139,7 @@ namespace Qommon
                 while (type.IsPointer)
                 {
                     depth++;
-                    type = type.GetElementType();
+                    type = type.GetElementType()!;
                 }
 
                 return $"{FormatDisplayString(type, 0, type.GetGenericArguments())}{new string('*', depth)}";

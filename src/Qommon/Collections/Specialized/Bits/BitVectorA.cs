@@ -73,7 +73,7 @@ namespace Qommon.Collections.Specialized
         }
 
         /// <inheritdoc/>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
             => obj is BitVectorA vector && vector._data == _data;
 
         /// <inheritdoc/>

@@ -35,7 +35,7 @@ namespace Qommon.Pooling
         bool ICollection<T>.IsReadOnly => false;
 
         int IList<T>.IndexOf(T item)
-            => Array.IndexOf(_segment.Array, item, _segment.Offset, _segment.Count);
+            => Array.IndexOf(_segment.Array!, item, _segment.Offset, _segment.Count);
 
         void IList<T>.Insert(int index, T item)
             => throw new NotSupportedException();

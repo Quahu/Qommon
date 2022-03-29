@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Qommon.Collections.Specialized
 {
     public class ListDictionary<TKey, TValue> : IDictionary<TKey, TValue>, IReadOnlyDictionary<TKey, TValue>,
         IList<KeyValuePair<TKey, TValue>>, IReadOnlyList<KeyValuePair<TKey, TValue>>
+        where TKey : notnull
     {
         public int Count => _items.Count;
 
@@ -33,7 +35,9 @@ namespace Qommon.Collections.Specialized
         }
 
         bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
+
         ICollection<TKey> IDictionary<TKey, TValue>.Keys => _items.Select(x => x.Key).ToArray();
+
         ICollection<TValue> IDictionary<TKey, TValue>.Values => _items.Select(x => x.Value).ToArray();
 
         private readonly List<KeyValuePair<TKey, TValue>> _items;
@@ -90,7 +94,7 @@ namespace Qommon.Collections.Specialized
         public void RemoveAt(int index)
             => _items.RemoveAt(index);
 
-        public bool TryGetValue(TKey key, out TValue value)
+        public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             var index = _items.FindIndex(x => x.Key.Equals(key));
             if (index != -1)

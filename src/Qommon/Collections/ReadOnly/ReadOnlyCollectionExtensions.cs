@@ -16,13 +16,15 @@ namespace Qommon.Collections
             => new ReadOnlyList<T>(list);
 
         public static IReadOnlyDictionary<TKey, TValue> ReadOnly<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
+            where TKey : notnull
             => new ReadOnlyDictionary<TKey, TValue>(dictionary);
 
         public static IReadOnlySet<T> ReadOnly<T>(this ISet<T> set)
             => new ReadOnlySet<T>(set);
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source,
-            IEqualityComparer<TKey> comparer = null)
+            IEqualityComparer<TKey>? comparer = null)
+            where TKey : notnull
         {
             Guard.IsNotNull(source);
 
@@ -34,7 +36,8 @@ namespace Qommon.Collections
         }
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<TSource, TKey, TValue>(this IEnumerable<TSource> source,
-            Func<TSource, TKey> keySelector, Func<TSource, TValue> valueSelector, IEqualityComparer<TKey> comparer = null)
+            Func<TSource, TKey> keySelector, Func<TSource, TValue> valueSelector, IEqualityComparer<TKey>? comparer = null)
+            where TKey : notnull
         {
             Guard.IsNotNull(keySelector);
             Guard.IsNotNull(valueSelector);
@@ -51,7 +54,8 @@ namespace Qommon.Collections
         }
 
         public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<TSource, TKey, TValue, TState>(this IEnumerable<TSource> source,
-            TState state, Func<TSource, TState, TKey> keySelector, Func<TSource, TState, TValue> valueSelector, IEqualityComparer<TKey> comparer = null)
+            TState state, Func<TSource, TState, TKey> keySelector, Func<TSource, TState, TValue> valueSelector, IEqualityComparer<TKey>? comparer = null)
+            where TKey : notnull
         {
             Guard.IsNotNull(source);
             Guard.IsNotNull(keySelector);

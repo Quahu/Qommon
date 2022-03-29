@@ -8,7 +8,7 @@ namespace Qommon
         private static partial class Throw
         {
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsTrue(string name, string message)
+            public static void ArgumentExceptionForIsTrue(string? name, string? message)
             {
                 if (message == null)
                     throw new ArgumentException($"Parameter {GetNameString(name)} must be true, was false.", name);
@@ -17,7 +17,7 @@ namespace Qommon
             }
 
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsFalse(string name, string message)
+            public static void ArgumentExceptionForIsFalse(string? name, string? message)
             {
                 if (message == null)
                     throw new ArgumentException($"Parameter {GetNameString(name)} must be false, was true.", name);

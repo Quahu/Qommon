@@ -15,7 +15,7 @@ namespace Qommon.Metadata
         /// <summary>
         ///     Gets the metadata of this entity, i.e. dynamic data keyed by <see cref="string"/>s.
         /// </summary>
-        IDictionary<string, object> Metadata
+        IDictionary<string, object?>? Metadata
         {
             get => DynamicMetadata.GetOrCreate(this).Metadata;
             set => DynamicMetadata.Set(this, value);

@@ -7,6 +7,7 @@ namespace Qommon.Collections.Synchronized
     public static class SynchronizedCollectionExtensions
     {
         public static ISynchronizedDictionary<TKey, TValue> Synchronized<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
+            where TKey : notnull
             => new SynchronizedDictionary<TKey, TValue>(dictionary);
 
         public static ISynchronizedList<T> Synchronized<T>(this IList<T> list)

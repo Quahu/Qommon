@@ -14,7 +14,7 @@ namespace Qommon
         ///     Thrown if <paramref name="value"/> is not defined within the <see langword="enum"/>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsDefined<TEnum>(TEnum value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsDefined<TEnum>(TEnum value, [CallerArgumentExpression("value")] string? name = null)
             where TEnum : struct, Enum
         {
             if (Enum.IsDefined(value))

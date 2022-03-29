@@ -21,7 +21,7 @@ namespace Qommon.Collections.Proxied
         /// <summary>
         ///     Gets the wrapped list.
         /// </summary>
-        protected virtual IList<T> List => Collection as IList<T>;
+        protected virtual IList<T> List => (Collection as IList<T>)!;
 
         /// <summary>
         ///     Instantiates a new <see cref="ProxiedList{T}"/> wrapping a <see cref="List{T}"/>.
@@ -53,36 +53,36 @@ namespace Qommon.Collections.Proxied
 
         bool IList.IsFixedSize => (List as IList)?.IsFixedSize ?? false;
 
-        object IList.this[int index]
+        object? IList.this[int index]
         {
             get => this[index];
-            set => this[index] = (T) value;
+            set => this[index] = (T) value!;
         }
 
-        int IList.Add(object value)
+        int IList.Add(object? value)
         {
-            Add((T) value);
+            Add((T) value!);
             return Count - 1; // Violates the IList contract, but in practice doesn't matter
         }
 
-        bool IList.Contains(object value)
+        bool IList.Contains(object? value)
         {
-            return Contains((T) value);
+            return Contains((T) value!);
         }
 
-        int IList.IndexOf(object value)
+        int IList.IndexOf(object? value)
         {
-            return IndexOf((T) value);
+            return IndexOf((T) value!);
         }
 
-        void IList.Insert(int index, object value)
+        void IList.Insert(int index, object? value)
         {
-            Insert(index, (T) value);
+            Insert(index, (T) value!);
         }
 
-        void IList.Remove(object value)
+        void IList.Remove(object? value)
         {
-            Remove((T) value);
+            Remove((T) value!);
         }
     }
 }

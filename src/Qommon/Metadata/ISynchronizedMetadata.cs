@@ -14,16 +14,16 @@ namespace Qommon.Metadata
     public interface ISynchronizedMetadata : IMetadata
     {
         /// <inheritdoc cref="IMetadata.Metadata"/>
-        new ISynchronizedDictionary<string, object> Metadata
+        new ISynchronizedDictionary<string, object?>? Metadata
         {
             get => DynamicMetadata.GetOrCreateSynchronized(this).Metadata;
             set => DynamicMetadata.SetSynchronized(this, value);
         }
 
-        IDictionary<string, object> IMetadata.Metadata
+        IDictionary<string, object?>? IMetadata.Metadata
         {
             get => Metadata;
-            set => Metadata = (ISynchronizedDictionary<string, object>) value;
+            set => Metadata = (ISynchronizedDictionary<string, object?>?) value;
         }
     }
 }

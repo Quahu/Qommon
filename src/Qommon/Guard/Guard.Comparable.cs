@@ -13,7 +13,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is not <see langword="default"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsDefault<T>(T value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsDefault<T>(T value, [CallerArgumentExpression("value")] string? name = null)
             where T : struct, IEquatable<T>
         {
             if (value.Equals(default))
@@ -30,7 +30,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is <see langword="default"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotDefault<T>(T value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotDefault<T>(T value, [CallerArgumentExpression("value")] string? name = null)
             where T : struct, IEquatable<T>
         {
             if (!value.Equals(default))
@@ -48,7 +48,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string name = null)
+        public static void IsEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IEquatable<T>
         {
             if (value.Equals(target))
@@ -66,7 +66,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotEqualTo<T>(T value, T target, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IEquatable<T>
         {
             if (!value.Equals(target))
@@ -84,7 +84,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsLessThan<T>(T value, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsLessThan<T>(T value, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(maximum) < 0)
@@ -102,7 +102,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsLessThanOrEqualTo<T>(T value, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsLessThanOrEqualTo<T>(T value, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(maximum) <= 0)
@@ -120,7 +120,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsGreaterThan<T>(T value, T minimum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsGreaterThan<T>(T value, T minimum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) > 0)
@@ -138,7 +138,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsGreaterThanOrEqualTo<T>(T value, T minimum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsGreaterThanOrEqualTo<T>(T value, T minimum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) >= 0)
@@ -160,7 +160,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsInRange<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsInRange<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) >= 0 && value.CompareTo(maximum) < 0)
@@ -182,7 +182,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotInRange<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotInRange<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) < 0 || value.CompareTo(maximum) >= 0)
@@ -204,7 +204,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsBetween<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsBetween<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) > 0 && value.CompareTo(maximum) < 0)
@@ -226,7 +226,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotBetween<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotBetween<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) <= 0 || value.CompareTo(maximum) >= 0)
@@ -248,7 +248,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsBetweenOrEqualTo<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsBetweenOrEqualTo<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) >= 0 && value.CompareTo(maximum) <= 0)
@@ -270,7 +270,7 @@ namespace Qommon
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotBetweenOrEqualTo<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string name = null)
+        public static void IsNotBetweenOrEqualTo<T>(T value, T minimum, T maximum, [CallerArgumentExpression("value")] string? name = null)
             where T : notnull, IComparable<T>
         {
             if (value.CompareTo(minimum) < 0 || value.CompareTo(maximum) > 0)

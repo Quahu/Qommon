@@ -11,7 +11,7 @@ namespace Qommon.Collections
     {
         /// <inheritdoc cref="GetArray"/>
         /// <typeparam name="T"> The type of the elements. </typeparam>
-        public static T[] GetArray<T>(this IEnumerable<T> source)
+        public static T[] GetArray<T>(this IEnumerable<T>? source)
         {
             return source switch
             {
@@ -31,7 +31,7 @@ namespace Qommon.Collections
         /// <returns>
         ///     An array containing the elements from the enumerable.
         /// </returns>
-        public static object[] GetArray(this IEnumerable source)
+        public static object[] GetArray(this IEnumerable? source)
         {
             if (source == null)
                 return Array.Empty<object>();
@@ -42,7 +42,8 @@ namespace Qommon.Collections
             return source.Cast<object>().GetArray();
         }
 
-        public static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey> comparer = null)
+        public static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey>? comparer = null)
+            where TKey : notnull
         {
             return new(source, comparer);
         }

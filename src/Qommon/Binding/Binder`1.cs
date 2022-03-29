@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Qommon.Binding
 {
@@ -31,9 +32,9 @@ namespace Qommon.Binding
         /// </summary>
         public bool IsBound => _value != null;
 
-        private TBind _value;
+        private TBind? _value;
         private readonly IBindable<TBind> _bindable;
-        private readonly Action<TBind> _check;
+        private readonly Action<TBind>? _check;
         private readonly bool _allowRebinding;
 
         /// <summary>
@@ -42,10 +43,9 @@ namespace Qommon.Binding
         /// <param name="bindable"> The bindable to wrap. </param>
         /// <param name="check"> The optional check used for throwing exceptions. </param>
         /// <param name="allowRebinding"> Whether rebinding should be allowed. </param>
-        public Binder(IBindable<TBind> bindable, Action<TBind> check = null, bool allowRebinding = false)
+        public Binder(IBindable<TBind> bindable, Action<TBind>? check = null, bool allowRebinding = false)
         {
-            if (bindable == null)
-                throw new ArgumentNullException(nameof(bindable));
+            Guard.IsNotNull(bindable);
 
             _bindable = bindable;
             _check = check;
@@ -68,7 +68,7 @@ namespace Qommon.Binding
             _value = value;
         }
 
-        public bool TryGetValue(out TBind value)
+        public bool TryGetValue([NotNullWhen(true)] out TBind? value)
         {
             value = _value;
             return _value != null;
@@ -77,7 +77,7 @@ namespace Qommon.Binding
         /// <summary>
         ///     Gets the bound value of this <see cref="Binder{TBind}"/> or the <see langword="default"/> value.
         /// </summary>
-        public TBind GetValueOrDefault()
+        public TBind? GetValueOrDefault()
             => _value;
     }
 }

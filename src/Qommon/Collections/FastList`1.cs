@@ -149,7 +149,7 @@ namespace Qommon.Collections
         public void AddRange(IEnumerable<T> enumerable)
             => InsertRange(_size, enumerable);
 
-        public int BinarySearch(int index, int count, T item, IComparer<T> comparer)
+        public int BinarySearch(int index, int count, T item, IComparer<T>? comparer)
         {
             Guard.IsNotNegative(index);
             Guard.IsNotNegative(count);
@@ -161,7 +161,7 @@ namespace Qommon.Collections
         public int BinarySearch(T item)
             => BinarySearch(0, Count, item, null);
 
-        public int BinarySearch(T item, IComparer<T> comparer)
+        public int BinarySearch(T item, IComparer<T>? comparer)
             => BinarySearch(0, Count, item, comparer);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -358,7 +358,7 @@ namespace Qommon.Collections
                 Array.Copy(_items, index + 1, _items, index, _size - index);
 
             if (RuntimeHelpers.IsReferenceOrContainsReferences<T>())
-                _items[_size] = default;
+                _items[_size] = default!;
         }
 
         public void RemoveRange(int index, int count)
@@ -394,10 +394,10 @@ namespace Qommon.Collections
         public void Sort()
             => Sort(0, Count, null);
 
-        public void Sort(IComparer<T> comparer)
+        public void Sort(IComparer<T>? comparer)
             => Sort(0, Count, comparer);
 
-        public void Sort(int index, int count, IComparer<T> comparer)
+        public void Sort(int index, int count, IComparer<T>? comparer)
         {
             Guard.IsNotNegative(index);
             Guard.IsNotNegative(count);
@@ -434,13 +434,13 @@ namespace Qommon.Collections
 
         public struct Enumerator : IEnumerator<T>
         {
-            public T Current => _current;
+            public T Current => _current!;
 
-            object IEnumerator.Current => _current;
+            object? IEnumerator.Current => _current;
 
             private readonly FastList<T> _list;
             private int _index;
-            private T _current;
+            private T? _current;
 
             internal Enumerator(FastList<T> list)
             {
@@ -489,18 +489,18 @@ namespace Qommon.Collections
 
         bool ICollection.IsSynchronized => false;
 
-        object IList.this[int index]
+        object? IList.this[int index]
         {
             get => this[index];
-            set => this[index] = (T) value;
+            set => this[index] = (T) value!;
         }
 
-        private static bool IsCompatibleObject(object value)
+        private static bool IsCompatibleObject(object? value)
             => value is T || value == null && default(T) == null;
 
-        int IList.Add(object item)
+        int IList.Add(object? item)
         {
-            Add((T) item);
+            Add((T) item!);
             return _size - 1;
         }
 
@@ -512,28 +512,28 @@ namespace Qommon.Collections
             Array.Copy(_items, 0, array!, arrayIndex, _size);
         }
 
-        bool IList.Contains(object item)
+        bool IList.Contains(object? item)
         {
             if (IsCompatibleObject(item))
-                return Contains((T) item);
+                return Contains((T) item!);
 
             return false;
         }
 
-        int IList.IndexOf(object item)
+        int IList.IndexOf(object? item)
         {
             if (IsCompatibleObject(item))
-                return IndexOf((T) item);
+                return IndexOf((T) item!);
 
             return -1;
         }
 
-        void IList.Insert(int index, object item)
+        void IList.Insert(int index, object? item)
         {
-            Insert(index, (T) item);
+            Insert(index, (T) item!);
         }
 
-        void IList.Remove(object item)
+        void IList.Remove(object? item)
         {
             if (!IsCompatibleObject(item))
                 return;

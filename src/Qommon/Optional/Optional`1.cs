@@ -37,7 +37,7 @@ namespace Qommon
             }
         }
 
-        object IOptional.Value => Value;
+        object? IOptional.Value => Value;
 
         private readonly T _value;
 
@@ -66,7 +66,7 @@ namespace Qommon
             if (HasValue != other.HasValue)
                 return false;
 
-            return _value.Equals(other._value);
+            return Equals(_value, other._value);
         }
 
         /// <summary>
@@ -76,12 +76,12 @@ namespace Qommon
         /// <returns>
         ///     <see langword="true"/> if this optional has a value and its value is equal the provided value.
         /// </returns>
-        public bool Equals(T other)
+        public bool Equals(T? other)
         {
             if (!HasValue)
                 return false;
 
-            return _value.Equals(other);
+            return Equals(_value, other);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Qommon
         /// <returns>
         ///     <inheritdoc/>
         /// </returns>
-        public int CompareTo(T other)
+        public int CompareTo(T? other)
         {
             if (!HasValue)
                 return -1;
@@ -118,7 +118,7 @@ namespace Qommon
         }
 
         /// <inheritdoc/>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is Optional<T> optional)
                 return Equals(optional);
@@ -131,7 +131,7 @@ namespace Qommon
 
         /// <inheritdoc/>
         public override int GetHashCode()
-            => HasValue ? _value.GetHashCode() : -1;
+            => HasValue ? _value?.GetHashCode() ?? 0 : -1;
 
         /// <inheritdoc/>
         public override string ToString()

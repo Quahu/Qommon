@@ -1,35 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../Qommon.targets" />
-  <PropertyGroup>
-    <RootNamespace>Qommon</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Update="Guard\Generated\Throw.Collection.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Throw.Collection.Generated.cs</LastGenOutput>
-    </None>
-    <None Update="Guard\Generated\Guard.Collection.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
-    </None>
-    <None Update="Guard\Generated\Guard.Comparable.Numeric.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Guard.Comparable.Numeric.Generated.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Guard\Generated\Throw.Collection.Generated.cs">
-      <DependentUpon>Throw.Collection.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Guard\Generated\Guard.Comparable.Numeric.Generated.cs">
-      <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Guard.Collection.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
+    <PropertyGroup>
+        <VersionPrefix>2.1.0</VersionPrefix>
+        <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <Authors>Quahu</Authors>
+        <Description>Library containing common code between libraries made by Quahu.</Description>
+        <RepositoryUrl>https://github.com/Quahu/Qommon</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Quahu/Qommon</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/Quahu/Qommon/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryType>Git</RepositoryType>
+
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>
+            CA1816, <!-- Call GC.SuppressFinalize correctly -->
+            CA2255, <!-- The 'ModuleInitializer' attribute is only intended to be used in application code or advanced source generator scenarios -->
+            CS0078, <!-- The 'l' suffix is easily confused with the digit '1' - use 'L' for clarity -->
+            CA1401, <!-- P/Invokes should not be visible-->
+        </NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Update="Guard\Generated\Throw.Collection.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>Throw.Collection.Generated.cs</LastGenOutput>
+        </None>
+        <None Update="Guard\Generated\Guard.Collection.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
+        </None>
+        <None Update="Guard\Generated\Guard.Comparable.Numeric.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>Guard.Comparable.Numeric.Generated.cs</LastGenOutput>
+        </None>
+        <None Update="Guard\Generated\TypeInfo.ttinclude">
+          <Generator>TextTemplatingFileGenerator</Generator>
+          <LastGenOutput>TypeInfo.Generated.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Guard\Generated\Throw.Collection.Generated.cs">
+            <DependentUpon>Throw.Collection.tt</DependentUpon>
+        </Compile>
+        <Compile Update="Guard\Generated\Guard.Comparable.Numeric.Generated.cs">
+            <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
+        </Compile>
+        <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
+            <DependentUpon>Guard.Collection.tt</DependentUpon>
+        </Compile>
+    </ItemGroup>
 
 </Project>

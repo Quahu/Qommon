@@ -25,7 +25,7 @@ namespace Qommon.Collections.Synchronized
             : this(0)
         { }
 
-        public SynchronizedHashSet(int capacity = 0, IEqualityComparer<T> comparer = null)
+        public SynchronizedHashSet(int capacity = 0, IEqualityComparer<T>? comparer = null)
         {
             _hashSet = new HashSet<T>(capacity);
         }

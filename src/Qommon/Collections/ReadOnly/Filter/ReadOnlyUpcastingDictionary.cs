@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Qommon.Collections
 {
@@ -24,7 +25,7 @@ namespace Qommon.Collections
         public bool ContainsKey(TKey key)
             => _dictionary.ContainsKey(key);
 
-        public bool TryGetValue(TKey key, out TNewValue value)
+        public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TNewValue value)
         {
             if (_dictionary.TryGetValue(key, out var oldValue))
             {

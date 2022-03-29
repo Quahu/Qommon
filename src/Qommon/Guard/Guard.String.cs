@@ -13,7 +13,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is neither <see langword="null"/> nor empty.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNullOrEmpty(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNullOrEmpty(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (string.IsNullOrEmpty(text))
                 return;
@@ -28,7 +28,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is <see langword="null"/> or empty.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotNullOrEmpty([NotNull] string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNotNullOrEmpty([NotNull] string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (!string.IsNullOrEmpty(text))
                 return;
@@ -43,7 +43,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is neither <see langword="null"/> nor whitespace.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNullOrWhiteSpace(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNullOrWhiteSpace(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (string.IsNullOrWhiteSpace(text))
                 return;
@@ -58,7 +58,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is <see langword="null"/> or whitespace.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotNullOrWhiteSpace([NotNull] string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNotNullOrWhiteSpace([NotNull] string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (!string.IsNullOrWhiteSpace(text))
                 return;
@@ -73,7 +73,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is empty.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsEmpty(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsEmpty(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length == 0)
                 return;
@@ -88,7 +88,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is empty.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotEmpty(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNotEmpty(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length != 0)
                 return;
@@ -103,7 +103,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is neither <see langword="null"/> nor whitespace.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsWhiteSpace(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsWhiteSpace(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (string.IsNullOrWhiteSpace(text))
                 return;
@@ -118,7 +118,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if <paramref name="text"/> is <see langword="null"/> or whitespace.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotWhiteSpace(string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNotWhiteSpace(string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if (!string.IsNullOrWhiteSpace(text))
                 return;
@@ -134,7 +134,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is != <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeEqualTo(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeEqualTo(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length == size)
                 return;
@@ -150,7 +150,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is == <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeNotEqualTo(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeNotEqualTo(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length != size)
                 return;
@@ -166,7 +166,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is &lt;= <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeGreaterThan(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeGreaterThan(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length > size)
                 return;
@@ -182,7 +182,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is &lt; <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeGreaterThanOrEqualTo(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeGreaterThanOrEqualTo(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length >= size)
                 return;
@@ -198,7 +198,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is >= <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeLessThan(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeLessThan(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length < size)
                 return;
@@ -214,7 +214,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="text"/> is > <paramref name="size"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeLessThanOrEqualTo(string text, int size, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeLessThanOrEqualTo(string text, int size, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length <= size)
                 return;
@@ -231,7 +231,7 @@ namespace Qommon
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is != the one of <paramref name="destination"/>.</exception>
         /// <remarks>The <see cref="string"/> type is immutable, but the name of this API is kept for consistency with the other overloads.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeEqualTo(string source, string destination, [CallerArgumentExpression("source")] string name = null)
+        public static void HasSizeEqualTo(string source, string destination, [CallerArgumentExpression("source")] string? name = null)
         {
             if (source.Length == destination.Length)
                 return;
@@ -248,7 +248,7 @@ namespace Qommon
         /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is > the one of <paramref name="destination"/>.</exception>
         /// <remarks>The <see cref="string"/> type is immutable, but the name of this API is kept for consistency with the other overloads.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeLessThanOrEqualTo(string source, string destination, [CallerArgumentExpression("source")] string name = null)
+        public static void HasSizeLessThanOrEqualTo(string source, string destination, [CallerArgumentExpression("source")] string? name = null)
         {
             if (source.Length <= destination.Length)
                 return;
@@ -264,7 +264,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="index"/> is not valid to access <paramref name="text"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsInRangeFor(int index, string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsInRangeFor(int index, string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if ((uint) index < (uint) text.Length)
                 return;
@@ -280,7 +280,7 @@ namespace Qommon
         /// <param name="name">The name of the input parameter being tested.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="index"/> is valid to access <paramref name="text"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotInRangeFor(int index, string text, [CallerArgumentExpression("text")] string name = null)
+        public static void IsNotInRangeFor(int index, string text, [CallerArgumentExpression("text")] string? name = null)
         {
             if ((uint) index >= (uint) text.Length)
                 return;
@@ -299,7 +299,7 @@ namespace Qommon
         ///     Thrown if the length of <paramref name="text"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length > minimum && text.Length < maximum)
                 return;
@@ -318,7 +318,7 @@ namespace Qommon
         ///     Thrown if the length of <paramref name="text"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeNotBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeNotBetween(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length <= minimum || text.Length >= maximum)
                 return;
@@ -337,7 +337,7 @@ namespace Qommon
         ///     Thrown if the length of <paramref name="text"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length >= minimum && text.Length <= maximum)
                 return;
@@ -356,7 +356,7 @@ namespace Qommon
         ///     Thrown if the length of <paramref name="text"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeNotBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string name = null)
+        public static void HasSizeNotBetweenOrEqualTo(string text, int minimum, int maximum, [CallerArgumentExpression("text")] string? name = null)
         {
             if (text.Length < minimum || text.Length > maximum)
                 return;

@@ -14,7 +14,7 @@ namespace Qommon
         ///     Thrown if <paramref name="value"/> is not finite (zero, subnormal or normal).
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsFinite(double value, [CallerArgumentExpression("value")] string name = null)
+        public static void IsFinite(double value, [CallerArgumentExpression("value")] string? name = null)
         {
             if (double.IsFinite(value))
                 return;

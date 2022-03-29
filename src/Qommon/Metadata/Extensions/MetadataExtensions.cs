@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Qommon.Collections;
 using Qommon.Collections.Synchronized;
@@ -22,7 +23,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     <see langword="true"/> if the key was found.
         /// </returns>
-        public static bool TryGetMetadata(this IMetadata metadata, string key, out object value)
+        public static bool TryGetMetadata(this IMetadata metadata, string key, out object? value)
         {
             Guard.IsNotNull(metadata);
             Guard.IsNotNull(key);
@@ -51,7 +52,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     <see langword="true"/> if the key was found and was successfully casted/converted to <typeparamref name="T"/>.
         /// </returns>
-        public static T GetMetadata<T>(this IMetadata metadata, string key, IFormatProvider provider = null)
+        public static T? GetMetadata<T>(this IMetadata metadata, string key, IFormatProvider? provider = null)
         {
             if (metadata.TryGetMetadata(key, out var rawValue))
             {
@@ -100,7 +101,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     <see langword="true"/> if the key was found and was successfully casted/converted to <typeparamref name="T"/>.
         /// </returns>
-        public static bool TryGetMetadata<T>(this IMetadata metadata, string key, out T value, IFormatProvider provider = null)
+        public static bool TryGetMetadata<T>(this IMetadata metadata, string key, out T? value, IFormatProvider? provider = null)
         {
             if (metadata.TryGetMetadata(key, out var rawValue))
             {
@@ -108,13 +109,13 @@ namespace Qommon.Metadata
                 {
                     if (typeof(T).TryGetNullableUnderlyingType(out _))
                     {
-                        value = default;
+                        value = default!;
                         return true;
                     }
 
                     if (!typeof(T).IsValueType)
                     {
-                        value = default;
+                        value = default!;
                         return true;
                     }
                 }
@@ -134,7 +135,7 @@ namespace Qommon.Metadata
                 }
             }
 
-            value = default;
+            value = default!;
             return false;
         }
 
@@ -154,7 +155,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     The metadata value if the key was found and was successfully casted/converted to <typeparamref name="T"/> or the <paramref name="defaultValue"/>.
         /// </returns>
-        public static T GetMetadataOrDefault<T>(this IMetadata metadata, string key, T defaultValue = default, IFormatProvider provider = null)
+        public static T? GetMetadataOrDefault<T>(this IMetadata metadata, string key, T? defaultValue = default!, IFormatProvider? provider = null)
         {
             if (metadata.TryGetMetadata<T>(key, out var value, provider))
                 return value;
@@ -171,7 +172,7 @@ namespace Qommon.Metadata
         /// <exception cref="ArgumentException">
         ///     Thrown when the metadata dictionary is <see langword="null"/> or read-only.
         /// </exception>
-        public static void SetMetadata(this IMetadata metadata, string key, object value)
+        public static void SetMetadata(this IMetadata metadata, string key, object? value)
         {
             Guard.IsNotNull(metadata);
             Guard.IsNotNull(key);
@@ -192,7 +193,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     <see langword="true"/> if the metadata dictionary is writable.
         /// </returns>
-        public static bool TrySetMetadata(this IMetadata metadata, string key, object value)
+        public static bool TrySetMetadata(this IMetadata metadata, string key, object? value)
         {
             Guard.IsNotNull(metadata);
             Guard.IsNotNull(key);
@@ -234,7 +235,7 @@ namespace Qommon.Metadata
         /// <returns>
         ///     <see langword="true"/> if the key was found.
         /// </returns>
-        public static bool TryRemoveMetadata(this IMetadata metadata, string key, out object value)
+        public static bool TryRemoveMetadata(this IMetadata metadata, string key, out object? value)
         {
             Guard.IsNotNull(metadata);
             Guard.IsNotNull(key);
@@ -247,7 +248,7 @@ namespace Qommon.Metadata
             }
 
             // Synchronized access.
-            if (dictionary is ISynchronizedDictionary<string, object> synchronizedDictionary)
+            if (dictionary is ISynchronizedDictionary<string, object?> synchronizedDictionary)
                 return synchronizedDictionary.TryRemove(key, out value);
 
             return dictionary.Remove(key, out value);
@@ -261,13 +262,13 @@ namespace Qommon.Metadata
         /// <returns>
         ///     An enumerable of metadata items.
         /// </returns>
-        public static IEnumerable<KeyValuePair<string, object>> EnumerateMetadata(this IMetadata metadata)
+        public static IEnumerable<KeyValuePair<string, object?>> EnumerateMetadata(this IMetadata metadata)
         {
             Guard.IsNotNull(metadata);
 
             var dictionary = metadata.Metadata;
             if (dictionary == null)
-                return Enumerable.Empty<KeyValuePair<string, object>>();
+                return Enumerable.Empty<KeyValuePair<string, object?>>();
 
             return dictionary;
         }
@@ -281,13 +282,13 @@ namespace Qommon.Metadata
         /// <returns>
         ///     A dictionary of metadata items.
         /// </returns>
-        public static Dictionary<string, object> ToMetadataDictionary(this IMetadata metadata, IEqualityComparer<string> comparer = null)
+        public static Dictionary<string, object?> ToMetadataDictionary(this IMetadata metadata, IEqualityComparer<string>? comparer = null)
         {
             Guard.IsNotNull(metadata);
 
             var dictionary = metadata.Metadata;
             if (dictionary == null)
-                return new Dictionary<string, object>();
+                return new Dictionary<string, object?>();
 
             return dictionary.ToDictionary(comparer);
         }
@@ -306,7 +307,7 @@ namespace Qommon.Metadata
             if (metadata.Metadata != null)
                 return;
 
-            metadata.Metadata = new Dictionary<string, object>();
+            metadata.Metadata = new Dictionary<string, object?>();
         }
 
         /// <summary>
@@ -328,14 +329,14 @@ namespace Qommon.Metadata
                     return;
 
                 // The dictionary is already synchronized.
-                if (dictionary is ISynchronizedDictionary<string, object>)
+                if (dictionary is ISynchronizedDictionary<string, object?>)
                     return;
 
                 metadata.Metadata = dictionary.Synchronized();
                 return;
             }
 
-            metadata.Metadata = new SynchronizedDictionary<string, object>();
+            metadata.Metadata = new SynchronizedDictionary<string, object?>();
         }
     }
 }

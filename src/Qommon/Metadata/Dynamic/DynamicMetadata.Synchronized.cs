@@ -6,9 +6,9 @@ namespace Qommon.Metadata.Dynamic
     {
         private class SynchronizedMetadataImpl : ISynchronizedMetadata
         {
-            public ISynchronizedDictionary<string, object> Metadata { get; set; }
+            public ISynchronizedDictionary<string, object?>? Metadata { get; set; }
 
-            public SynchronizedMetadataImpl(ISynchronizedDictionary<string, object> dictionary)
+            public SynchronizedMetadataImpl(ISynchronizedDictionary<string, object?>? dictionary)
             {
                 Metadata = dictionary;
             }
@@ -24,7 +24,7 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation.
         /// </returns>
-        public static ISynchronizedMetadata SetSynchronized(object instance, ISynchronizedDictionary<string, object> dictionary)
+        public static ISynchronizedMetadata SetSynchronized(object instance, ISynchronizedDictionary<string, object?>? dictionary)
         {
             if (instance is ISynchronizedMetadata synchronizedMetadata)
             {
@@ -32,7 +32,7 @@ namespace Qommon.Metadata.Dynamic
                 return synchronizedMetadata;
             }
 
-            if (Cache.TryGetValue(instance, out var metadata) && (synchronizedMetadata = metadata as ISynchronizedMetadata) != null)
+            if (Cache.TryGetValue(instance, out var metadata) && (synchronizedMetadata = (metadata as ISynchronizedMetadata)!) != null)
             {
                 synchronizedMetadata.Metadata = dictionary;
                 return synchronizedMetadata;
@@ -61,12 +61,12 @@ namespace Qommon.Metadata.Dynamic
             if (instance is ISynchronizedMetadata synchronizedMetadata)
                 return synchronizedMetadata;
 
-            if (Cache.TryGetValue(instance, out var metadata) && (synchronizedMetadata = metadata as ISynchronizedMetadata) != null)
+            if (Cache.TryGetValue(instance, out var metadata) && (synchronizedMetadata = (metadata as ISynchronizedMetadata)!) != null)
                 return synchronizedMetadata;
 
             return SetSynchronized(instance, metadata?.Metadata != null
-                ? new SynchronizedDictionary<string, object>(metadata.Metadata)
-                : new SynchronizedDictionary<string, object>());
+                ? new SynchronizedDictionary<string, object?>(metadata.Metadata)
+                : new SynchronizedDictionary<string, object?>());
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation.
         /// </returns>
-        public static ISynchronizedMetadata SetSynchronized(ISynchronizedMetadata instance, ISynchronizedDictionary<string, object> dictionary)
+        public static ISynchronizedMetadata SetSynchronized(ISynchronizedMetadata instance, ISynchronizedDictionary<string, object?>? dictionary)
         {
             if (Cache.TryGetValue(instance, out var metadata) && metadata is ISynchronizedMetadata synchronizedMetadata)
             {
@@ -109,8 +109,8 @@ namespace Qommon.Metadata.Dynamic
                 return synchronizedMetadata;
 
             return SetSynchronized(instance, metadata?.Metadata != null
-                ? new SynchronizedDictionary<string, object>(metadata.Metadata)
-                : new SynchronizedDictionary<string, object>());
+                ? new SynchronizedDictionary<string, object?>(metadata.Metadata)
+                : new SynchronizedDictionary<string, object?>());
         }
     }
 }

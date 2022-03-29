@@ -21,9 +21,9 @@ namespace Qommon.Metadata.Dynamic
 
         private sealed class MetadataImpl : IMetadata
         {
-            public IDictionary<string, object> Metadata { get; set; }
+            public IDictionary<string, object?>? Metadata { get; set; }
 
-            public MetadataImpl(IDictionary<string, object> dictionary)
+            public MetadataImpl(IDictionary<string, object?>? dictionary)
             {
                 Metadata = dictionary;
             }
@@ -39,12 +39,12 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation or <see langword="null"/>.
         /// </returns>
-        public static IMetadata Get(object instance)
+        public static IMetadata? Get(object instance)
         {
             if (instance is IMetadata metadata)
                 return metadata;
 
-            if (Cache.TryGetValue(instance, out metadata))
+            if (Cache.TryGetValue(instance, out metadata!))
                 return metadata;
 
             return null;
@@ -60,7 +60,7 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation.
         /// </returns>
-        public static IMetadata Set(object instance, IDictionary<string, object> dictionary)
+        public static IMetadata Set(object instance, IDictionary<string, object?>? dictionary)
         {
             if (instance is IMetadata metadata)
             {
@@ -68,7 +68,7 @@ namespace Qommon.Metadata.Dynamic
                 return metadata;
             }
 
-            if (Cache.TryGetValue(instance, out metadata))
+            if (Cache.TryGetValue(instance, out metadata!))
             {
                 metadata.Metadata = dictionary;
                 return metadata;
@@ -80,7 +80,7 @@ namespace Qommon.Metadata.Dynamic
         }
 
         /// <summary>
-        ///     Removes a weakly attached metadata dictionary for the given instance that was set using <see cref="Set{T}"/>.
+        ///     Removes a weakly attached metadata dictionary for the given instance that was set using <see cref="Set(object,System.Collections.Generic.IDictionary{string,object?}?)"/>.
         /// </summary>
         /// <param name="instance"> The instance to remove the metadata from. </param>
         /// <returns>
@@ -106,10 +106,10 @@ namespace Qommon.Metadata.Dynamic
             if (instance is IMetadata metadata)
                 return metadata;
 
-            if (Cache.TryGetValue(instance, out metadata))
+            if (Cache.TryGetValue(instance, out metadata!))
                 return metadata;
 
-            return Set(instance, new Dictionary<string, object>());
+            return Set(instance, new Dictionary<string, object?>());
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation or <see langword="null"/>.
         /// </returns>
-        public static IMetadata Get(IMetadata instance)
+        public static IMetadata? Get(IMetadata instance)
         {
             if (Cache.TryGetValue(instance, out var metadata))
                 return metadata;
@@ -138,7 +138,7 @@ namespace Qommon.Metadata.Dynamic
         /// <returns>
         ///     The <see cref="IMetadata"/> implementation.
         /// </returns>
-        public static IMetadata Set(IMetadata instance, IDictionary<string, object> dictionary)
+        public static IMetadata Set(IMetadata instance, IDictionary<string, object?>? dictionary)
         {
             if (Cache.TryGetValue(instance, out var metadata))
             {
@@ -165,7 +165,7 @@ namespace Qommon.Metadata.Dynamic
             if (Cache.TryGetValue(instance, out var metadata))
                 return metadata;
 
-            return Set(instance, new Dictionary<string, object>());
+            return Set(instance, new Dictionary<string, object?>());
         }
     }
 }
