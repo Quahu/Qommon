@@ -6,13 +6,13 @@ namespace Qommon.Tests.Primitives
 {
     public class MultiStringTests : QommonFixture
     {
-        private static string GetString(ReadOnlyMemory<char> value)
+        private static string? GetString(ReadOnlyMemory<char> value)
             => MemoryMarshal.TryGetString(value, out var text, out _, out _) ? text : null;
 
         [Test]
         public void CountAndIndex()
         {
-            MultiString multiString = (string) null;
+            MultiString multiString = (string?) null;
             Assert.AreEqual(0, multiString.Count);
             Assert.Throws<ArgumentOutOfRangeException>(() => _ = multiString[0]);
 
@@ -29,7 +29,7 @@ namespace Qommon.Tests.Primitives
         [Test]
         public void Enumerate()
         {
-            MultiString multiString = (string) null;
+            MultiString multiString = (string?) null;
             var enumerator = multiString.GetEnumerator();
             Assert.IsFalse(enumerator.MoveNext());
 

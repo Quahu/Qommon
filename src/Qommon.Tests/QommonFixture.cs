@@ -10,9 +10,9 @@ namespace Qommon.Tests
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public abstract unsafe class QommonFixture
     {
-        protected ILogger Logger;
+        protected ILogger? Logger;
 
-        protected TestContext _context;
+        protected TestContext? _context;
 
         protected static readonly ILoggerFactory LoggerFactory;
 
