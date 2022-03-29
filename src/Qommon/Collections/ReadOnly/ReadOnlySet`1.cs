@@ -4,7 +4,7 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly
 {
-    internal sealed class ReadOnlySet<T> : ProxiedSet<T>
+    public class ReadOnlySet<T> : ProxiedSet<T>
     {
         public static readonly IReadOnlySet<T> Empty = new HashSet<T>(0).ReadOnly();
 

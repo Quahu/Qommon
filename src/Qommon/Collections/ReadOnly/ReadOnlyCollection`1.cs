@@ -4,7 +4,7 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly
 {
-    internal sealed class ReadOnlyCollection<T> : ProxiedCollection<T>
+    public class ReadOnlyCollection<T> : ProxiedCollection<T>
     {
         public static readonly IReadOnlyCollection<T> Empty = Array.Empty<T>().ReadOnly();
 

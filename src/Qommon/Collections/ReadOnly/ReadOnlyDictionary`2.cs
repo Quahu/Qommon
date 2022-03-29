@@ -4,7 +4,7 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly
 {
-    internal sealed class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
+    public class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
         where TKey : notnull
     {
         public static readonly IReadOnlyDictionary<TKey, TValue> Empty = new Dictionary<TKey, TValue>(0).ReadOnly();
