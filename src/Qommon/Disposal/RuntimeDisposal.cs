@@ -22,7 +22,7 @@ namespace Qommon.Disposal
         /// <returns>
         ///     The <see cref="ValueTask"/> representing the disposal work.
         /// </returns>
-        public static async ValueTask DisposeAsync(object instance, bool disposeBoth = false)
+        public static async ValueTask DisposeAsync(object? instance, bool disposeBoth = false)
         {
             if (instance is IAsyncDisposable asyncDisposable)
                 await asyncDisposable.DisposeAsync().ConfigureAwait(false);
@@ -42,7 +42,7 @@ namespace Qommon.Disposal
         /// <returns>
         ///     The <see cref="RuntimeAsyncDisposable"/> wrapping the instance.
         /// </returns>
-        public static RuntimeAsyncDisposable WrapAsync(object instance, bool disposeBoth = false)
+        public static RuntimeAsyncDisposable WrapAsync(object? instance, bool disposeBoth = false)
             => new(instance, disposeBoth);
 
         /// <summary>
@@ -55,15 +55,15 @@ namespace Qommon.Disposal
         /// <returns>
         ///     The <see cref="RuntimeDisposable"/> wrapping the instance.
         /// </returns>
-        public static RuntimeDisposable Wrap(object instance)
+        public static RuntimeDisposable Wrap(object? instance)
             => new(instance);
 
         public readonly struct RuntimeAsyncDisposable : IAsyncDisposable
         {
-            private readonly object _instance;
+            private readonly object? _instance;
             private readonly bool _disposeBoth;
 
-            public RuntimeAsyncDisposable(object instance, bool disposeBoth)
+            public RuntimeAsyncDisposable(object? instance, bool disposeBoth)
             {
                 _instance = instance;
                 _disposeBoth = disposeBoth;
@@ -75,9 +75,9 @@ namespace Qommon.Disposal
 
         public readonly struct RuntimeDisposable : IDisposable
         {
-            private readonly object _instance;
+            private readonly object? _instance;
 
-            public RuntimeDisposable(object instance)
+            public RuntimeDisposable(object? instance)
             {
                 _instance = instance;
             }

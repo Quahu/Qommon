@@ -27,7 +27,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ArrayTypeMismatchException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ArrayTypeMismatchException(string message)
+        public static void ArrayTypeMismatchException(string? message)
             => throw new ArrayTypeMismatchException(message);
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArrayTypeMismatchException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArrayTypeMismatchException(string message, Exception innerException)
+        public static void ArrayTypeMismatchException(string? message, Exception? innerException)
             => throw new ArrayTypeMismatchException(message, innerException);
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string message)
+        public static void ArgumentException(string? message)
             => throw new ArgumentException(message);
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string message, Exception innerException)
+        public static void ArgumentException(string? message, Exception? innerException)
             => throw new ArgumentException(message, innerException);
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Qommon
         /// <param name="name">The argument name.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string message, string name)
+        public static void ArgumentException(string? message, string? name)
             => throw new ArgumentException(message, name);
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentException(string message, string name, Exception innerException)
+        public static void ArgumentException(string? message, string? name, Exception? innerException)
             => throw new ArgumentException(message, name, innerException);
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Qommon
         /// <param name="name">The argument name.</param>
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ArgumentNullException(string name)
+        public static void ArgumentNullException(string? name)
             => throw new ArgumentNullException(name);
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentNullException(string name, Exception innerException)
+        public static void ArgumentNullException(string? name, Exception? innerException)
             => throw new ArgumentNullException(name, innerException);
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentNullException(string name, string message)
+        public static void ArgumentNullException(string? name, string? message)
             => throw new ArgumentNullException(name, message);
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Qommon
         /// <param name="name">The argument name.</param>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ArgumentOutOfRangeException(string name)
+        public static void ArgumentOutOfRangeException(string? name)
             => throw new ArgumentOutOfRangeException(name);
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ArgumentOutOfRangeException(string name, Exception innerException)
+        public static void ArgumentOutOfRangeException(string? name, Exception? innerException)
             => throw new ArgumentOutOfRangeException(name, innerException);
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentOutOfRangeException(string name, string message)
+        public static void ArgumentOutOfRangeException(string? name, string? message)
             => throw new ArgumentOutOfRangeException(name, message);
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ArgumentOutOfRangeException(string name, object value, string message)
+        public static void ArgumentOutOfRangeException(string? name, object? value, string? message)
             => throw new ArgumentOutOfRangeException(name, value, message);
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void COMException(string message)
+        public static void COMException(string? message)
             => throw new COMException(message);
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void COMException(string message, Exception innerException)
+        public static void COMException(string? message, Exception? innerException)
             => throw new COMException(message, innerException);
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Qommon
         /// <param name="error">The HRESULT of the error to include.</param>
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void COMException(string message, int error)
+        public static void COMException(string? message, int error)
             => throw new COMException(message, error);
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ExternalException(string message)
+        public static void ExternalException(string? message)
             => throw new ExternalException(message);
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ExternalException(string message, Exception innerException)
+        public static void ExternalException(string? message, Exception? innerException)
             => throw new ExternalException(message, innerException);
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Qommon
         /// <param name="error">The HRESULT of the error to include.</param>
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ExternalException(string message, int error)
+        public static void ExternalException(string? message, int error)
             => throw new ExternalException(message, error);
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.FormatException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void FormatException(string message)
+        public static void FormatException(string? message)
             => throw new FormatException(message);
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.FormatException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void FormatException(string message, Exception innerException)
+        public static void FormatException(string? message, Exception? innerException)
             => throw new FormatException(message, innerException);
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void KeyNotFoundException(string message)
+        public static void KeyNotFoundException(string? message)
             => throw new KeyNotFoundException(message);
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void KeyNotFoundException(string message, Exception innerException)
+        public static void KeyNotFoundException(string? message, Exception? innerException)
             => throw new KeyNotFoundException(message, innerException);
 
         /// <summary>
@@ -315,7 +315,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.InsufficientMemoryException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InsufficientMemoryException(string message)
+        public static void InsufficientMemoryException(string? message)
             => throw new InsufficientMemoryException(message);
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.InsufficientMemoryException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InsufficientMemoryException(string message, Exception innerException)
+        public static void InsufficientMemoryException(string? message, Exception? innerException)
             => throw new InsufficientMemoryException(message, innerException);
 
         /// <summary>
@@ -342,7 +342,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.IO.InvalidDataException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InvalidDataException(string message)
+        public static void InvalidDataException(string? message)
             => throw new InvalidDataException(message);
 
         /// <summary>
@@ -352,7 +352,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.IO.InvalidDataException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InvalidDataException(string message, Exception innerException)
+        public static void InvalidDataException(string? message, Exception? innerException)
             => throw new InvalidDataException(message, innerException);
 
         /// <summary>
@@ -369,7 +369,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.InvalidOperationException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InvalidOperationException(string message)
+        public static void InvalidOperationException(string? message)
             => throw new InvalidOperationException(message);
 
         /// <summary>
@@ -379,7 +379,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.InvalidOperationException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void InvalidOperationException(string message, Exception innerException)
+        public static void InvalidOperationException(string? message, Exception? innerException)
             => throw new InvalidOperationException(message, innerException);
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.Threading.LockRecursionException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void LockRecursionException(string message)
+        public static void LockRecursionException(string? message)
             => throw new LockRecursionException(message);
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.Threading.LockRecursionException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void LockRecursionException(string message, Exception innerException)
+        public static void LockRecursionException(string? message, Exception? innerException)
             => throw new LockRecursionException(message, innerException);
 
         /// <summary>
@@ -423,7 +423,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.MissingFieldException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingFieldException(string message)
+        public static void MissingFieldException(string? message)
             => throw new MissingFieldException(message);
 
         /// <summary>
@@ -433,7 +433,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.MissingFieldException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingFieldException(string message, Exception innerException)
+        public static void MissingFieldException(string? message, Exception? innerException)
             => throw new MissingFieldException(message, innerException);
 
         /// <summary>
@@ -460,7 +460,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.MissingMemberException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingMemberException(string message)
+        public static void MissingMemberException(string? message)
             => throw new MissingMemberException(message);
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.MissingMemberException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingMemberException(string message, Exception innerException)
+        public static void MissingMemberException(string? message, Exception? innerException)
             => throw new MissingMemberException(message, innerException);
 
         /// <summary>
@@ -497,7 +497,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.MissingMethodException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingMethodException(string message)
+        public static void MissingMethodException(string? message)
             => throw new MissingMethodException(message);
 
         /// <summary>
@@ -507,7 +507,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.MissingMethodException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void MissingMethodException(string message, Exception innerException)
+        public static void MissingMethodException(string? message, Exception? innerException)
             => throw new MissingMethodException(message, innerException);
 
         /// <summary>
@@ -534,7 +534,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.NotSupportedException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void NotSupportedException(string message)
+        public static void NotSupportedException(string? message)
             => throw new NotSupportedException(message);
 
         /// <summary>
@@ -544,7 +544,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.NotSupportedException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void NotSupportedException(string message, Exception innerException)
+        public static void NotSupportedException(string? message, Exception? innerException)
             => throw new NotSupportedException(message, innerException);
 
         /// <summary>
@@ -563,7 +563,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ObjectDisposedException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void ObjectDisposedException(string objectName, Exception innerException)
+        public static void ObjectDisposedException(string objectName, Exception? innerException)
             => throw new ObjectDisposedException(objectName, innerException);
 
         /// <summary>
@@ -573,7 +573,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ObjectDisposedException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void ObjectDisposedException(string objectName, string message)
+        public static void ObjectDisposedException(string objectName, string? message)
             => throw new ObjectDisposedException(objectName, message);
 
         /// <summary>
@@ -590,7 +590,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void OperationCanceledException(string message)
+        public static void OperationCanceledException(string? message)
             => throw new OperationCanceledException(message);
 
         /// <summary>
@@ -600,7 +600,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void OperationCanceledException(string message, Exception innerException)
+        public static void OperationCanceledException(string? message, Exception? innerException)
             => throw new OperationCanceledException(message, innerException);
 
         /// <summary>
@@ -619,7 +619,7 @@ namespace Qommon
         /// <param name="token">The <see cref="CancellationToken"/> in use.</param>
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void OperationCanceledException(string message, CancellationToken token)
+        public static void OperationCanceledException(string? message, CancellationToken token)
             => throw new OperationCanceledException(message, token);
 
         /// <summary>
@@ -630,7 +630,7 @@ namespace Qommon
         /// <param name="token">The <see cref="CancellationToken"/> in use.</param>
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameters.</exception>
         [DoesNotReturn]
-        public static void OperationCanceledException(string message, Exception innerException, CancellationToken token)
+        public static void OperationCanceledException(string? message, Exception? innerException, CancellationToken token)
             => throw new OperationCanceledException(message, innerException, token);
 
         /// <summary>
@@ -647,7 +647,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.PlatformNotSupportedException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void PlatformNotSupportedException(string message)
+        public static void PlatformNotSupportedException(string? message)
             => throw new PlatformNotSupportedException(message);
 
         /// <summary>
@@ -657,7 +657,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.PlatformNotSupportedException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void PlatformNotSupportedException(string message, Exception innerException)
+        public static void PlatformNotSupportedException(string? message, Exception? innerException)
             => throw new PlatformNotSupportedException(message, innerException);
 
         /// <summary>
@@ -674,7 +674,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.Threading.SynchronizationLockException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void SynchronizationLockException(string message)
+        public static void SynchronizationLockException(string? message)
             => throw new SynchronizationLockException(message);
 
         /// <summary>
@@ -684,7 +684,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.Threading.SynchronizationLockException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void SynchronizationLockException(string message, Exception innerException)
+        public static void SynchronizationLockException(string? message, Exception? innerException)
             => throw new SynchronizationLockException(message, innerException);
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.TimeoutException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void TimeoutException(string message)
+        public static void TimeoutException(string? message)
             => throw new TimeoutException(message);
 
         /// <summary>
@@ -711,7 +711,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.TimeoutException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void TimeoutException(string message, Exception innerException)
+        public static void TimeoutException(string? message, Exception? innerException)
             => throw new TimeoutException(message, innerException);
 
         /// <summary>
@@ -728,7 +728,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.UnauthorizedAccessException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void UnauthorizedAccessException(string message)
+        public static void UnauthorizedAccessException(string? message)
             => throw new UnauthorizedAccessException(message);
 
         /// <summary>
@@ -738,7 +738,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.UnauthorizedAccessException">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void UnauthorizedAccessException(string message, Exception innerException)
+        public static void UnauthorizedAccessException(string? message, Exception? innerException)
             => throw new UnauthorizedAccessException(message, innerException);
 
         /// <summary>
@@ -765,7 +765,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void Win32Exception(int error, string message)
+        public static void Win32Exception(int error, string? message)
             => throw new Win32Exception(error, message);
 
         /// <summary>
@@ -774,7 +774,7 @@ namespace Qommon
         /// <param name="message">The message to include in the exception.</param>
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void Win32Exception(string message)
+        public static void Win32Exception(string? message)
             => throw new Win32Exception(message);
 
         /// <summary>
@@ -784,7 +784,7 @@ namespace Qommon
         /// <param name="innerException">The inner <see cref="System.Exception"/> to include.</param>
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         [DoesNotReturn]
-        public static void Win32Exception(string message, Exception innerException)
+        public static void Win32Exception(string? message, Exception? innerException)
             => throw new Win32Exception(message, innerException);
     }
 }

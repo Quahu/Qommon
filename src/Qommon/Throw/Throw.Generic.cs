@@ -28,7 +28,7 @@ namespace Qommon
         /// <exception cref="System.ArrayTypeMismatchException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArrayTypeMismatchException<T>(string message)
+        public static T ArrayTypeMismatchException<T>(string? message)
             => throw new ArrayTypeMismatchException(message);
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Qommon
         /// <exception cref="System.ArrayTypeMismatchException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArrayTypeMismatchException<T>(string message, Exception innerException)
+        public static T ArrayTypeMismatchException<T>(string? message, Exception? innerException)
             => throw new ArrayTypeMismatchException(message, innerException);
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string message)
+        public static T ArgumentException<T>(string? message)
             => throw new ArgumentException(message);
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string message, Exception innerException)
+        public static T ArgumentException<T>(string? message, Exception? innerException)
             => throw new ArgumentException(message, innerException);
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string message, string name)
+        public static T ArgumentException<T>(string? message, string? name)
             => throw new ArgumentException(message, name);
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentException<T>(string message, string name, Exception innerException)
+        public static T ArgumentException<T>(string? message, string? name, Exception? innerException)
             => throw new ArgumentException(message, name, innerException);
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentNullException<T>(string name)
+        public static T ArgumentNullException<T>(string? name)
             => throw new ArgumentNullException(name);
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentNullException<T>(string name, Exception innerException)
+        public static T ArgumentNullException<T>(string? name, Exception? innerException)
             => throw new ArgumentNullException(name, innerException);
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentNullException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentNullException<T>(string name, string message)
+        public static T ArgumentNullException<T>(string? name, string? message)
             => throw new ArgumentNullException(name, message);
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentOutOfRangeException<T>(string name)
+        public static T ArgumentOutOfRangeException<T>(string? name)
             => throw new ArgumentOutOfRangeException(name);
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentOutOfRangeException<T>(string name, Exception innerException)
+        public static T ArgumentOutOfRangeException<T>(string? name, Exception? innerException)
             => throw new ArgumentOutOfRangeException(name, innerException);
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentOutOfRangeException<T>(string name, string message)
+        public static T ArgumentOutOfRangeException<T>(string? name, string? message)
             => throw new ArgumentOutOfRangeException(name, message);
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Qommon
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ArgumentOutOfRangeException<T>(string name, object value, string message)
+        public static T ArgumentOutOfRangeException<T>(string? name, object? value, string? message)
             => throw new ArgumentOutOfRangeException(name, value, message);
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T COMException<T>(string message)
+        public static T COMException<T>(string? message)
             => throw new COMException(message);
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T COMException<T>(string message, Exception innerException)
+        public static T COMException<T>(string? message, Exception? innerException)
             => throw new COMException(message, innerException);
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.COMException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T COMException<T>(string message, int error)
+        public static T COMException<T>(string? message, int error)
             => throw new COMException(message, error);
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ExternalException<T>(string message)
+        public static T ExternalException<T>(string? message)
             => throw new ExternalException(message);
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ExternalException<T>(string message, Exception innerException)
+        public static T ExternalException<T>(string? message, Exception? innerException)
             => throw new ExternalException(message, innerException);
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Qommon
         /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ExternalException<T>(string message, int error)
+        public static T ExternalException<T>(string? message, int error)
             => throw new ExternalException(message, error);
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Qommon
         /// <exception cref="System.FormatException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T FormatException<T>(string message)
+        public static T FormatException<T>(string? message)
             => throw new FormatException(message);
 
         /// <summary>
@@ -324,7 +324,7 @@ namespace Qommon
         /// <exception cref="System.FormatException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T FormatException<T>(string message, Exception innerException)
+        public static T FormatException<T>(string? message, Exception? innerException)
             => throw new FormatException(message, innerException);
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Qommon
         /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T KeyNotFoundException<T>(string message)
+        public static T KeyNotFoundException<T>(string? message)
             => throw new KeyNotFoundException(message);
 
         /// <summary>
@@ -354,7 +354,7 @@ namespace Qommon
         /// <exception cref="System.FormatException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T KeyNotFoundException<T>(string message, Exception innerException)
+        public static T KeyNotFoundException<T>(string? message, Exception? innerException)
             => throw new KeyNotFoundException(message, innerException);
 
         /// <summary>
@@ -375,7 +375,7 @@ namespace Qommon
         /// <exception cref="System.InsufficientMemoryException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InsufficientMemoryException<T>(string message)
+        public static T InsufficientMemoryException<T>(string? message)
             => throw new InsufficientMemoryException(message);
 
         /// <summary>
@@ -387,7 +387,7 @@ namespace Qommon
         /// <exception cref="System.InsufficientMemoryException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InsufficientMemoryException<T>(string message, Exception innerException)
+        public static T InsufficientMemoryException<T>(string? message, Exception? innerException)
             => throw new InsufficientMemoryException(message, innerException);
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Qommon
         /// <exception cref="System.IO.InvalidDataException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InvalidDataException<T>(string message)
+        public static T InvalidDataException<T>(string? message)
             => throw new InvalidDataException(message);
 
         /// <summary>
@@ -420,7 +420,7 @@ namespace Qommon
         /// <exception cref="System.IO.InvalidDataException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InvalidDataException<T>(string message, Exception innerException)
+        public static T InvalidDataException<T>(string? message, Exception? innerException)
             => throw new InvalidDataException(message, innerException);
 
         /// <summary>
@@ -441,7 +441,7 @@ namespace Qommon
         /// <exception cref="System.InvalidOperationException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InvalidOperationException<T>(string message)
+        public static T InvalidOperationException<T>(string? message)
             => throw new InvalidOperationException(message);
 
         /// <summary>
@@ -453,7 +453,7 @@ namespace Qommon
         /// <exception cref="System.InvalidOperationException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T InvalidOperationException<T>(string message, Exception innerException)
+        public static T InvalidOperationException<T>(string? message, Exception? innerException)
             => throw new InvalidOperationException(message, innerException);
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace Qommon
         /// <exception cref="System.Threading.LockRecursionException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T LockRecursionException<T>(string message)
+        public static T LockRecursionException<T>(string? message)
             => throw new LockRecursionException(message);
 
         /// <summary>
@@ -486,7 +486,7 @@ namespace Qommon
         /// <exception cref="System.Threading.LockRecursionException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T LockRecursionException<T>(string message, Exception innerException)
+        public static T LockRecursionException<T>(string? message, Exception? innerException)
             => throw new LockRecursionException(message, innerException);
 
         /// <summary>
@@ -507,7 +507,7 @@ namespace Qommon
         /// <exception cref="System.MissingFieldException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingFieldException<T>(string message)
+        public static T MissingFieldException<T>(string? message)
             => throw new MissingFieldException(message);
 
         /// <summary>
@@ -519,7 +519,7 @@ namespace Qommon
         /// <exception cref="System.MissingFieldException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingFieldException<T>(string message, Exception innerException)
+        public static T MissingFieldException<T>(string? message, Exception? innerException)
             => throw new MissingFieldException(message, innerException);
 
         /// <summary>
@@ -552,7 +552,7 @@ namespace Qommon
         /// <exception cref="System.MissingMemberException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingMemberException<T>(string message)
+        public static T MissingMemberException<T>(string? message)
             => throw new MissingMemberException(message);
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace Qommon
         /// <exception cref="System.MissingMemberException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingMemberException<T>(string message, Exception innerException)
+        public static T MissingMemberException<T>(string? message, Exception? innerException)
             => throw new MissingMemberException(message, innerException);
 
         /// <summary>
@@ -597,7 +597,7 @@ namespace Qommon
         /// <exception cref="System.MissingMethodException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingMethodException<T>(string message)
+        public static T MissingMethodException<T>(string? message)
             => throw new MissingMethodException(message);
 
         /// <summary>
@@ -609,7 +609,7 @@ namespace Qommon
         /// <exception cref="System.MissingMethodException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T MissingMethodException<T>(string message, Exception innerException)
+        public static T MissingMethodException<T>(string? message, Exception? innerException)
             => throw new MissingMethodException(message, innerException);
 
         /// <summary>
@@ -642,7 +642,7 @@ namespace Qommon
         /// <exception cref="System.NotSupportedException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T NotSupportedException<T>(string message)
+        public static T NotSupportedException<T>(string? message)
             => throw new NotSupportedException(message);
 
         /// <summary>
@@ -654,7 +654,7 @@ namespace Qommon
         /// <exception cref="System.NotSupportedException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T NotSupportedException<T>(string message, Exception innerException)
+        public static T NotSupportedException<T>(string? message, Exception? innerException)
             => throw new NotSupportedException(message, innerException);
 
         /// <summary>
@@ -677,7 +677,7 @@ namespace Qommon
         /// <exception cref="System.ObjectDisposedException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ObjectDisposedException<T>(string objectName, Exception innerException)
+        public static T ObjectDisposedException<T>(string objectName, Exception? innerException)
             => throw new ObjectDisposedException(objectName, innerException);
 
         /// <summary>
@@ -689,7 +689,7 @@ namespace Qommon
         /// <exception cref="System.ObjectDisposedException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T ObjectDisposedException<T>(string objectName, string message)
+        public static T ObjectDisposedException<T>(string objectName, string? message)
             => throw new ObjectDisposedException(objectName, message);
 
         /// <summary>
@@ -710,7 +710,7 @@ namespace Qommon
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T OperationCanceledException<T>(string message)
+        public static T OperationCanceledException<T>(string? message)
             => throw new OperationCanceledException(message);
 
         /// <summary>
@@ -722,7 +722,7 @@ namespace Qommon
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T OperationCanceledException<T>(string message, Exception innerException)
+        public static T OperationCanceledException<T>(string? message, Exception? innerException)
             => throw new OperationCanceledException(message, innerException);
 
         /// <summary>
@@ -745,7 +745,7 @@ namespace Qommon
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T OperationCanceledException<T>(string message, CancellationToken token)
+        public static T OperationCanceledException<T>(string? message, CancellationToken token)
             => throw new OperationCanceledException(message, token);
 
         /// <summary>
@@ -758,7 +758,7 @@ namespace Qommon
         /// <exception cref="System.OperationCanceledException">Thrown with the specified parameters.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T OperationCanceledException<T>(string message, Exception innerException, CancellationToken token)
+        public static T OperationCanceledException<T>(string? message, Exception? innerException, CancellationToken token)
             => throw new OperationCanceledException(message, innerException, token);
 
         /// <summary>
@@ -779,7 +779,7 @@ namespace Qommon
         /// <exception cref="System.PlatformNotSupportedException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T PlatformNotSupportedException<T>(string message)
+        public static T PlatformNotSupportedException<T>(string? message)
             => throw new PlatformNotSupportedException(message);
 
         /// <summary>
@@ -791,7 +791,7 @@ namespace Qommon
         /// <exception cref="System.PlatformNotSupportedException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T PlatformNotSupportedException<T>(string message, Exception innerException)
+        public static T PlatformNotSupportedException<T>(string? message, Exception? innerException)
             => throw new PlatformNotSupportedException(message, innerException);
 
         /// <summary>
@@ -812,7 +812,7 @@ namespace Qommon
         /// <exception cref="System.Threading.SynchronizationLockException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T SynchronizationLockException<T>(string message)
+        public static T SynchronizationLockException<T>(string? message)
             => throw new SynchronizationLockException(message);
 
         /// <summary>
@@ -824,7 +824,7 @@ namespace Qommon
         /// <exception cref="System.Threading.SynchronizationLockException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T SynchronizationLockException<T>(string message, Exception innerException)
+        public static T SynchronizationLockException<T>(string? message, Exception? innerException)
             => throw new SynchronizationLockException(message, innerException);
 
         /// <summary>
@@ -845,7 +845,7 @@ namespace Qommon
         /// <exception cref="System.TimeoutException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T TimeoutException<T>(string message)
+        public static T TimeoutException<T>(string? message)
             => throw new TimeoutException(message);
 
         /// <summary>
@@ -857,7 +857,7 @@ namespace Qommon
         /// <exception cref="System.TimeoutException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T TimeoutException<T>(string message, Exception innerException)
+        public static T TimeoutException<T>(string? message, Exception? innerException)
             => throw new TimeoutException(message, innerException);
 
         /// <summary>
@@ -878,7 +878,7 @@ namespace Qommon
         /// <exception cref="System.UnauthorizedAccessException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T UnauthorizedAccessException<T>(string message)
+        public static T UnauthorizedAccessException<T>(string? message)
             => throw new UnauthorizedAccessException(message);
 
         /// <summary>
@@ -890,7 +890,7 @@ namespace Qommon
         /// <exception cref="System.UnauthorizedAccessException">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T UnauthorizedAccessException<T>(string message, Exception innerException)
+        public static T UnauthorizedAccessException<T>(string? message, Exception? innerException)
             => throw new UnauthorizedAccessException(message, innerException);
 
         /// <summary>
@@ -923,7 +923,7 @@ namespace Qommon
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T Win32Exception<T>(int error, string message)
+        public static T Win32Exception<T>(int error, string? message)
             => throw new Win32Exception(error, message);
 
         /// <summary>
@@ -934,7 +934,7 @@ namespace Qommon
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T Win32Exception<T>(string message)
+        public static T Win32Exception<T>(string? message)
             => throw new Win32Exception(message);
 
         /// <summary>
@@ -946,7 +946,7 @@ namespace Qommon
         /// <exception cref="System.ComponentModel.Win32Exception">Thrown with the specified parameter.</exception>
         /// <returns>This method always throws, so it actually never returns a value.</returns>
         [DoesNotReturn]
-        public static T Win32Exception<T>(string message, Exception innerException)
+        public static T Win32Exception<T>(string? message, Exception? innerException)
             => throw new Win32Exception(message, innerException);
     }
 }

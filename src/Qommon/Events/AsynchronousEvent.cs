@@ -10,7 +10,7 @@ namespace Qommon.Events
     /// <typeparam name="T"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this handler. </typeparam>
     /// <param name="sender"> The instance from which the event came from. </param>
     /// <param name="e"> The <see cref="EventArgs"/> object containing the event data. </param>
-    public delegate ValueTask AsynchronousEventHandler<T>(object sender, T e)
+    public delegate ValueTask AsynchronousEventHandler<T>(object? sender, T e)
         where T : EventArgs;
 
     /// <summary>
@@ -109,7 +109,7 @@ namespace Qommon.Events
         /// </summary>
         /// <param name="sender"> The sender invoking this event. </param>
         /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
-        public async ValueTask InvokeAsync(object sender, TEventArgs e)
+        public async ValueTask InvokeAsync(object? sender, TEventArgs e)
         {
             ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
             lock (this)
@@ -136,7 +136,7 @@ namespace Qommon.Events
         /// </summary>
         /// <param name="sender"> The sender invoking this event. </param>
         /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
-        public void Invoke(object sender, TEventArgs e)
+        public void Invoke(object? sender, TEventArgs e)
         {
             ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
             lock (this)
@@ -157,10 +157,10 @@ namespace Qommon.Events
             }
         }
 
-        ValueTask IAsynchronousEvent.InvokeAsync(object sender, EventArgs e)
+        ValueTask IAsynchronousEvent.InvokeAsync(object? sender, EventArgs e)
             => InvokeAsync(sender, (TEventArgs) e);
 
-        void IAsynchronousEvent.Invoke(object sender, EventArgs e)
+        void IAsynchronousEvent.Invoke(object? sender, EventArgs e)
             => Invoke(sender, (TEventArgs) e);
     }
 }

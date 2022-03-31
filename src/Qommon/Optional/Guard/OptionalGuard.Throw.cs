@@ -22,7 +22,7 @@ namespace Disqord
             }
 
             [Pure]
-            private static string GetValueString(object value)
+            private static string GetValueString(object? value)
             {
                 return value switch
                 {
