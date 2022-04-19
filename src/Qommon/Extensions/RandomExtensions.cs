@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
@@ -27,7 +28,8 @@ namespace Qommon
         ///     returning less than <paramref name="probability"/>.
         /// </summary>
         /// <param name="random"> The <see cref="Random"/> instance. </param>
-        /// <param name="probability"> The [0..1) probability. </param>
+        /// <param name="probability"> The <c>[0..1)</c> probability. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown when <paramref name="probability"/> is not within the <c>[0..1)</c> range. </exception>
         /// <returns>
         ///     A <see cref="bool"/>.
         /// </returns>
@@ -36,6 +38,23 @@ namespace Qommon
             Guard.IsBetweenOrEqualTo(probability, 0, 1);
 
             return random.NextDouble() < probability;
+        }
+
+        /// <summary>
+        ///     Returns a randomly chosen item from the provided list.
+        /// </summary>
+        /// <param name="random"> The <see cref="Random"/> instance. </param>
+        /// <param name="list"> The list to choose an item from. </param>
+        /// <typeparam name="T"> The type of the items. </typeparam>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="list"/> is empty. </exception>
+        /// <returns>
+        ///     The randomly chosen item.
+        /// </returns>
+        public static T Choice<T>(this Random random, IReadOnlyList<T> list)
+        {
+            Guard.HasSizeGreaterThan(list, 0);
+
+            return list[random.Next(list.Count)];
         }
 
         /// <summary>
