@@ -32,6 +32,16 @@ namespace Qommon.Disposal
         }
 
         /// <summary>
+        ///     Disposes of the specified instance by calling <see cref="IDisposable.Dispose"/>.
+        /// </summary>
+        /// <param name="instance"> The instance to dispose. </param>
+        public static void Dispose(object? instance)
+        {
+            if (instance is IDisposable disposable)
+                disposable.Dispose();
+        }
+
+        /// <summary>
         ///     Wraps the specified instance in a <see cref="RuntimeAsyncDisposable"/>.
         /// </summary>
         /// <param name="instance"> The instance to wrap. </param>
@@ -58,34 +68,52 @@ namespace Qommon.Disposal
         public static RuntimeDisposable Wrap(object? instance)
             => new(instance);
 
+        /// <summary>
+        ///     Represents an <see cref="IAsyncDisposable"/> that will call <see cref="RuntimeDisposal.DisposeAsync"/> upon disposal.
+        /// </summary>
         public readonly struct RuntimeAsyncDisposable : IAsyncDisposable
         {
             private readonly object? _instance;
             private readonly bool _disposeBoth;
 
+            /// <summary>
+            ///     Instantiates a new <see cref="RuntimeAsyncDisposable"/>.
+            /// </summary>
+            /// <param name="instance"> The instance to wrap. </param>
+            /// <param name="disposeBoth">  </param>
             public RuntimeAsyncDisposable(object? instance, bool disposeBoth)
             {
                 _instance = instance;
                 _disposeBoth = disposeBoth;
             }
 
+            /// <inheritdoc/>
             public ValueTask DisposeAsync()
-                => RuntimeDisposal.DisposeAsync(_instance, _disposeBoth);
+            {
+                return RuntimeDisposal.DisposeAsync(_instance, _disposeBoth);
+            }
         }
 
+        /// <summary>
+        ///     Represents an <see cref="IDisposable"/> that will call <see cref="RuntimeDisposal.Dispose"/> upon disposal.
+        /// </summary>
         public readonly struct RuntimeDisposable : IDisposable
         {
             private readonly object? _instance;
 
+            /// <summary>
+            ///     Instantiates a new <see cref="RuntimeDisposable"/>.
+            /// </summary>
+            /// <param name="instance"> The instance to wrap. </param>
             public RuntimeDisposable(object? instance)
             {
                 _instance = instance;
             }
 
+            /// <inheritdoc/>
             public void Dispose()
             {
-                if (_instance is IDisposable disposable)
-                    disposable.Dispose();
+                RuntimeDisposal.Dispose(_instance);
             }
         }
     }
