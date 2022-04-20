@@ -17,7 +17,7 @@ namespace Qommon.Disposal
         /// <param name="instance"> The instance to dispose. </param>
         /// <param name="disposeBoth">
         ///     Whether to call both <see cref="IAsyncDisposable.DisposeAsync"/>
-        ///     and <see cref="IDisposable.Dispose"/> or only one of them.
+        ///     and <see cref="IDisposable.Dispose"/> or just the former.
         /// </param>
         /// <returns>
         ///     The <see cref="ValueTask"/> representing the disposal work.
@@ -46,8 +46,8 @@ namespace Qommon.Disposal
         /// </summary>
         /// <param name="instance"> The instance to wrap. </param>
         /// <param name="disposeBoth">
-        ///     Whether the <see cref="RuntimeAsyncDisposable"/> should call both
-        ///     <see cref="IAsyncDisposable.DisposeAsync"/> and <see cref="IDisposable.Dispose"/> or only one of them.
+        ///     Whether the <see cref="RuntimeAsyncDisposable"/> should call both <see cref="IAsyncDisposable.DisposeAsync"/>
+        ///     and <see cref="IDisposable.Dispose"/> or just the former.
         /// </param>
         /// <returns>
         ///     The <see cref="RuntimeAsyncDisposable"/> wrapping the instance.
@@ -80,7 +80,7 @@ namespace Qommon.Disposal
             ///     Instantiates a new <see cref="RuntimeAsyncDisposable"/>.
             /// </summary>
             /// <param name="instance"> The instance to wrap. </param>
-            /// <param name="disposeBoth">  </param>
+            /// <param name="disposeBoth"> The value to be passed to <see cref="DisposeAsync"/>. </param>
             public RuntimeAsyncDisposable(object? instance, bool disposeBoth)
             {
                 _instance = instance;

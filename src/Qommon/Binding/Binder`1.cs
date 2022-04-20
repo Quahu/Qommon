@@ -68,6 +68,13 @@ namespace Qommon.Binding
             _value = value;
         }
 
+        /// <summary>
+        ///     Attempts to get the bound value of this <see cref="Binder{TBind}"/>.
+        /// </summary>
+        /// <param name="value"> The bound value. </param>
+        /// <returns>
+        ///     <see langword="true"/> if this <see cref="Binder{TBind}"/> has a value.
+        /// </returns>
         public bool TryGetValue([NotNullWhen(true)] out TBind? value)
         {
             value = _value;

@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Qommon.Collections
 {
+    /// <summary>
+    ///     Represents extensions for enumerables.
+    /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class EnumerableExtensions
     {
@@ -23,11 +26,13 @@ namespace Qommon.Collections
 
         /// <summary>
         ///     Returns an array for this enumerable.
+        /// </summary>
+        /// <remarks>
         ///     If the source is <see langword="null"/> an empty array is returned.
         ///     If the source is already an array it is returned directly.
         ///     Otherwise the source is copied to a new array.
-        /// </summary>
-        /// <param name="source"> The enumerable to get </param>
+        /// </remarks>
+        /// <param name="source"> The enumerable to get the array for. </param>
         /// <returns>
         ///     An array containing the elements from the enumerable.
         /// </returns>
@@ -42,6 +47,16 @@ namespace Qommon.Collections
             return source.Cast<object>().GetArray();
         }
 
+        /// <summary>
+        ///     Returns a new <see cref="Dictionary{TKey,TValue}"/> created from this enumerable.
+        /// </summary>
+        /// <param name="source"> The enumerable to create a dictionary from. </param>
+        /// <param name="comparer"> The key comparer to use for the dictionary. </param>
+        /// <typeparam name="TKey"> The type of keys. </typeparam>
+        /// <typeparam name="TValue"> The type of values. </typeparam>
+        /// <returns>
+        ///     A new <see cref="Dictionary{TKey,TValue}"/>.
+        /// </returns>
         public static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<KeyValuePair<TKey, TValue>> source, IEqualityComparer<TKey>? comparer = null)
             where TKey : notnull
         {

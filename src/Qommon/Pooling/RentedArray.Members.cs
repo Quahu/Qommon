@@ -16,11 +16,11 @@ namespace Qommon.Pooling
 
         public RentedArray<T> this[Range range] => new(_segment[range], _pool, _clearArray);
 
-        public void CopyTo(T[] array)
-            => _segment.CopyTo(array);
-
         public void CopyTo(Span<T> destination)
             => _segment.AsSpan().CopyTo(destination);
+
+        public void CopyTo(T[] array)
+            => _segment.CopyTo(array);
 
         public void CopyTo(T[] array, int arrayIndex)
             => _segment.CopyTo(array, arrayIndex);
@@ -36,6 +36,12 @@ namespace Qommon.Pooling
 
         int IList<T>.IndexOf(T item)
             => Array.IndexOf(_segment.Array!, item, _segment.Offset, _segment.Count);
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+            => GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator()
+            => GetEnumerator();
 
         void IList<T>.Insert(int index, T item)
             => throw new NotSupportedException();
@@ -54,11 +60,5 @@ namespace Qommon.Pooling
 
         bool ICollection<T>.Remove(T item)
             => throw new NotSupportedException();
-
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
-            => GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
     }
 }
