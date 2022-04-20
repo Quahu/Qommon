@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <VersionPrefix>2.1.3</VersionPrefix>
+        <VersionPrefix>2.2.0</VersionPrefix>
         <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
         <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -31,13 +31,9 @@
         </NoWarn>
     </PropertyGroup>
     <ItemGroup>
-        <None Update="Guard\Generated\Throw.Collection.tt">
+        <None Update="Guard\Generated\Guard.Throw.Collection.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
             <LastGenOutput>Throw.Collection.Generated.cs</LastGenOutput>
-        </None>
-        <None Update="Guard\Generated\Guard.Collection.tt">
-            <Generator>TextTemplatingFileGenerator</Generator>
-            <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
         </None>
         <None Update="Guard\Generated\Guard.Comparable.Numeric.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
@@ -47,16 +43,22 @@
           <Generator>TextTemplatingFileGenerator</Generator>
           <LastGenOutput>TypeInfo.Generated.cs</LastGenOutput>
         </None>
+        <None Update="Guard\Generated\Guard.Collection.tt">
+          <Generator>TextTemplatingFileGenerator</Generator>
+          <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
+        </None>
     </ItemGroup>
     <ItemGroup>
-        <Compile Update="Guard\Generated\Throw.Collection.Generated.cs">
+        <Compile Update="Guard\Generated\Guard.Throw.Collection.Generated.cs">
             <DependentUpon>Throw.Collection.tt</DependentUpon>
         </Compile>
         <Compile Update="Guard\Generated\Guard.Comparable.Numeric.Generated.cs">
             <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
         </Compile>
         <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
-            <DependentUpon>Guard.Collection.tt</DependentUpon>
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>Guard.Collection.tt</DependentUpon>
         </Compile>
     </ItemGroup>
 
