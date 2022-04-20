@@ -1,9 +1,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
-using Qommon;
 
-namespace Disqord
+namespace Qommon
 {
     public static partial class OptionalGuard
     {

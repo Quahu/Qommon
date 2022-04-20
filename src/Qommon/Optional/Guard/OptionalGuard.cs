@@ -1,8 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
-using Qommon;
 
-namespace Disqord
+namespace Qommon
 {
     public static partial class OptionalGuard
     {
