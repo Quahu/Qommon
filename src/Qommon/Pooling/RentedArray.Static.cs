@@ -1,4 +1,5 @@
 ﻿using System.Buffers;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Qommon.Pooling
@@ -15,6 +16,14 @@ namespace Qommon.Pooling
             Guard.IsNotNull(pool);
 
             return new(new(pool.Rent(length), 0, length), pool, clearArray);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static RentedArray<T> RentFor(ICollection<T> items)
+        {
+            var array = Rent(items.Count);
+            items.CopyTo(array._segment.Array!, 0);
+            return array;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
