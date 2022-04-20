@@ -11,12 +11,12 @@ namespace Qommon
     {
 #>
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must be empty.
+        ///     Asserts that the input <#= item.XmlType #> instance must be empty.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is != 0.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is != 0. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEmpty<T>(<#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -27,12 +27,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must not be empty.
+        ///     Asserts that the input <#= item.XmlType #> instance must not be empty.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is == 0.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is == 0. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEmpty<T>(<#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -62,12 +62,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance contains no <see langword="null"> items.
+        ///     Asserts that the input <#= item.XmlType #> instance contains no <see langword="null"> items.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the <paramref name="<#= item.Name #>"/> <see langword="null"> items .</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the <paramref name=" <#= item.Name #> "/> <see langword="null"> items . </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ContainsNoNullItems<T>(<#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
             where T : class
@@ -94,13 +94,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size of a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size of a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is != <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is != <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -111,13 +111,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size not equal to a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size not equal to a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is == <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is == <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeNotEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -128,13 +128,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size over a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size over a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is &lt;= <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is &lt;= <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeGreaterThan<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -145,13 +145,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size of at least or equal to a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size of at least or equal to a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is &lt; <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is &lt; <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeGreaterThanOrEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -162,13 +162,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size of less than a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size of less than a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is >= <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #>"/> is > = <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeLessThan<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -179,13 +179,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input <#= item.XmlType #> instance must have a size of less than or equal to a specified value.
+        ///     Asserts that the input <#= item.XmlType #> instance must have a size of less than or equal to a specified value.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="size">The target size to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="<#= item.Name #>"/> is > <paramref name="size"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="size"> The target size to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name=" <#= item.Name #> "/> is > <paramref name="size"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeLessThanOrEqualTo<T>(<#= item.Type #> <#= item.Name #>, int size, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -196,13 +196,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the source <#= item.XmlType #> instance must have the same size of a destination <#= item.XmlType #> instance.
+        ///     Asserts that the source <#= item.XmlType #> instance must have the same size of a destination <#= item.XmlType #> instance.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="source">The source <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="destination">The destination <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is != the one of <paramref name="destination"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="source"> The source <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="destination"> The destination <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name="source"/> is != the one of <paramref name="destination"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("source")] string name = null)
         {
@@ -213,13 +213,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the source <#= item.XmlType #> instance must have a size of less than or equal to that of a destination <#= item.XmlType #> instance.
+        ///     Asserts that the source <#= item.XmlType #> instance must have a size of less than or equal to that of a destination <#= item.XmlType #> instance.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="source">The source <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="destination">The destination <#= item.XmlType #> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is > the one of <paramref name="destination"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="source"> The source <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="destination"> The destination <#= item.XmlType #> instance to check the size for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if the size of <paramref name="source"/> is > the one of <paramref name="destination"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void HasSizeLessThanOrEqualTo<T>(<#= item.Type #> source, <#= item.DestinationType #> destination, [CallerArgumentExpression("source")] string name = null)
         {
@@ -230,13 +230,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input index is valid for a given <#= item.XmlType #> instance.
+        ///     Asserts that the input index is valid for a given <#= item.XmlType #> instance.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="index">The input index to be used to access <paramref name="<#= item.Name #>"/>.</param>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to use to validate <paramref name="index"/>.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="index"/> is not valid to access <paramref name="<#= item.Name #>"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="index"> The input index to be used to access <paramref name=" <#= item.Name #> "/>. </param>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to use to validate <paramref name="index"/>. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="index"/> is not valid to access <paramref name=" <#= item.Name #> "/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {
@@ -247,13 +247,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input index is not valid for a given <#= item.XmlType #> instance.
+        ///     Asserts that the input index is not valid for a given <#= item.XmlType #> instance.
         /// </summary>
-        /// <typeparam name="T">The type of items in the input <#= item.XmlType #> instance.</typeparam>
-        /// <param name="index">The input index to be used to access <paramref name="<#= item.Name #>"/>.</param>
-        /// <param name="<#= item.Name #>">The input <#= item.XmlType #> instance to use to validate <paramref name="index"/>.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="index"/> is valid to access <paramref name="<#= item.Name #>"/>.</exception>
+        /// <typeparam name="T"> The type of items in the input <#= item.XmlType #> instance. </typeparam>
+        /// <param name="index"> The input index to be used to access <paramref name=" <#= item.Name #> "/>. </param>
+        /// <param name="<#= item.Name #>"> The input <#= item.XmlType #> instance to use to validate <paramref name="index"/>. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="index"/> is valid to access <paramref name=" <#= item.Name #> "/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotInRangeFor<T>(int index, <#= item.Type #> <#= item.Name #>, [CallerArgumentExpression("<#= item.Name #>")] string name = null)
         {

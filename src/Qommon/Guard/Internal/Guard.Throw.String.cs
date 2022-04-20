@@ -8,19 +8,19 @@ namespace Qommon
         private static partial class Throw
         {
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsNullOrEmpty(string text, string? name)
+            public static void ArgumentExceptionForIsNullOrEmpty(string? text, string? name)
                 => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must be null or empty, was {GetValueString(text)}.", name);
 
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsNotNullOrEmpty(string text, string? name)
+            public static void ArgumentExceptionForIsNotNullOrEmpty(string? text, string? name)
                 => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not be null or empty, was {(text is null ? "null" : "empty")}.", name);
 
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsNullOrWhiteSpace(string text, string? name)
+            public static void ArgumentExceptionForIsNullOrWhiteSpace(string? text, string? name)
                 => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must be null or whitespace, was {GetValueString(text)}.", name);
 
             [DoesNotReturn]
-            public static void ArgumentExceptionForIsNotNullOrWhiteSpace(string text, string? name)
+            public static void ArgumentExceptionForIsNotNullOrWhiteSpace(string? text, string? name)
                 => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not be null or whitespace, was {(text is null ? "null" : "whitespace")}.", name);
 
             [DoesNotReturn]
@@ -30,14 +30,6 @@ namespace Qommon
             [DoesNotReturn]
             public static void ArgumentExceptionForIsNotEmpty(string? name)
                 => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not be empty.", name);
-
-            [DoesNotReturn]
-            public static void ArgumentExceptionForIsWhiteSpace(string text, string? name)
-                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must be whitespace, was {GetValueString(text)}.", name);
-
-            [DoesNotReturn]
-            public static void ArgumentExceptionForIsNotWhiteSpace(string text, string? name)
-                => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must not be whitespace, was {GetValueString(text)}.", name);
 
             [DoesNotReturn]
             public static void ArgumentExceptionForHasSizeEqualTo(string text, int size, string? name)

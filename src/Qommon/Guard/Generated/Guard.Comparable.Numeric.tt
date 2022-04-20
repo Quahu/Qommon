@@ -11,12 +11,12 @@ Generate(NumericTypes, typeInfo =>
     var (type, prefix) = typeInfo;
 #>
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="target">The target <see <#=prefix#>="<#=type#>"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="target"> The target <see <#=prefix#>=" <#=type#> "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(<#=type#> value, <#=type#> target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -27,13 +27,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="target">The target <see <#=prefix#>="<#=type#>"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="target"> The target <see <#=prefix#>=" <#=type#> "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(<#=type#> value, <#=type#> target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -44,13 +44,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="maximum"> The exclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(<#=type#> value, <#=type#> maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -61,13 +61,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="maximum"> The inclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(<#=type#> value, <#=type#> maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -78,13 +78,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The exclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(<#=type#> value, <#=type#> minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -95,13 +95,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The inclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(<#=type#> value, <#=type#> minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -112,13 +112,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The inclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The exclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -133,13 +133,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The inclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The exclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -154,13 +154,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The exclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The exclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -175,13 +175,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The exclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The exclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -196,13 +196,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The inclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The inclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -217,13 +217,13 @@ Generate(NumericTypes, typeInfo =>
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see <#=prefix#>="<#=type#>"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="minimum"> The inclusive minimum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="maximum"> The inclusive maximum <see <#=prefix#>=" <#=type#> "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -244,8 +244,8 @@ Generate(NumericTypes, typeInfo =>
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -261,8 +261,8 @@ Generate(NumericTypes, typeInfo =>
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -278,10 +278,10 @@ Generate(NumericTypes, typeInfo =>
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(<#=type#> value, [CallerArgumentExpression("value")] string name = null)
@@ -295,8 +295,8 @@ Generate(NumericTypes, typeInfo =>
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see <#=prefix#>="<#=type#>"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value"> The input <see <#=prefix#>=" <#=type#> "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>

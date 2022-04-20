@@ -6,12 +6,12 @@ namespace Qommon
     public static partial class Guard
     {
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="target">The target <see cref="byte"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="target">The target <see cref="byte "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(byte value, byte target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -22,13 +22,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="target">The target <see cref="byte"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="target">The target <see cref="byte "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(byte value, byte target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -39,13 +39,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(byte value, byte maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -56,13 +56,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(byte value, byte maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -73,13 +73,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(byte value, byte minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -90,13 +90,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(byte value, byte minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -107,13 +107,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -128,13 +128,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -149,13 +149,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -170,13 +170,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -191,13 +191,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -212,13 +212,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="byte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="byte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -235,8 +235,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -252,8 +252,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -269,10 +269,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(byte value, [CallerArgumentExpression("value")] string name = null)
@@ -286,8 +286,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="byte"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="byte "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -301,12 +301,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="target">The target <see cref="sbyte"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="target">The target <see cref="sbyte "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(sbyte value, sbyte target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -317,13 +317,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="target">The target <see cref="sbyte"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="target">The target <see cref="sbyte "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(sbyte value, sbyte target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -334,13 +334,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(sbyte value, sbyte maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -351,13 +351,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(sbyte value, sbyte maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -368,13 +368,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(sbyte value, sbyte minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -385,13 +385,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(sbyte value, sbyte minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -402,13 +402,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -423,13 +423,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -444,13 +444,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -465,13 +465,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -486,13 +486,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -507,13 +507,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="sbyte"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="sbyte"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="sbyte "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="sbyte "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -528,12 +528,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="target">The target <see cref="short"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="target">The target <see cref="short "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(short value, short target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -544,13 +544,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="target">The target <see cref="short"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="target">The target <see cref="short "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(short value, short target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -561,13 +561,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(short value, short maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -578,13 +578,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(short value, short maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -595,13 +595,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(short value, short minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -612,13 +612,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(short value, short minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -629,13 +629,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -650,13 +650,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -671,13 +671,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -692,13 +692,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -713,13 +713,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -734,13 +734,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="short"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="short"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="short "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="short "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -757,8 +757,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -774,8 +774,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -791,10 +791,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(short value, [CallerArgumentExpression("value")] string name = null)
@@ -808,8 +808,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="short"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="short "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -823,12 +823,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="target">The target <see cref="ushort"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="target">The target <see cref="ushort "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(ushort value, ushort target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -839,13 +839,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="target">The target <see cref="ushort"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="target">The target <see cref="ushort "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(ushort value, ushort target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -856,13 +856,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(ushort value, ushort maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -873,13 +873,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(ushort value, ushort maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -890,13 +890,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(ushort value, ushort minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -907,13 +907,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(ushort value, ushort minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -924,13 +924,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -945,13 +945,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -966,13 +966,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -987,13 +987,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1008,13 +1008,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1029,13 +1029,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ushort"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ushort"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ushort "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ushort "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1050,12 +1050,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="target">The target <see cref="char"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="target">The target <see cref="char "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(char value, char target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1066,13 +1066,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="target">The target <see cref="char"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="target">The target <see cref="char "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(char value, char target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1083,13 +1083,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(char value, char maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1100,13 +1100,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(char value, char maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1117,13 +1117,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(char value, char minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1134,13 +1134,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(char value, char minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1151,13 +1151,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1172,13 +1172,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1193,13 +1193,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1214,13 +1214,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1235,13 +1235,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1256,13 +1256,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="char"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="char"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="char"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="char "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="char "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="char "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1277,12 +1277,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="target">The target <see cref="int"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="target">The target <see cref="int "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(int value, int target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1293,13 +1293,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="target">The target <see cref="int"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="target">The target <see cref="int "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(int value, int target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1310,13 +1310,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(int value, int maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1327,13 +1327,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(int value, int maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1344,13 +1344,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(int value, int minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1361,13 +1361,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(int value, int minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1378,13 +1378,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1399,13 +1399,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1420,13 +1420,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1441,13 +1441,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1462,13 +1462,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1483,13 +1483,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="int"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="int"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="int "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="int "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1506,8 +1506,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -1523,8 +1523,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -1540,10 +1540,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(int value, [CallerArgumentExpression("value")] string name = null)
@@ -1557,8 +1557,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="int"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="int "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -1572,12 +1572,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="target">The target <see cref="uint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="target">The target <see cref="uint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(uint value, uint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1588,13 +1588,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="target">The target <see cref="uint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="target">The target <see cref="uint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(uint value, uint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1605,13 +1605,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(uint value, uint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1622,13 +1622,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(uint value, uint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1639,13 +1639,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(uint value, uint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1656,13 +1656,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(uint value, uint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1673,13 +1673,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1694,13 +1694,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1715,13 +1715,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1736,13 +1736,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1757,13 +1757,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1778,13 +1778,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="uint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="uint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="uint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="uint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1799,12 +1799,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="target">The target <see cref="float"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="target">The target <see cref="float "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(float value, float target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1815,13 +1815,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="target">The target <see cref="float"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="target">The target <see cref="float "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(float value, float target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1832,13 +1832,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(float value, float maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1849,13 +1849,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(float value, float maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1866,13 +1866,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(float value, float minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1883,13 +1883,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(float value, float minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -1900,13 +1900,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1921,13 +1921,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1942,13 +1942,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1963,13 +1963,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -1984,13 +1984,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2005,13 +2005,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="float"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="float"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="float "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="float "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2028,8 +2028,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -2045,8 +2045,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -2062,10 +2062,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(float value, [CallerArgumentExpression("value")] string name = null)
@@ -2079,8 +2079,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="float"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="float "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -2094,12 +2094,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="target">The target <see cref="long"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="target">The target <see cref="long "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(long value, long target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2110,13 +2110,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="target">The target <see cref="long"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="target">The target <see cref="long "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(long value, long target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2127,13 +2127,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(long value, long maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2144,13 +2144,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(long value, long maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2161,13 +2161,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(long value, long minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2178,13 +2178,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(long value, long minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2195,13 +2195,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2216,13 +2216,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2237,13 +2237,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2258,13 +2258,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2279,13 +2279,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2300,13 +2300,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="long"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="long"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="long "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="long "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2323,8 +2323,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -2340,8 +2340,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -2357,10 +2357,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(long value, [CallerArgumentExpression("value")] string name = null)
@@ -2374,8 +2374,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="long"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="long "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -2389,12 +2389,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="target">The target <see cref="ulong"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="target">The target <see cref="ulong "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(ulong value, ulong target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2405,13 +2405,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="target">The target <see cref="ulong"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="target">The target <see cref="ulong "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(ulong value, ulong target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2422,13 +2422,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(ulong value, ulong maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2439,13 +2439,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(ulong value, ulong maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2456,13 +2456,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(ulong value, ulong minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2473,13 +2473,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(ulong value, ulong minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2490,13 +2490,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2511,13 +2511,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2532,13 +2532,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2553,13 +2553,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2574,13 +2574,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2595,13 +2595,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="ulong"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="ulong"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="ulong "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="ulong "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2616,12 +2616,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="target">The target <see cref="double"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="target">The target <see cref="double "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(double value, double target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2632,13 +2632,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="target">The target <see cref="double"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="target">The target <see cref="double "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(double value, double target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2649,13 +2649,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(double value, double maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2666,13 +2666,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(double value, double maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2683,13 +2683,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(double value, double minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2700,13 +2700,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(double value, double minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2717,13 +2717,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2738,13 +2738,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2759,13 +2759,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2780,13 +2780,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2801,13 +2801,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2822,13 +2822,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="double"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="double"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="double "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="double "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -2845,8 +2845,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -2862,8 +2862,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -2879,10 +2879,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(double value, [CallerArgumentExpression("value")] string name = null)
@@ -2896,8 +2896,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="double"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="double "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -2911,12 +2911,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="target">The target <see cref="decimal"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="target">The target <see cref="decimal "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(decimal value, decimal target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2927,13 +2927,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="target">The target <see cref="decimal"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="target">The target <see cref="decimal "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(decimal value, decimal target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2944,13 +2944,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(decimal value, decimal maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2961,13 +2961,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(decimal value, decimal maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2978,13 +2978,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(decimal value, decimal minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -2995,13 +2995,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(decimal value, decimal minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3012,13 +3012,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3033,13 +3033,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3054,13 +3054,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3075,13 +3075,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3096,13 +3096,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3117,13 +3117,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see cref="decimal"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see cref="decimal "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3140,8 +3140,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -3157,8 +3157,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -3174,10 +3174,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(decimal value, [CallerArgumentExpression("value")] string name = null)
@@ -3191,8 +3191,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see cref="decimal"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see cref="decimal "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -3206,12 +3206,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="target">The target <see langword="nint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="target">The target <see langword="nint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(nint value, nint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3222,13 +3222,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="target">The target <see langword="nint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="target">The target <see langword="nint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(nint value, nint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3239,13 +3239,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(nint value, nint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3256,13 +3256,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(nint value, nint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3273,13 +3273,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(nint value, nint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3290,13 +3290,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(nint value, nint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3307,13 +3307,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3328,13 +3328,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3349,13 +3349,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3370,13 +3370,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3391,13 +3391,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3412,13 +3412,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3435,8 +3435,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be positive.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is <= <c>0</c>.
         /// </exception>
@@ -3452,8 +3452,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be positive.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is > <c>0</c>.
         /// </exception>
@@ -3469,10 +3469,10 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must be negative.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     Thrown if <paramref name="value"/> is >= <c>0</c>.
+        ///     Thrown if <paramref name="value"/> is > = <c>0 </c>.
         /// </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNegative(nint value, [CallerArgumentExpression("value")] string name = null)
@@ -3486,8 +3486,8 @@ namespace Qommon
         /// <summary>
         ///     Asserts that the input value must not be negative.
         /// </summary>
-        /// <param name="value">The input <see langword="nint"/> value to test.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
+        /// <param name="value">The input <see langword="nint "/> value to test. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
         /// <exception cref="ArgumentOutOfRangeException">
         ///     Thrown if <paramref name="value"/> is < <c>0</c>.
         /// </exception>
@@ -3501,12 +3501,12 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be equal to a specified value.
+        ///     Asserts that the input value must be equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="target">The target <see langword="nuint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is != <paramref name="target"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="target">The target <see langword="nuint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is != <paramref name="target"/>. </exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsEqualTo(nuint value, nuint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3517,13 +3517,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be not equal to a specified value.
+        ///     Asserts that the input value must be not equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="target">The target <see langword="nuint"/> value to test for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="value"/> is == <paramref name="target"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="target">The target <see langword="nuint "/> value to test for. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentException"> Thrown if <paramref name="value"/> is == <paramref name="target"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsNotEqualTo(nuint value, nuint target, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3534,13 +3534,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than a specified value.
+        ///     Asserts that the input value must be less than a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThan(nuint value, nuint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3551,13 +3551,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be less than or equal to a specified value.
+        ///     Asserts that the input value must be less than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="maximum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="maximum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsLessThanOrEqualTo(nuint value, nuint maximum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3568,13 +3568,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than a specified value.
+        ///     Asserts that the input value must be greater than a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThan(nuint value, nuint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3585,13 +3585,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be greater than or equal to a specified value.
+        ///     Asserts that the input value must be greater than or equal to a specified value.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>.</exception>
-        /// <remarks>The method is generic to avoid boxing the parameters, if they are value types.</remarks>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/>. </exception>
+        /// <remarks> The method is generic to avoid boxing the parameters, if they are value types. </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IsGreaterThanOrEqualTo(nuint value, nuint minimum, [CallerArgumentExpression("value")] string name = null)
         {
@@ -3602,13 +3602,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given range.
+        ///     Asserts that the input value must be in a given range.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3623,13 +3623,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given range.
+        ///     Asserts that the input value must not be in a given range.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3644,13 +3644,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or >= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt;= <paramref name="minimum"/> or > = <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3665,13 +3665,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The exclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The exclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The exclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The exclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is > <paramref name="minimum"/> or &lt; <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in (<paramref name="minimum"/>, <paramref name="maximum"/>)", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3686,13 +3686,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must be in a given interval.
+        ///     Asserts that the input value must be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException"> Thrown if <paramref name="value"/> is &lt; <paramref name="minimum"/> or > <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
@@ -3707,13 +3707,13 @@ namespace Qommon
         }
 
         /// <summary>
-        /// Asserts that the input value must not be in a given interval.
+        ///     Asserts that the input value must not be in a given interval.
         /// </summary>
-        /// <param name="value">The input <see langword="nuint"/> value to test.</param>
-        /// <param name="minimum">The inclusive minimum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="maximum">The inclusive maximum <see langword="nuint"/> value that is accepted.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is >= <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>.</exception>
+        /// <param name="value">The input <see langword="nuint "/> value to test. </param>
+        /// <param name="minimum">The inclusive minimum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="maximum">The inclusive maximum <see langword="nuint "/> value that is accepted. </param>
+        /// <param name="name"> The name of the input parameter being tested. </param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="value"/> is > = <paramref name="minimum"/> or &lt;= <paramref name="maximum"/>. </exception>
         /// <remarks>
         /// This API asserts the equivalent of "<paramref name="value"/> not in [<paramref name="minimum"/>, <paramref name="maximum"/>]", using arithmetic notation.
         /// The method is generic to avoid boxing the parameters, if they are value types.
