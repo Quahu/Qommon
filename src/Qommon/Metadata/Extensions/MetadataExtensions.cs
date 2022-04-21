@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Qommon.Collections;
 using Qommon.Collections.Synchronized;
@@ -54,6 +53,9 @@ namespace Qommon.Metadata
         /// </returns>
         public static T? GetMetadata<T>(this IMetadata metadata, string key, IFormatProvider? provider = null)
         {
+            Guard.IsNotNull(metadata);
+            Guard.IsNotNull(key);
+
             if (metadata.TryGetMetadata(key, out var rawValue))
             {
                 if (rawValue is null)
@@ -103,6 +105,9 @@ namespace Qommon.Metadata
         /// </returns>
         public static bool TryGetMetadata<T>(this IMetadata metadata, string key, out T? value, IFormatProvider? provider = null)
         {
+            Guard.IsNotNull(metadata);
+            Guard.IsNotNull(key);
+
             if (metadata.TryGetMetadata(key, out var rawValue))
             {
                 if (rawValue is null)
@@ -157,6 +162,9 @@ namespace Qommon.Metadata
         /// </returns>
         public static T? GetMetadataOrDefault<T>(this IMetadata metadata, string key, T? defaultValue = default!, IFormatProvider? provider = null)
         {
+            Guard.IsNotNull(metadata);
+            Guard.IsNotNull(key);
+
             if (metadata.TryGetMetadata<T>(key, out var value, provider))
                 return value;
 
