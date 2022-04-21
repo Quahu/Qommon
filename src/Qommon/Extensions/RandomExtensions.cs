@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Qommon
@@ -68,10 +69,11 @@ namespace Qommon
         /// <returns>
         ///     A new <typeparamref name="T"/> with random data.
         /// </returns>
+        [SkipLocalsInit]
         public static T Next<T>(this Random random)
             where T : unmanaged
         {
-            var value = default(T);
+            Unsafe.SkipInit(out T value);
             random.NextBytes(MemoryMarshal.AsBytes(MemoryMarshal.CreateSpan(ref value, 1)));
             return value;
         }
