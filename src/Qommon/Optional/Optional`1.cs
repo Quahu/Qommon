@@ -13,7 +13,7 @@ namespace Qommon
         /// <summary>
         ///     An empty <see cref="Optional{T}"/> instance.
         /// </summary>
-        public static readonly Optional<T> Empty = default;
+        public static Optional<T> Empty => default;
 
         /// <summary>
         ///     Gets whether this <see cref="Optional{T}"/> has a value.
