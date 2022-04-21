@@ -109,32 +109,6 @@ namespace Qommon
         }
 
         /// <summary>
-        ///     Asserts that the input <see cref="string"/> instance must be whitespace.
-        /// </summary>
-        /// <param name="text"> The input <see cref="string"/> instance to test. </param>
-        /// <param name="name"> The name of the input parameter being tested. </param>
-        /// <exception cref="ArgumentException">
-        ///      Thrown if <paramref name="text"/> is neither <see langword="null"/> nor whitespace.
-        /// </exception>
-        [Obsolete("Use Guard.IsNullOrWhiteSpace instead.")]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsWhiteSpace(string text, [CallerArgumentExpression("text")] string? name = null)
-            => IsNullOrWhiteSpace(text);
-
-        /// <summary>
-        ///     Asserts that the input <see cref="string"/> instance must not be <see langword="null"/> or whitespace.
-        /// </summary>
-        /// <param name="text"> The input <see cref="string"/> instance to test. </param>
-        /// <param name="name"> The name of the input parameter being tested. </param>
-        /// <exception cref="ArgumentException">
-        ///      Thrown if <paramref name="text"/> is <see langword="null"/> or whitespace.
-        /// </exception>
-        [Obsolete("Use Guard.IsNotNullOrWhiteSpace instead.")]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IsNotWhiteSpace(string text, [CallerArgumentExpression("text")] string? name = null)
-            => IsNotNullOrWhiteSpace(text);
-
-        /// <summary>
         ///     Asserts that the input <see cref="string"/> instance must have a size of a specified value.
         /// </summary>
         /// <param name="text"> The input <see cref="string"/> instance to check the size for. </param>
@@ -240,42 +214,6 @@ namespace Qommon
                 return;
 
             Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(text, size, name);
-        }
-
-        /// <summary>
-        /// Asserts that the source <see cref="string"/> instance must have the same size of a destination <see cref="string"/> instance.
-        /// </summary>
-        /// <param name="source">The source <see cref="string"/> instance to check the size for.</param>
-        /// <param name="destination">The destination <see cref="string"/> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is != the one of <paramref name="destination"/>.</exception>
-        /// <remarks>The <see cref="string"/> type is immutable, but the name of this API is kept for consistency with the other overloads.</remarks>
-        [Obsolete]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeEqualTo(string source, string destination, [CallerArgumentExpression("source")] string? name = null)
-        {
-            if (source.Length == destination.Length)
-                return;
-
-            Throw.ArgumentExceptionForHasSizeEqualTo(source, destination, name);
-        }
-
-        /// <summary>
-        /// Asserts that the source <see cref="string"/> instance must have a size of less than or equal to that of a destination <see cref="string"/> instance.
-        /// </summary>
-        /// <param name="source">The source <see cref="string"/> instance to check the size for.</param>
-        /// <param name="destination">The destination <see cref="string"/> instance to check the size for.</param>
-        /// <param name="name">The name of the input parameter being tested.</param>
-        /// <exception cref="ArgumentException">Thrown if the size of <paramref name="source"/> is > the one of <paramref name="destination"/>.</exception>
-        /// <remarks>The <see cref="string"/> type is immutable, but the name of this API is kept for consistency with the other overloads.</remarks>
-        [Obsolete]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void HasSizeLessThanOrEqualTo(string source, string destination, [CallerArgumentExpression("source")] string? name = null)
-        {
-            if (source.Length <= destination.Length)
-                return;
-
-            Throw.ArgumentExceptionForHasSizeLessThanOrEqualTo(source, destination, name);
         }
 
         /// <summary>
