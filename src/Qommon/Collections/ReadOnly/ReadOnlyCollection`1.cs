@@ -4,6 +4,10 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly;
 
+/// <summary>
+///     Represents a read-only wrapper over a collection.
+/// </summary>
+/// <typeparam name="T"> The type of the items. </typeparam>
 public class ReadOnlyCollection<T> : ProxiedCollection<T>
 {
     public static readonly IReadOnlyCollection<T> Empty = Array.Empty<T>().ReadOnly();
@@ -11,6 +15,10 @@ public class ReadOnlyCollection<T> : ProxiedCollection<T>
     /// <inheritdoc/>
     public override bool IsReadOnly => true;
 
+    /// <summary>
+    ///     Instantiates a new <see cref="ReadOnlyCollection{T}"/> wrapping the provided collection.
+    /// </summary>
+    /// <param name="collection"> The collection to wrap. </param>
     public ReadOnlyCollection(ICollection<T> collection)
         : base(collection)
     { }

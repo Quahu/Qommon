@@ -4,6 +4,10 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly;
 
+/// <summary>
+///     Represents a read-only wrapper over a set.
+/// </summary>
+/// <typeparam name="T"> The type of the items. </typeparam>
 public class ReadOnlySet<T> : ProxiedSet<T>
 {
     public static readonly IReadOnlySet<T> Empty = new HashSet<T>(0).ReadOnly();
@@ -11,6 +15,10 @@ public class ReadOnlySet<T> : ProxiedSet<T>
     /// <inheritdoc/>
     public override bool IsReadOnly => true;
 
+    /// <summary>
+    ///     Instantiates a new <see cref="ReadOnlySet{T}"/> wrapping the provided set.
+    /// </summary>
+    /// <param name="set"> The set to wrap. </param>
     public ReadOnlySet(ISet<T> set)
         : base(set)
     { }

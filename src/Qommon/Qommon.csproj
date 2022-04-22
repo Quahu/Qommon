@@ -40,12 +40,12 @@
             <LastGenOutput>Guard.Comparable.Numeric.Generated.cs</LastGenOutput>
         </None>
         <None Update="Guard\Generated\TypeInfo.ttinclude">
-          <Generator>TextTemplatingFileGenerator</Generator>
-          <LastGenOutput>TypeInfo.Generated.cs</LastGenOutput>
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>TypeInfo.Generated.cs</LastGenOutput>
         </None>
         <None Update="Guard\Generated\Guard.Collection.tt">
-          <Generator>TextTemplatingFileGenerator</Generator>
-          <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>Guard.Collection.Generated.cs</LastGenOutput>
         </None>
     </ItemGroup>
     <ItemGroup>
@@ -60,9 +60,9 @@
             <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
         </Compile>
         <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
-          <AutoGen>True</AutoGen>
-          <DesignTime>True</DesignTime>
-          <DependentUpon>Guard.Collection.tt</DependentUpon>
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Guard.Collection.tt</DependentUpon>
         </Compile>
     </ItemGroup>
 

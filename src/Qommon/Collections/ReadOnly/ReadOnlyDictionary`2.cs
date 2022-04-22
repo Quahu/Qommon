@@ -4,6 +4,11 @@ using Qommon.Collections.Proxied;
 
 namespace Qommon.Collections.ReadOnly;
 
+/// <summary>
+///     Represents a read-only wrapper over a dictionary.
+/// </summary>
+/// <typeparam name="TKey"> The type of the keys. </typeparam>
+/// <typeparam name="TValue"> The type of the values. </typeparam>
 public class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
     where TKey : notnull
 {
@@ -25,6 +30,10 @@ public class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
         set => throw new NotSupportedException();
     }
 
+    /// <summary>
+    ///     Instantiates a new <see cref="ReadOnlyDictionary{TKey,TValue}"/> wrapping the provided dictionary.
+    /// </summary>
+    /// <param name="dictionary"> The dictionary to wrap. </param>
     public ReadOnlyDictionary(IDictionary<TKey, TValue> dictionary)
         : base(dictionary)
     { }
