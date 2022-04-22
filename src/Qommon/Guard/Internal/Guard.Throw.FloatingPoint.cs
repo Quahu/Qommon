@@ -1,17 +1,16 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Qommon
+namespace Qommon;
+
+public static partial class Guard
 {
-    public static partial class Guard
+    private static partial class Throw
     {
-        private static partial class Throw
+        [DoesNotReturn]
+        public static void ArgumentExceptionForIsFinite(double value, string? name)
         {
-            [DoesNotReturn]
-            public static void ArgumentExceptionForIsFinite(double value, string? name)
-            {
-                throw new ArgumentException($"Parameter {GetNameString(name)} must be finite, was {GetValueString(value)}.", name);
-            }
+            throw new ArgumentException($"Parameter {GetNameString(name)} must be finite, was {GetValueString(value)}.", name);
         }
     }
 }

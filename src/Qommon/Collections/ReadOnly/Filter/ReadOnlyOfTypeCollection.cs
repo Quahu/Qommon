@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Qommon.Collections
+namespace Qommon.Collections;
+
+public class ReadOnlyOfTypeCollection<TOriginal, TNew> : IReadOnlyCollection<TNew>
 {
-    public class ReadOnlyOfTypeCollection<TOriginal, TNew> : IReadOnlyCollection<TNew>
+    public int Count => this.Count();
+
+    private readonly ICollection<TOriginal> _collection;
+
+    public ReadOnlyOfTypeCollection(ICollection<TOriginal> collection)
     {
-        public int Count => this.Count();
-
-        private readonly ICollection<TOriginal> _collection;
-
-        public ReadOnlyOfTypeCollection(ICollection<TOriginal> collection)
-        {
-            _collection = collection;
-        }
-
-        public IEnumerator<TNew> GetEnumerator()
-        {
-            foreach (var value in _collection)
-            {
-                if (value is TNew newValue)
-                    yield return newValue;
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
+        _collection = collection;
     }
+
+    public IEnumerator<TNew> GetEnumerator()
+    {
+        foreach (var value in _collection)
+        {
+            if (value is TNew newValue)
+                yield return newValue;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+        => GetEnumerator();
 }

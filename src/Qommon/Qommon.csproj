@@ -33,7 +33,7 @@
     <ItemGroup>
         <None Update="Guard\Generated\Guard.Throw.Collection.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
-            <LastGenOutput>Throw.Collection.Generated.cs</LastGenOutput>
+            <LastGenOutput>Guard.Throw.Collection.Generated.cs</LastGenOutput>
         </None>
         <None Update="Guard\Generated\Guard.Comparable.Numeric.tt">
             <Generator>TextTemplatingFileGenerator</Generator>
@@ -50,9 +50,13 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Update="Guard\Generated\Guard.Throw.Collection.Generated.cs">
-            <DependentUpon>Throw.Collection.tt</DependentUpon>
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Guard.Throw.Collection.tt</DependentUpon>
         </Compile>
         <Compile Update="Guard\Generated\Guard.Comparable.Numeric.Generated.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
             <DependentUpon>Guard.Comparable.Numeric.tt</DependentUpon>
         </Compile>
         <Compile Update="Guard\Generated\Guard.Collection.Generated.cs">
