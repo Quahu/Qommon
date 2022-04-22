@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using Serilog;
 using Serilog.Extensions.Logging;
@@ -10,9 +11,11 @@ namespace Qommon.Tests
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public abstract unsafe class QommonFixture
     {
-        protected ILogger? Logger;
+        protected ILogger Logger = null!;
 
-        protected TestContext? _context;
+        protected TestContext _context = null!;
+
+        protected Random Random => _context.Random;
 
         protected static readonly ILoggerFactory LoggerFactory;
 
