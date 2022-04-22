@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using Qommon.Collections.ReadOnly;
 
-namespace Qommon.Collections;
+namespace Qommon.Collections.ReadOnly;
 
 [EditorBrowsable(EditorBrowsableState.Never)]
 public static class ReadOnlyCollectionExtensions
