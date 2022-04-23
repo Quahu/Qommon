@@ -351,7 +351,7 @@ namespace Qommon.Collections
 
         public void RemoveAt(int index)
         {
-            Guard.IsGreaterThanOrEqualTo(index, _size);
+            Guard.IsLessThan(index, _size);
 
             _size--;
             if (index < _size)
