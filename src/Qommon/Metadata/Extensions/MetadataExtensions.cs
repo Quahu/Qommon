@@ -264,11 +264,10 @@ public static class MetadataExtensions
 
     /// <summary>
     ///     Enumerates the metadata items.
-    ///     Returns an empty enumerable if the metadata dictionary is <see langword="null"/>.
     /// </summary>
     /// <param name="metadata"> The metadata object. </param>
     /// <returns>
-    ///     An enumerable of metadata items.
+    ///     An enumerable of metadata items or an empty enumerable if the metadata dictionary is <see langword="null"/>.
     /// </returns>
     public static IEnumerable<KeyValuePair<string, object?>> EnumerateMetadata(this IMetadata metadata)
     {
@@ -283,12 +282,11 @@ public static class MetadataExtensions
 
     /// <summary>
     ///     Puts the metadata items into a separate dictionary.
-    ///     Returns an empty dictionary if the metadata dictionary is <see langword="null"/>.
     /// </summary>
     /// <param name="metadata"> The metadata object. </param>
     /// <param name="comparer"> The comparer for the dictionary to use. </param>
     /// <returns>
-    ///     A dictionary of metadata items.
+    ///     A dictionary of metadata items or an empty dictionary if the metadata dictionary is <see langword="null"/>.
     /// </returns>
     public static Dictionary<string, object?> ToMetadataDictionary(this IMetadata metadata, IEqualityComparer<string>? comparer = null)
     {
@@ -302,20 +300,69 @@ public static class MetadataExtensions
     }
 
     /// <summary>
+    ///     Copies metadata items from this metadata to another.
+    /// </summary>
+    /// <remarks>
+    ///     If this metadata is synchronized the target's metadata items get synchronized as well.
+    /// </remarks>
+    /// <param name="metadata"> The metadata object. </param>
+    /// <param name="target"> The target metadata object. </param>
+    public static void CopyMetadataTo(this IMetadata metadata, IMetadata target)
+    {
+        Guard.IsNotNull(metadata);
+        Guard.IsNotNull(target);
+
+        var dictionary = target.EnsureMetadataDictionaryExists();
+        metadata.CopyMetadataTo(dictionary);
+    }
+
+    /// <summary>
+    ///     Copies metadata items from this metadata to another.
+    /// </summary>
+    /// <remarks>
+    ///     If this metadata is synchronized the target's metadata items get synchronized as well.
+    /// </remarks>
+    /// <param name="metadata"> The metadata object. </param>
+    /// <param name="target"> The target metadata object. </param>
+    public static void CopyMetadataTo(this IMetadata metadata, IDictionary<string, object?> target)
+    {
+        Guard.IsNotNull(metadata);
+        Guard.IsNotNull(target);
+
+        var items = metadata.Metadata as IEnumerable<KeyValuePair<string, object?>>;
+        if (items == null)
+            return;
+
+        if (items is ISynchronizedDictionary<string, object?> synchronizedDictionary)
+            items = synchronizedDictionary.ToArray();
+
+        foreach (var (key, value) in items)
+        {
+            target[key] = value;
+        }
+    }
+
+    /// <summary>
     ///     Ensures that this metadata has a dictionary set.
     /// </summary>
     /// <param name="metadata"> The metadata object. </param>
     /// <returns>
     ///     A dictionary of metadata items.
     /// </returns>
-    public static void EnsureMetadataDictionaryExists(this IMetadata metadata)
+    public static IDictionary<string, object?> EnsureMetadataDictionaryExists(this IMetadata metadata)
     {
         Guard.IsNotNull(metadata);
 
-        if (metadata.Metadata != null)
-            return;
+        var dictionary = metadata.Metadata;
+        if (dictionary != null)
+            return dictionary;
 
-        metadata.Metadata = new Dictionary<string, object?>();
+        if (metadata is ISynchronizedMetadata)
+            return metadata.EnsureSynchronizedMetadataDictionaryExists();
+
+        dictionary = new Dictionary<string, object?>();
+        metadata.Metadata = dictionary;
+        return dictionary;
     }
 
     /// <summary>
@@ -325,25 +372,26 @@ public static class MetadataExtensions
     /// <returns>
     ///     A dictionary of metadata items.
     /// </returns>
-    public static void EnsureSynchronizedMetadataDictionaryExists(this IMetadata metadata)
+    public static ISynchronizedDictionary<string, object?> EnsureSynchronizedMetadataDictionaryExists(this IMetadata metadata)
     {
         Guard.IsNotNull(metadata);
 
+        ISynchronizedDictionary<string, object?> synchronizedDictionary;
         var dictionary = metadata.Metadata;
         if (dictionary != null)
         {
-            // I assume read-only means no synchronization necessary.
-            if (dictionary.IsReadOnly)
-                return;
-
             // The dictionary is already synchronized.
-            if (dictionary is ISynchronizedDictionary<string, object?>)
-                return;
+            if (dictionary is ISynchronizedDictionary<string, object?> existingSynchronizedDictionary)
+                return existingSynchronizedDictionary;
 
-            metadata.Metadata = dictionary.Synchronized();
-            return;
+            synchronizedDictionary = dictionary.Synchronized();
+        }
+        else
+        {
+            synchronizedDictionary = new SynchronizedDictionary<string, object?>();
         }
 
-        metadata.Metadata = new SynchronizedDictionary<string, object?>();
+        metadata.Metadata = synchronizedDictionary;
+        return synchronizedDictionary;
     }
 }
