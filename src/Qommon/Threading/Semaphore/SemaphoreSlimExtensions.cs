@@ -70,7 +70,7 @@ public static class SemaphoreSlimExtensions
         /// </summary>
         public void Dispose()
         {
-            _semaphore?.Dispose();
+            _semaphore?.Release();
             _semaphore = null;
         }
     }
