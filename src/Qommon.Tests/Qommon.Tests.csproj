@@ -14,17 +14,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
-        <PackageReference Include="NUnit" Version="3.13.2" />
-        <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
-        <PackageReference Include="coverlet.collector" Version="3.0.3" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0"/>
+        <PackageReference Include="NUnit" Version="3.13.3"/>
+        <PackageReference Include="NUnit3TestAdapter" Version="4.2.1"/>
+        <PackageReference Include="coverlet.collector" Version="3.1.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
 
-        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
-        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.2-dev-00890" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0"/>
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.2-dev-00890"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Qommon\Qommon.csproj" />
+        <ProjectReference Include="..\Qommon\Qommon.csproj"/>
     </ItemGroup>
 
 </Project>
