@@ -5,9 +5,14 @@ See:
 - [Disqord](https://github.com/Quahu/Disqord)
 - [Qmmands](https://github.com/Quahu/Qmmands)
 
-### Copyright Note
-Contains code based off of [Microsoft.Toolkit.Diagnostics](https://github.com/CommunityToolkit/WindowsCommunityToolkit/tree/main/Microsoft.Toolkit.Diagnostics), specifically code related to the `Throw` (originally `ThrowHelper`) and `Guard` types.
+### Copyright Notes
+- Contains code based off of [CommunityToolkit.Diagnostics](https://github.com/CommunityToolkit/dotnet/tree/main/CommunityToolkit.Diagnostics), specifically code related to the `Throw` (originally `ThrowHelper`) and `Guard` types.
 
-> Copyright © .NET Foundation and Contributors
+  > Copyright © .NET Foundation and Contributors
 
-[Original License](https://github.com/CommunityToolkit/WindowsCommunityToolkit/blob/main/License.md)
+  [Original License](https://github.com/CommunityToolkit/dotnet/blob/main/License.md)
+- Contains code based off of [Microsoft.Extensions.ObjectPool](https://github.com/dotnet/aspnetcore/tree/main/src/ObjectPool), specifically code related to the `ObjectPool<T>` type.
+  
+  > Copyright (c) .NET Foundation and Contributors
+
+  [Original License](https://github.com/dotnet/aspnetcore/blob/main/LICENSE.txt)
