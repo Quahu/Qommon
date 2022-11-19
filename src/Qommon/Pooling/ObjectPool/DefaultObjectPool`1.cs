@@ -61,16 +61,23 @@ public class DefaultObjectPool<T> : ObjectPool<T>
     }
 
     /// <inheritdoc/>
-    public override void Return(T obj)
+    public override bool Return(T obj)
     {
         if (!_isDefaultPolicy && !_policy.OnReturn(obj))
-            return;
+            return false;
 
-        if (_fastObject != null || Interlocked.CompareExchange(ref _fastObject, obj, null) != null)
+        var returnedToPool = false;
+        if (_fastObject == null && Interlocked.CompareExchange(ref _fastObject, obj, null) == null)
+        {
+            returnedToPool = true;
+        }
+        else
         {
             var slowObjects = _slowObjects;
-            for (var i = 0; i < slowObjects.Length && Interlocked.CompareExchange(ref slowObjects[i].Value, obj, null) != null; i++)
+            for (var i = 0; i < slowObjects.Length && !(returnedToPool = Interlocked.CompareExchange(ref slowObjects[i].Value, obj, null) == null); i++)
             { }
         }
+
+        return returnedToPool;
     }
 }

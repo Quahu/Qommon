@@ -36,32 +36,15 @@ public class DisposableObjectPool<T> : DefaultObjectPool<T>, IDisposable
     }
 
     /// <inheritdoc/>
-    public override void Return(T obj)
+    public override bool Return(T obj)
     {
-        if (_isDisposed || !ReturnCore(obj))
+        if (_isDisposed || !base.Return(obj))
         {
             DisposeObject(obj);
-        }
-    }
-
-    private bool ReturnCore(T obj)
-    {
-        if (!_isDefaultPolicy && !_policy.OnReturn(obj))
             return false;
-
-        var returnedToPool = false;
-        if (_fastObject == null && Interlocked.CompareExchange(ref _fastObject, obj, null) == null)
-        {
-            returnedToPool = true;
-        }
-        else
-        {
-            var slowObjects = _slowObjects;
-            for (var i = 0; i < slowObjects.Length && !(returnedToPool = Interlocked.CompareExchange(ref slowObjects[i].Value, obj, null) == null); i++)
-            { }
         }
 
-        return returnedToPool;
+        return true;
     }
 
     /// <summary>

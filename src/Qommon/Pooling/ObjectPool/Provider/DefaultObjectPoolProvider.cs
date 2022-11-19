@@ -20,6 +20,9 @@ namespace Qommon.Pooling;
 ///         RuntimeDisposal.Dispose(pool);
 ///         </code>
 ///     </example>
+///     <para/>
+///     <see cref="CreateDisposablePools"/> can be set to <see langword="false"/> to prevent possibly unexpected disposals
+///     of the pooled objects, however you should then ensure you dispose of those objects yourself.
 /// </remarks>
 public class DefaultObjectPoolProvider : ObjectPoolProvider
 {
@@ -27,15 +30,26 @@ public class DefaultObjectPoolProvider : ObjectPoolProvider
     ///     Gets or sets the capacity of the created object pools,
     ///     i.e. the amount of objects to be retained.
     /// </summary>
-    public int Capacity { get; set; }
+    /// <remarks>
+    ///     Defaults to twice the amount of logical processors
+    ///     the host machine is using.
+    /// </remarks>
+    public int Capacity { get; set; } = Environment.ProcessorCount * 2;
+
+    /// <summary>
+    ///     Gets or sets whether this provider should create specialized disposable instances.
+    ///     See remarks of this type for details.
+    /// </summary>
+    /// <remarks>
+    ///     Defaults to <see langword="true"/>.
+    /// </remarks>
+    public bool CreateDisposablePools { get; set; } = true;
 
     /// <summary>
     ///     Instantiates a new object pool provider.
     /// </summary>
     public DefaultObjectPoolProvider()
-    {
-        Capacity = Environment.ProcessorCount * 2;
-    }
+    { }
 
     /// <inheritdoc/>
     public override ObjectPool<T> Create<T>(PooledObjectPolicy<T> policy)
@@ -43,7 +57,7 @@ public class DefaultObjectPoolProvider : ObjectPoolProvider
     {
         Guard.IsNotNull(policy);
 
-        if (typeof(IDisposable).IsAssignableFrom(typeof(T)))
+        if (CreateDisposablePools && typeof(IDisposable).IsAssignableFrom(typeof(T)))
         {
             return new DisposableObjectPool<T>(policy, Capacity);
         }

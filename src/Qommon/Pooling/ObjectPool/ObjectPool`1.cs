@@ -17,5 +17,8 @@ public abstract class ObjectPool<T>
     ///     Returns a rented object back to this pool.
     /// </summary>
     /// <param name="obj"> The rented object. </param>
-    public abstract void Return(T obj);
+    /// <returns>
+    ///     <see langword="true"/> if the object was returned to the pool.
+    /// </returns>
+    public abstract bool Return(T obj);
 }
