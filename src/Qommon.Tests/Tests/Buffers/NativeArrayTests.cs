@@ -1,4 +1,3 @@
-#if NET6_0_OR_GREATER
 using NUnit.Framework;
 using Qommon.Buffers;
 
@@ -17,4 +16,3 @@ public class NativeArrayTests : QommonFixture
         }
     }
 }
-#endif

@@ -1,4 +1,3 @@
-#if NET6_0_OR_GREATER
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -334,4 +333,3 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
         throw new NotSupportedException();
     }
 }
-#endif

@@ -9,7 +9,7 @@ using ILogger = Microsoft.Extensions.Logging.ILogger;
 namespace Qommon.Tests;
 
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-public abstract unsafe class QommonFixture
+public abstract class QommonFixture
 {
     protected ILogger Logger = null!;
 

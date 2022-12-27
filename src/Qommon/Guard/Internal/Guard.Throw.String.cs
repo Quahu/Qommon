@@ -56,14 +56,6 @@ public static partial class Guard
             => throw new ArgumentException($"Parameter {GetNameString(name)} (string) must have a size less than or equal to {size}, had a size of {text.Length} and was {GetValueString(text)}.", name);
 
         [DoesNotReturn]
-        public static void ArgumentExceptionForHasSizeEqualTo(string source, string destination, string? name)
-            => throw new ArgumentException($"The source {GetNameString(name)} (string) must have a size equal to {GetValueString(destination.Length)} (the destination), had a size of {GetValueString(source.Length)}.", name);
-
-        [DoesNotReturn]
-        public static void ArgumentExceptionForHasSizeLessThanOrEqualTo(string source, string destination, string? name)
-            => throw new ArgumentException($"The source {GetNameString(name)} (string) must have a size less than or equal to {GetValueString(destination.Length)} (the destination), had a size of {GetValueString(source.Length)}.", name);
-
-        [DoesNotReturn]
         public static void ArgumentOutOfRangeExceptionForIsInRangeFor(int index, string text, string? name)
             => throw new ArgumentOutOfRangeException(name, index, $"Parameter {GetNameString(name)} (int) must be in the range given by <0> and {GetValueString(text.Length)} to be a valid index for the target string, was {GetValueString(index)}.");
 

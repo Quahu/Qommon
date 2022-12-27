@@ -48,15 +48,15 @@ public static class ListExtensions
         }
     }
 
-#if NET6_0_OR_GREATER
-        /// <summary>
-        ///     Shuffles the items of this list.
-        /// </summary>
-        /// <param name="list"> The list to shuffle. </param>
-        /// <typeparam name="T"> The type of the list items. </typeparam>
-        public static void Shuffle<T>(this IList<T> list)
-            => list.Shuffle(Random.Shared);
-#endif
+    /// <summary>
+    ///     Shuffles the items of this list.
+    /// </summary>
+    /// <param name="list"> The list to shuffle. </param>
+    /// <typeparam name="T"> The type of the list items. </typeparam>
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        list.Shuffle(Random.Shared);
+    }
 
     /// <summary>
     ///     Shuffles the items of this list using the specified <see cref="Random"/> instance.

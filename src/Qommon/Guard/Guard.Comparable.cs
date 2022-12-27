@@ -135,7 +135,7 @@ public static partial class Guard
     /// </exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void IsGreaterThan<T>(T value, T? minimum, [CallerArgumentExpression("value")] string? name = null)
-        where T : notnull, IComparable<T>
+        where T : IComparable<T>
     {
         if (value.CompareTo(minimum) > 0)
             return;

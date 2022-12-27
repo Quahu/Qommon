@@ -1,4 +1,3 @@
-#if NET6_0_OR_GREATER
 using System;
 using System.Buffers;
 using System.Runtime.InteropServices;
@@ -77,4 +76,3 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
         _ptr = null;
     }
 }
-#endif
