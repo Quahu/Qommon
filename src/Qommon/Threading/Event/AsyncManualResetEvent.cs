@@ -86,25 +86,32 @@ public sealed class AsyncManualResetEvent
     /// <summary>
     ///     Sets this event to the signaled state.
     /// </summary>
-    public void Set()
+    /// <returns>
+    ///     <see langword="true"/> if this event was in the unsignaled state.
+    /// </returns>
+    public bool Set()
     {
         lock (this)
         {
-            _tcs.TrySetResult();
+            return _tcs.TrySetResult();
         }
     }
 
     /// <summary>
     ///     Resets this event back to the unsignaled state.
     /// </summary>
-    public void Reset()
+    /// <returns>
+    ///     <see langword="true"/> if this event was in the signaled state.
+    /// </returns>
+    public bool Reset()
     {
         lock (this)
         {
             if (!_tcs.Task.IsCompleted)
-                return;
+                return false;
 
             _tcs = CreateTcs();
+            return true;
         }
     }
 }
