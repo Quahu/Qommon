@@ -55,11 +55,25 @@ public sealed class AsyncManualResetEvent
     /// <summary>
     ///     Asynchronously waits for this event to be signaled.
     /// </summary>
+    /// <returns>
+    ///     A <see cref="Task"/> that will complete when this event is signaled.
+    /// </returns>
+    public Task WaitAsync()
+    {
+        lock (this)
+        {
+            return _tcs.Task;
+        }
+    }
+
+    /// <summary>
+    ///     Asynchronously waits for this event to be signaled.
+    /// </summary>
     /// <param name="cancellationToken"> The cancellation token to observe. </param>
     /// <returns>
     ///     A <see cref="Task"/> that will complete when this event is signaled.
     /// </returns>
-    public Task WaitAsync(CancellationToken cancellationToken = default)
+    public Task WaitAsync(CancellationToken cancellationToken)
     {
         lock (this)
         {
@@ -71,11 +85,26 @@ public sealed class AsyncManualResetEvent
     ///     Asynchronously waits for this event to be signaled.
     /// </summary>
     /// <param name="timeout"> The timeout after which the task should be faulted with a <see cref="TimeoutException"/>. </param>
+    /// <returns>
+    ///     A <see cref="Task"/> that will complete when this event is signaled.
+    /// </returns>
+    public Task WaitAsync(TimeSpan timeout)
+    {
+        lock (this)
+        {
+            return _tcs.Task.WaitAsync(timeout);
+        }
+    }
+
+    /// <summary>
+    ///     Asynchronously waits for this event to be signaled.
+    /// </summary>
+    /// <param name="timeout"> The timeout after which the task should be faulted with a <see cref="TimeoutException"/>. </param>
     /// <param name="cancellationToken"> The cancellation token to observe. </param>
     /// <returns>
     ///     A <see cref="Task"/> that will complete when this event is signaled.
     /// </returns>
-    public Task WaitAsync(TimeSpan timeout, CancellationToken cancellationToken = default)
+    public Task WaitAsync(TimeSpan timeout, CancellationToken cancellationToken)
     {
         lock (this)
         {
