@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -11,7 +12,11 @@ namespace Qommon.Buffers;
 ///     Represents an array over unmanaged memory.
 /// </summary>
 /// <typeparam name="T"> The unmanaged type of elements. </typeparam>
-public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisposable
+[DebuggerTypeProxy(typeof(NativeArrayDebuggerProxy<>))]
+[DebuggerDisplay("{ToString(),raw}")]
+public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
+    IEquatable<NativeArray<T>>,
+    IDisposable
     where T : unmanaged
 {
     /// <summary>
@@ -105,10 +110,14 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
     ///     The reinterpreted array.
     /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public NativeArray<TTarget> Cast<TTarget>()
+    public unsafe NativeArray<TTarget> Cast<TTarget>()
         where TTarget : unmanaged
     {
-        return new NativeArray<TTarget>(_ptr, _length);
+        var oldLength = _length;
+        var oldSize = sizeof(T);
+        var newSize = sizeof(TTarget);
+        var newLength = oldLength * oldSize / newSize;
+        return new NativeArray<TTarget>(_ptr, newLength);
     }
 
     /// <summary>
@@ -123,7 +132,31 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
         return Span.ToArray();
     }
 
-    /// <inheritdoc />
+    /// <inheritdoc/>
+    public override string ToString()
+    {
+        return $"Qommon.Buffers.NativeArray<{typeof(T).Name}>[{_length}]";
+    }
+
+    /// <inheritdoc/>
+    public bool Equals(NativeArray<T> other)
+    {
+        return _ptr == other._ptr && _length == other._length;
+    }
+
+    /// <inheritdoc/>
+    public override bool Equals(object? obj)
+    {
+        return obj is NativeArray<T> other && Equals(other);
+    }
+
+    /// <inheritdoc/>
+    public override int GetHashCode()
+    {
+        return _ptr.GetHashCode();
+    }
+
+    /// <inheritdoc/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void Dispose()
     {
@@ -136,14 +169,14 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
     /// </summary>
     public struct Enumerator : IEnumerator<T>
     {
-        /// <inheritdoc />
+        /// <inheritdoc/>
         public readonly T Current
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => _array.Span[_index];
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         readonly object IEnumerator.Current
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -160,7 +193,7 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
             _index = -1;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool MoveNext()
         {
@@ -174,14 +207,14 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
             return false;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Reset()
         {
             _index = -1;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc/>
         readonly void IDisposable.Dispose()
         { }
     }
@@ -217,7 +250,9 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
     /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static implicit operator Span<T>(NativeArray<T> array)
-        => array.Span;
+    {
+        return array.Span;
+    }
 
     /// <summary>
     ///     Implicitly converts this <see cref="NativeArray{T}"/> to a span.
@@ -228,7 +263,19 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>, IDisp
     /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static implicit operator ReadOnlySpan<T>(NativeArray<T> array)
-        => array.Span;
+    {
+        return array.Span;
+    }
+
+    public static bool operator ==(NativeArray<T> left, NativeArray<T> right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(NativeArray<T> left, NativeArray<T> right)
+    {
+        return !left.Equals(right);
+    }
 
     int ICollection<T>.Count => _length;
 
