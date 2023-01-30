@@ -2,7 +2,9 @@
 using System.Buffers;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Qommon.Buffers;
 
 namespace Qommon.Pooling;
 
@@ -13,6 +15,8 @@ namespace Qommon.Pooling;
 ///     Does not perform any validation checks on the underlying array nor on the pool.
 /// </remarks>
 /// <typeparam name="T"> The type of the elements in the array. </typeparam>
+[DebuggerTypeProxy(typeof(RentedArrayDebuggerProxy<>))]
+[DebuggerDisplay("{ToString(),raw}")]
 public readonly partial struct RentedArray<T> : IList<T>, IReadOnlyList<T>, IDisposable
 {
     private readonly ArraySegment<T> _segment;
@@ -28,9 +32,17 @@ public readonly partial struct RentedArray<T> : IList<T>, IReadOnlyList<T>, IDis
         _clearArray = clearArray;
     }
 
+    /// <inheritdoc/>
+    public override string ToString()
+    {
+        return $"Qommon.Pooling.RentedArray<{typeof(T).Name}>[{Length}]";
+    }
+
     [EditorBrowsable(EditorBrowsableState.Never)]
     public ref T GetPinnableReference()
-        => ref _segment.AsSpan().GetPinnableReference();
+    {
+        return ref _segment.AsSpan().GetPinnableReference();
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Dispose()

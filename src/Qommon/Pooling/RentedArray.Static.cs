@@ -8,7 +8,9 @@ public readonly partial struct RentedArray<T>
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static RentedArray<T> Rent(int length, bool clearArray = false)
-        => Rent(length, ArrayPool<T>.Shared, clearArray);
+    {
+        return Rent(length, ArrayPool<T>.Shared, clearArray);
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static RentedArray<T> Rent(int length, ArrayPool<T> pool, bool clearArray = false)
