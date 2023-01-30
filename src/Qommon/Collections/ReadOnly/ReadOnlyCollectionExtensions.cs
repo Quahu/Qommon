@@ -20,7 +20,9 @@ public static class ReadOnlyCollectionExtensions
     ///     A read-only collection wrapper.
     /// </returns>
     public static IReadOnlyCollection<T> ReadOnly<T>(this ICollection<T> collection)
-        => new ReadOnlyCollection<T>(collection);
+    {
+        return new ReadOnlyCollection<T>(collection);
+    }
 
     /// <summary>
     ///     Wraps this list in a <see cref="ReadOnlyList{T}"/> which prevents its modification.
@@ -31,7 +33,9 @@ public static class ReadOnlyCollectionExtensions
     ///     A read-only list wrapper.
     /// </returns>
     public static IReadOnlyList<T> ReadOnly<T>(this IList<T> list)
-        => new ReadOnlyList<T>(list);
+    {
+        return new ReadOnlyList<T>(list);
+    }
 
     /// <summary>
     ///     Wraps this dictionary in a <see cref="ReadOnlyDictionary{TKey,TValue}"/> which prevents its modification.
@@ -44,7 +48,9 @@ public static class ReadOnlyCollectionExtensions
     /// </returns>
     public static IReadOnlyDictionary<TKey, TValue> ReadOnly<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
         where TKey : notnull
-        => new ReadOnlyDictionary<TKey, TValue>(dictionary);
+    {
+        return new ReadOnlyDictionary<TKey, TValue>(dictionary);
+    }
 
     /// <summary>
     ///     Wraps this list in a <see cref="ReadOnlySet{T}"/> which prevents its modification.
@@ -55,7 +61,9 @@ public static class ReadOnlyCollectionExtensions
     ///     A read-only set wrapper.
     /// </returns>
     public static IReadOnlySet<T> ReadOnly<T>(this ISet<T> set)
-        => new ReadOnlySet<T>(set);
+    {
+        return new ReadOnlySet<T>(set);
+    }
 
     /// <summary>
     ///     Copies the items of this enumerable into a new <see cref="ReadOnlyList{T}"/>.
@@ -66,7 +74,9 @@ public static class ReadOnlyCollectionExtensions
     ///     A read-only list.
     /// </returns>
     public static IReadOnlyList<T> ToReadOnlyList<T>(this IEnumerable<T> source)
-        => source.ToArray().ReadOnly();
+    {
+        return source.ToArray().ReadOnly();
+    }
 
     /// <summary>
     ///     Copies the items of this list into a new <see cref="ReadOnlyList{T}"/>.
@@ -225,5 +235,7 @@ public static class ReadOnlyCollectionExtensions
     ///     A read-only set.
     /// </returns>
     public static IReadOnlySet<T> ToReadOnlyHashSet<T>(this IEnumerable<T> source)
-        => source.ToHashSet().ReadOnly();
+    {
+        return source.ToHashSet().ReadOnly();
+    }
 }

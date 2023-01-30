@@ -10,7 +10,10 @@ namespace Qommon.Collections.ReadOnly;
 /// <typeparam name="T"> The type of the items. </typeparam>
 public class ReadOnlySet<T> : ProxiedSet<T>
 {
-    public static readonly IReadOnlySet<T> Empty = new HashSet<T>(0).ReadOnly();
+    /// <summary>
+    ///     Gets a singleton empty instance of this type.
+    /// </summary>
+    public static IReadOnlySet<T> Empty => EmptyReadOnlyInstances.Set<T>.Instance;
 
     /// <inheritdoc/>
     public override bool IsReadOnly => true;

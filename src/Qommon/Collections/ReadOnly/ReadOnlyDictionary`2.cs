@@ -12,7 +12,10 @@ namespace Qommon.Collections.ReadOnly;
 public class ReadOnlyDictionary<TKey, TValue> : ProxiedDictionary<TKey, TValue>
     where TKey : notnull
 {
-    public static readonly IReadOnlyDictionary<TKey, TValue> Empty = new Dictionary<TKey, TValue>(0).ReadOnly();
+    /// <summary>
+    ///     Gets a singleton empty instance of this type.
+    /// </summary>
+    public static IReadOnlyDictionary<TKey, TValue> Empty => EmptyReadOnlyInstances.Dictionary<TKey, TValue>.Instance;
 
     /// <inheritdoc/>
     public override bool IsReadOnly => true;
