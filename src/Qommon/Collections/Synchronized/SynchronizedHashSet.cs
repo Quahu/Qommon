@@ -27,7 +27,7 @@ public sealed class SynchronizedHashSet<T> : ProxiedSet<T>
 
     public SynchronizedHashSet(int capacity = 0, IEqualityComparer<T>? comparer = null)
     {
-        _hashSet = new HashSet<T>(capacity);
+        _hashSet = new HashSet<T>(capacity, comparer);
     }
 
     public SynchronizedHashSet(IEnumerable<T> collection)
