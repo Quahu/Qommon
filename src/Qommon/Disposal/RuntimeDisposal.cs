@@ -53,7 +53,9 @@ public static class RuntimeDisposal
     ///     The <see cref="RuntimeAsyncDisposable"/> wrapping the instance.
     /// </returns>
     public static RuntimeAsyncDisposable WrapAsync(object? instance, bool disposeBoth = false)
-        => new(instance, disposeBoth);
+    {
+        return new(instance, disposeBoth);
+    }
 
     /// <summary>
     ///     Wraps the specified instance in a <see cref="RuntimeDisposable"/>.
@@ -66,7 +68,9 @@ public static class RuntimeDisposal
     ///     The <see cref="RuntimeDisposable"/> wrapping the instance.
     /// </returns>
     public static RuntimeDisposable Wrap(object? instance)
-        => new(instance);
+    {
+        return new(instance);
+    }
 
     /// <summary>
     ///     Represents an <see cref="IAsyncDisposable"/> that will call <see cref="RuntimeDisposal.DisposeAsync"/> upon disposal.

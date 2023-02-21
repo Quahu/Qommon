@@ -3,8 +3,8 @@
 namespace Qommon.Collections.Proxied;
 
 /// <summary>
-///     Represents an implementation of <see cref="IList{T}"/> and <see cref="IReadOnlyList{T}"/>
-///     by wrapping an <see cref="IList{T}"/> with virtual implementations making overriding individual members very simple.
+///     Represents an implementation of <see cref="ISet{T}"/> and <see cref="IReadOnlySet{T}"/>
+///     by wrapping an <see cref="ISet{T}"/> with virtual implementations making overriding individual members very simple.
 /// </summary>
 /// <typeparam name="T"> The type of values in the list. </typeparam>
 public class ProxiedSet<T> : ProxiedCollection<T>,

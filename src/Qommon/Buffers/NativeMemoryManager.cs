@@ -11,7 +11,7 @@ namespace Qommon.Buffers;
 public unsafe class NativeMemoryManager<T> : MemoryManager<T>
     where T : unmanaged
 {
-    /// <inheritdoc />
+    /// <inheritdoc/>
     public override Memory<T> Memory => CreateMemory(_elementCount);
 
     private void* _ptr;
@@ -45,7 +45,7 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
         _elementCount = (int) elementCount;
     }
 
-    /// <inheritdoc />
+    /// <inheritdoc/>
     public override Span<T> GetSpan()
     {
         return new(_ptr, _elementCount);

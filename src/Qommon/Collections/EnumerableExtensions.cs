@@ -38,13 +38,12 @@ public static class EnumerableExtensions
     /// </returns>
     public static object[] GetArray(this IEnumerable? source)
     {
-        if (source == null)
-            return Array.Empty<object>();
-
-        if (source is IEnumerable<object> genericSource)
-            return genericSource.GetArray();
-
-        return source.Cast<object>().GetArray();
+        return source switch
+        {
+            null => Array.Empty<object>(),
+            IEnumerable<object> enumerable => enumerable.GetArray(),
+            _ => source.Cast<object>().ToArray()
+        };
     }
 
     /// <summary>

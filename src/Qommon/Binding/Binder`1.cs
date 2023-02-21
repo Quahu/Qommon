@@ -85,5 +85,7 @@ public class Binder<TBind>
     ///     Gets the bound value of this <see cref="Binder{TBind}"/> or the <see langword="default"/> value.
     /// </summary>
     public TBind? GetValueOrDefault()
-        => _value;
+    {
+        return _value;
+    }
 }
