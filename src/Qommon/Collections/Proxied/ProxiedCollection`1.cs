@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Qommon.Collections.Proxied;
 
@@ -9,6 +10,8 @@ namespace Qommon.Collections.Proxied;
 ///     by wrapping an <see cref="ICollection{T}"/> with virtual implementations making overriding individual members very simple.
 /// </summary>
 /// <typeparam name="T"> The type of values in the list. </typeparam>
+[DebuggerTypeProxy(typeof(CollectionDebuggerProxy<>))]
+[DebuggerDisplay("Count = {Count}")]
 public class ProxiedCollection<T> : ICollection<T>, ICollection, IReadOnlyCollection<T>
 {
     /// <inheritdoc cref="ICollection{T}.Count"/>

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Qommon.Collections.Proxied;
@@ -10,6 +11,7 @@ namespace Qommon.Collections.Proxied;
 /// </summary>
 /// <typeparam name="TKey"> The type of keys in the dictionary. </typeparam>
 /// <typeparam name="TValue"> The type of values in the dictionary. </typeparam>
+[DebuggerTypeProxy(typeof(DictionaryDebuggerProxy<,>))]
 public class ProxiedDictionary<TKey, TValue> : ProxiedCollection<KeyValuePair<TKey, TValue>>,
     IDictionary<TKey, TValue>, IDictionary, IReadOnlyDictionary<TKey, TValue>
     where TKey : notnull
@@ -97,7 +99,9 @@ public class ProxiedDictionary<TKey, TValue> : ProxiedCollection<KeyValuePair<TK
     }
 
     IDictionaryEnumerator IDictionary.GetEnumerator()
-        => new Enumerator(GetEnumerator());
+    {
+        return new Enumerator(GetEnumerator());
+    }
 
     private sealed class Enumerator : IDictionaryEnumerator
     {
