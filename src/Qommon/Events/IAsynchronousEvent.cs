@@ -9,19 +9,34 @@ namespace Qommon.Events;
 public interface IAsynchronousEvent
 {
     /// <summary>
-    ///     Invokes this <see cref="IAsynchronousEvent"/>.
+    ///     Invokes the subscribed event handlers of this event in parallel.
     /// </summary>
-    /// <param name="sender"> The event sender. </param>
+    /// <param name="sender"> The sender invoking the event. </param>
     /// <param name="e"> The event data. </param>
+    /// <remarks>
+    ///     Exceptions occurring in the handlers are collected and then thrown
+    ///     combined as an <see cref="AggregateException"/>.
+    /// </remarks>
     /// <returns>
-    ///     A <see cref="ValueTask"/> representing the invocation work.
+    ///     A <see cref="Task"/> which will complete when all subscribed handlers
+    ///     have finished executing.
     /// </returns>
-    ValueTask InvokeAsync(object? sender, EventArgs e);
+    /// <exception cref="AggregateException">
+    ///     Thrown when one or more exceptions occurred in the subscribed event handlers.
+    /// </exception>
+    Task InvokeParallel(object? sender, EventArgs e);
 
     /// <summary>
-    ///     Invokes this <see cref="IAsynchronousEvent"/>.
+    ///     Invokes the subscribed event handlers of this event sequentially.
     /// </summary>
-    /// <param name="sender"> The event sender. </param>
+    /// <remarks>
+    ///     Exceptions occurring in the handlers are immediately thrown.
+    /// </remarks>
+    /// <param name="sender"> The sender invoking the event. </param>
     /// <param name="e"> The event data. </param>
-    void Invoke(object? sender, EventArgs e);
+    /// <returns>
+    ///     A <see cref="Task"/> which will complete when all subscribed handlers
+    ///     have finished executing.
+    /// </returns>
+    Task InvokeSequential(object? sender, EventArgs e);
 }

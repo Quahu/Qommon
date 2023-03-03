@@ -1,123 +1,118 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Threading.Tasks;
+using Qommon.Pooling;
 
 namespace Qommon.Events;
 
 /// <summary>
-///     Represents an asynchronous event handler used by the <see cref="AsynchronousEvent{T}"/>.
+///     Represents an event handler used by <see cref="AsynchronousEvent{T}"/>.
 /// </summary>
-/// <typeparam name="T"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this handler. </typeparam>
-/// <param name="sender"> The instance from which the event came from. </param>
-/// <param name="e"> The <see cref="EventArgs"/> object containing the event data. </param>
-public delegate ValueTask AsynchronousEventHandler<T>(object? sender, T e)
-    where T : EventArgs;
+/// <typeparam name="TEventArgs"> The type of <see cref="EventArgs"/> used by this handler. </typeparam>
+/// <param name="sender"> The sender invoking the event. </param>
+/// <param name="e"> The event data. </param>
+public delegate Task AsynchronousEventHandler<TEventArgs>(object? sender, TEventArgs e)
+    where TEventArgs : EventArgs;
 
 /// <summary>
 ///     Represents an asynchronous event handler caller.
 /// </summary>
 /// <typeparam name="TEventArgs"> The <see cref="Type"/> of <see cref="EventArgs"/> used by this event. </typeparam>
+[DebuggerTypeProxy(typeof(AsynchronousEventDebuggerProxy<>))]
+[DebuggerDisplay("Count = {Count}")]
 public sealed class AsynchronousEvent<TEventArgs> : IAsynchronousEvent
     where TEventArgs : EventArgs
 {
     /// <summary>
     ///     Gets the amount of handlers this <see cref="AsynchronousEvent{T}"/> holds.
     /// </summary>
-    public int Count
-    {
-        get
-        {
-            lock (this)
-            {
-                return _handlers.Count;
-            }
-        }
-    }
+    public int Count => _handlers.Length;
 
-    private ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> _handlers;
-    private readonly Action<Exception>? _exceptionHandler;
+    private ImmutableArray<AsynchronousEventHandler<TEventArgs>> _handlers;
 
     /// <summary>
     ///     Instantiates a new <see cref="AsynchronousEvent{T}"/>.
     /// </summary>
     public AsynchronousEvent()
     {
-        _handlers = ImmutableHashSet<AsynchronousEventHandler<TEventArgs>>.Empty;
+        _handlers = ImmutableArray<AsynchronousEventHandler<TEventArgs>>.Empty;
     }
 
-    /// <summary>
-    ///     Instantiates a new <see cref="AsynchronousEvent{T}"/> with the specified <see cref="Func{T, TResult}"/> error handler.
-    /// </summary>
-    /// <param name="exceptionHandler"> The exception handler for exceptions occurring in event handlers. </param>
-    public AsynchronousEvent(Action<Exception> exceptionHandler)
-        : this()
+    internal AsynchronousEventHandler<TEventArgs>[] GetSubscribers()
     {
-        _exceptionHandler = exceptionHandler;
+        return _handlers.AsSpan().ToArray();
     }
 
     /// <summary>
-    ///     Hooks an <see cref="AsynchronousEventHandler{T}"/> up to this <see cref="AsynchronousEvent{T}"/>.
+    ///     Subscribes the specified event handler to this event.
     /// </summary>
-    /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to hook up. </param>
-    public void Hook(AsynchronousEventHandler<TEventArgs> handler)
+    /// <param name="handler"> The event handler to subscribe. </param>
+    /// <exception cref="ArgumentException">
+    ///     Thrown when <paramref name="handler"/> is already a handler of this event.
+    /// </exception>
+    public void Add(AsynchronousEventHandler<TEventArgs> handler)
     {
         Guard.IsNotNull(handler);
 
-        lock (this)
+        static ImmutableArray<AsynchronousEventHandler<TEventArgs>> Transformer(
+            ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers,
+            AsynchronousEventHandler<TEventArgs> handler)
         {
-            var currentHandlers = _handlers;
-            var newHandlers = currentHandlers.Add(handler);
-            if (currentHandlers == newHandlers)
-                throw new ArgumentException($"The event handler {handler} is already hooked to this event. Did you hook it up twice by mistake?");
+            if (handlers.Contains(handler))
+                return handlers;
 
-            _handlers = newHandlers;
+            return handlers.Add(handler);
+        }
+
+        if (!ImmutableInterlocked.Update(ref _handlers, Transformer, handler))
+        {
+            throw new ArgumentException($"The event handler {handler} is already subscribed to this event. Did you subscribe twice by mistake?");
         }
     }
 
     /// <summary>
-    ///     Unhooks an <see cref="AsynchronousEventHandler{T}"/> from this <see cref="AsynchronousEvent{T}"/>.
+    ///     Unsubscribes the specified event handler from this event.
     /// </summary>
-    /// <param name="handler"> The <see cref="AsynchronousEventHandler{T}"/> to unhook. </param>
-    public void Unhook(AsynchronousEventHandler<TEventArgs> handler)
+    /// <param name="handler"> The event handler to unsubscribe. </param>
+    /// <exception cref="ArgumentException">
+    ///     Thrown when <paramref name="handler"/> is not a handler of this event.
+    /// </exception>
+    public void Remove(AsynchronousEventHandler<TEventArgs> handler)
     {
         Guard.IsNotNull(handler);
 
-        lock (this)
+        static ImmutableArray<AsynchronousEventHandler<TEventArgs>> Transformer(
+            ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers,
+            AsynchronousEventHandler<TEventArgs> handler)
         {
-            var currentHandlers = _handlers;
-            var newHandlers = currentHandlers.Remove(handler);
-            if (currentHandlers == newHandlers)
-                throw new ArgumentException($"The event handler {handler} was never hooked to this event.");
+            return handlers.Remove(handler);
+        }
 
-            _handlers = newHandlers;
+        if (!ImmutableInterlocked.Update(ref _handlers, Transformer, handler))
+        {
+            throw new ArgumentException($"The event handler {handler} is not subscribed to this event.");
         }
     }
 
     /// <summary>
-    ///     Unhooks all <see cref="AsynchronousEventHandler{T}"/>s from this <see cref="AsynchronousEvent{T}"/>.
+    ///     Unsubscribes all event handlers from this event.
     /// </summary>
-    public void UnhookAll()
+    public void Clear()
     {
-        lock (this)
+        static ImmutableArray<AsynchronousEventHandler<TEventArgs>> Transformer(ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers)
         {
-            _handlers = _handlers.Clear();
+            return handlers.Clear();
         }
+
+        ImmutableInterlocked.Update(ref _handlers, Transformer);
     }
 
-    /// <summary>
-    ///     Invokes this <see cref="AsynchronousEventHandler{T}"/>, sequentially invoking each hooked up <see cref="AsynchronousEventHandler{T}"/>.
-    /// </summary>
-    /// <param name="sender"> The sender invoking this event. </param>
-    /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
-    public async ValueTask InvokeAsync(object? sender, TEventArgs e)
+    /// <inheritdoc cref="IAsynchronousEvent.InvokeParallel"/>
+    public Task InvokeParallel(object? sender, TEventArgs e)
     {
-        ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
-        lock (this)
-        {
-            handlers = _handlers;
-        }
-
-        foreach (var handler in handlers)
+        static async Task InvokeSingleAsync(AsynchronousEventHandler<TEventArgs> handler, object? sender, TEventArgs e)
         {
             try
             {
@@ -125,41 +120,87 @@ public sealed class AsynchronousEvent<TEventArgs> : IAsynchronousEvent
             }
             catch (Exception ex)
             {
-                _exceptionHandler?.Invoke(ex);
+                throw new AggregateException("One or more exceptions occurred while invoking the event.", ex);
             }
         }
+
+        static async Task InvokeMultipleAsync(ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers, int handlerCount, object? sender, TEventArgs e)
+        {
+            List<Exception>? exceptions = null;
+            var tasks = new Task?[handlers.Length];
+            for (var i = 0; i < handlers.Length; i++)
+            {
+                var handler = handlers[i];
+                try
+                {
+                    tasks[i] = handler.Invoke(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    (exceptions ??= new()).Add(ex);
+                }
+            }
+
+            foreach (var task in tasks)
+            {
+                if (task == null)
+                    continue;
+
+                try
+                {
+                    await task.ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    (exceptions ??= new()).Add(ex);
+                }
+            }
+
+            if (exceptions != null)
+            {
+                throw new AggregateException("One or more exceptions occurred while invoking the event.", exceptions);
+            }
+        }
+
+        var handlers = _handlers;
+        var handlerCount = _handlers.Length;
+        return handlerCount == 1
+            ? InvokeSingleAsync(handlers[0], sender, e)
+            : InvokeMultipleAsync(handlers, handlerCount, sender, e);
     }
 
-    /// <summary>
-    ///     Invokes this <see cref="AsynchronousEventHandler{T}"/>, sequentially invoking each hooked up <see cref="AsynchronousEventHandler{T}"/>
-    ///     without awaiting their completion.
-    /// </summary>
-    /// <param name="sender"> The sender invoking this event. </param>
-    /// <param name="e"> The <see cref="EventArgs"/> data for this invocation. </param>
-    public void Invoke(object? sender, TEventArgs e)
+    /// <inheritdoc cref="IAsynchronousEvent.InvokeSequential"/>
+    public Task InvokeSequential(object? sender, TEventArgs e)
     {
-        ImmutableHashSet<AsynchronousEventHandler<TEventArgs>> handlers;
-        lock (this)
+        static async Task InvokeSingleAsync(AsynchronousEventHandler<TEventArgs> handler, object? sender, TEventArgs e)
         {
-            handlers = _handlers;
+            await handler.Invoke(sender, e).ConfigureAwait(false);
         }
 
-        foreach (var handler in handlers)
+        static async Task InvokeMultipleAsync(ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers, int handlerCount, object? sender, TEventArgs e)
         {
-            try
+            for (var i = 0; i < handlerCount; i++)
             {
-                _ = handler.Invoke(sender, e);
-            }
-            catch (Exception ex)
-            {
-                _exceptionHandler?.Invoke(ex);
+                var handler = handlers[i];
+                var task = handler.Invoke(sender, e);
+                await task.ConfigureAwait(false);
             }
         }
+
+        var handlers = _handlers;
+        var handlerCount = _handlers.Length;
+        return handlerCount == 1
+            ? InvokeSingleAsync(handlers[0], sender, e)
+            : InvokeMultipleAsync(handlers, handlerCount, sender, e);
     }
 
-    ValueTask IAsynchronousEvent.InvokeAsync(object? sender, EventArgs e)
-        => InvokeAsync(sender, (TEventArgs) e);
+    Task IAsynchronousEvent.InvokeParallel(object? sender, EventArgs e)
+    {
+        return InvokeParallel(sender, (TEventArgs) e);
+    }
 
-    void IAsynchronousEvent.Invoke(object? sender, EventArgs e)
-        => Invoke(sender, (TEventArgs) e);
+    Task IAsynchronousEvent.InvokeSequential(object? sender, EventArgs e)
+    {
+        return InvokeSequential(sender, (TEventArgs) e);
+    }
 }
