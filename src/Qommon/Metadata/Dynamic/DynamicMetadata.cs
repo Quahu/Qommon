@@ -10,7 +10,7 @@ namespace Qommon.Metadata.Dynamic;
 public static partial class DynamicMetadata
 {
     // This class is a bit messy - the methods are ordered by object instance parameters, then IMetadata.
-    // The same order exists in the 'Synchronized' partial.
+    // The same order exists in the 'ThreadSafe' partial.
     // 1. Get()
     // 2. Set()
     // 3. Remove()

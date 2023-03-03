@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Qommon.Collections;
-using Qommon.Collections.Synchronized;
+using Qommon.Collections.ThreadSafe;
 
 namespace Qommon.Metadata;
 
@@ -255,9 +255,9 @@ public static class MetadataExtensions
             return false;
         }
 
-        // Synchronized access.
-        if (dictionary is ISynchronizedDictionary<string, object?> synchronizedDictionary)
-            return synchronizedDictionary.TryRemove(key, out value);
+        // Thread-safe access.
+        if (dictionary is IThreadSafeDictionary<string, object?> threadSafeDictionary)
+            return threadSafeDictionary.TryRemove(key, out value);
 
         return dictionary.Remove(key, out value);
     }
@@ -303,7 +303,7 @@ public static class MetadataExtensions
     ///     Copies metadata items from this metadata to another.
     /// </summary>
     /// <remarks>
-    ///     If this metadata is synchronized the target's metadata items get synchronized as well.
+    ///     If this metadata is thread-safe the target's metadata will be made thread-safe as well.
     /// </remarks>
     /// <param name="metadata"> The metadata object. </param>
     /// <param name="target"> The target metadata object. </param>
@@ -320,7 +320,7 @@ public static class MetadataExtensions
     ///     Copies metadata items from this metadata to another.
     /// </summary>
     /// <remarks>
-    ///     If this metadata is synchronized the target's metadata items get synchronized as well.
+    ///     If this metadata is thread-safe the target's metadata will be made thread-safe as well.
     /// </remarks>
     /// <param name="metadata"> The metadata object. </param>
     /// <param name="target"> The target metadata object. </param>
@@ -333,8 +333,8 @@ public static class MetadataExtensions
         if (items == null)
             return;
 
-        if (items is ISynchronizedDictionary<string, object?> synchronizedDictionary)
-            items = synchronizedDictionary.ToArray();
+        if (items is IThreadSafeDictionary<string, object?> threadSafeDictionary)
+            items = threadSafeDictionary.ToArray();
 
         foreach (var (key, value) in items)
         {
@@ -357,8 +357,8 @@ public static class MetadataExtensions
         if (dictionary != null)
             return dictionary;
 
-        if (metadata is ISynchronizedMetadata)
-            return metadata.EnsureSynchronizedMetadataDictionaryExists();
+        if (metadata is IThreadSafeMetadata)
+            return metadata.EnsureThreadSafeMetadataDictionaryExists();
 
         dictionary = new Dictionary<string, object?>();
         metadata.Metadata = dictionary;
@@ -366,32 +366,32 @@ public static class MetadataExtensions
     }
 
     /// <summary>
-    ///     Ensures that this metadata has a synchronized dictionary set.
+    ///     Ensures that this metadata has a thread-safe dictionary set.
     /// </summary>
     /// <param name="metadata"> The metadata object. </param>
     /// <returns>
     ///     A dictionary of metadata items.
     /// </returns>
-    public static ISynchronizedDictionary<string, object?> EnsureSynchronizedMetadataDictionaryExists(this IMetadata metadata)
+    public static IThreadSafeDictionary<string, object?> EnsureThreadSafeMetadataDictionaryExists(this IMetadata metadata)
     {
         Guard.IsNotNull(metadata);
 
-        ISynchronizedDictionary<string, object?> synchronizedDictionary;
+        IThreadSafeDictionary<string, object?> threadSafeDictionary;
         var dictionary = metadata.Metadata;
         if (dictionary != null)
         {
-            // The dictionary is already synchronized.
-            if (dictionary is ISynchronizedDictionary<string, object?> existingSynchronizedDictionary)
-                return existingSynchronizedDictionary;
+            // Checks if the dictionary is already thread-safe.
+            if (dictionary is IThreadSafeDictionary<string, object?> existingThreadSafeDictionary)
+                return existingThreadSafeDictionary;
 
-            synchronizedDictionary = dictionary.Synchronized();
+            threadSafeDictionary = ThreadSafeDictionary.Monitor.Wrap(dictionary);
         }
         else
         {
-            synchronizedDictionary = new SynchronizedDictionary<string, object?>();
+            threadSafeDictionary = ThreadSafeDictionary.Monitor.Create<string, object?>();
         }
 
-        metadata.Metadata = synchronizedDictionary;
-        return synchronizedDictionary;
+        metadata.Metadata = threadSafeDictionary;
+        return threadSafeDictionary;
     }
 }

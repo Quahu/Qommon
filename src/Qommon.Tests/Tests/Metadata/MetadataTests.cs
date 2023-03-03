@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using Qommon.Collections.Synchronized;
+using Qommon.Collections.ThreadSafe;
 using Qommon.Metadata;
 
 namespace Qommon.Tests.Metadata;
@@ -28,21 +28,21 @@ public class MetadataTests : QommonFixture
         }
     }
 
-    private class TestSynchronizedMetadata : ISynchronizedMetadata
+    private class TestThreadSafeMetadata : IThreadSafeMetadata
     {
-        public ISynchronizedDictionary<string, object?>? Metadata { get; set; }
+        public IThreadSafeDictionary<string, object?>? Metadata { get; set; }
 
-        public TestSynchronizedMetadata()
+        public TestThreadSafeMetadata()
         {
-            Metadata = new SynchronizedDictionary<string, object?>();
+            Metadata = ThreadSafeDictionary.Monitor.Create<string, object?>();
         }
 
-        public TestSynchronizedMetadata(ISynchronizedDictionary<string, object?>? metadata)
+        public TestThreadSafeMetadata(IThreadSafeDictionary<string, object?>? metadata)
         {
             Metadata = metadata;
         }
 
-        ISynchronizedDictionary<string, object?>? ISynchronizedMetadata.Metadata
+        IThreadSafeDictionary<string, object?>? IThreadSafeMetadata.Metadata
         {
             get => Metadata;
             set => Metadata = value;
@@ -59,9 +59,9 @@ public class MetadataTests : QommonFixture
     }
 
     [Test]
-    public void EnsureMetadataDictionaryExists_NoSynchronizedMetadata_ReturnsNewMetadata()
+    public void EnsureMetadataDictionaryExists_NoThreadSafeMetadata_ReturnsNewMetadata()
     {
-        var metadata = new TestSynchronizedMetadata(null);
+        var metadata = new TestThreadSafeMetadata(null);
         metadata.EnsureMetadataDictionaryExists();
 
         Assert.IsNotNull(metadata.Metadata);
