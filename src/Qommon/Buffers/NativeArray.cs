@@ -103,6 +103,17 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
     }
 
     /// <summary>
+    ///     Instantiates a new <see cref="NativeArray{T}"/> with the given pointer and length.
+    /// </summary>
+    /// <param name="ptr"> The pointer to the memory. </param>
+    /// <param name="length"> The length of the array. </param>
+    public unsafe NativeArray(T* ptr, int length)
+    {
+        _ptr = (IntPtr) ptr;
+        _length = length;
+    }
+
+    /// <summary>
     ///     Reinterprets this array as the given type.
     /// </summary>
     /// <typeparam name="TTarget"> The target type of the items. </typeparam>
