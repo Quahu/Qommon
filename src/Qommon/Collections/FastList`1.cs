@@ -15,6 +15,7 @@ namespace Qommon.Collections
     /// </summary>
     /// <typeparam name="T"> The type of the items. </typeparam>
     [EditorBrowsable(EditorBrowsableState.Never)]
+    [DebuggerTypeProxy(typeof(CollectionDebuggerProxy<>))]
     [DebuggerDisplay("Count = {Count}")]
     public class FastList<T> : IList<T>, IList, IReadOnlyList<T>
     {
@@ -508,7 +509,7 @@ namespace Qommon.Collections
             Guard.IsNotNull(array);
             Guard.IsNotMultiDimensional(array);
 
-            Array.Copy(_items, 0, array!, arrayIndex, _size);
+            Array.Copy(_items, 0, array, arrayIndex, _size);
         }
 
         bool IList.Contains(object? item)
