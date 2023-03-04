@@ -132,9 +132,9 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
         where TTarget : unmanaged
     {
         var oldLength = _length;
-        var oldSize = sizeof(T);
-        var newSize = sizeof(TTarget);
-        var newLength = oldLength * oldSize / newSize;
+        var oldElementSize = sizeof(T);
+        var newElementSize = sizeof(TTarget);
+        var newLength = oldLength * oldElementSize / newElementSize;
         return new NativeArray<TTarget>(_ptr, newLength);
     }
 

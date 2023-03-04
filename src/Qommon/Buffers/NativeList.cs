@@ -244,12 +244,12 @@ public struct NativeList<T> : IList<T>, IList, IReadOnlyList<T>,
         where TTarget : unmanaged
     {
         var oldCapacity = _capacity;
-        var oldSize = sizeof(T);
-        var newSize = sizeof(TTarget);
-        var newCapacity = oldCapacity * oldSize / newSize;
+        var oldElementSize = sizeof(T);
+        var newElementSize = sizeof(TTarget);
+        var newCapacity = oldCapacity * oldElementSize / newElementSize;
         return new NativeList<TTarget>(_ptr, newCapacity)
         {
-            _size = _size * oldSize / newSize
+            _size = _size * oldElementSize / newElementSize
         };
     }
 
