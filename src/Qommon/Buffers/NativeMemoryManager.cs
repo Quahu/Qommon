@@ -1,6 +1,8 @@
 using System;
 using System.Buffers;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace Qommon.Buffers;
 
@@ -14,7 +16,7 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
     /// <inheritdoc/>
     public override Memory<T> Memory => CreateMemory(_elementCount);
 
-    private void* _ptr;
+    private IntPtr _ptr;
     private readonly int _elementCount;
 
     /// <summary>
@@ -26,29 +28,29 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
     public NativeMemoryManager(nuint elementCount, bool zeroed = false)
     {
         var elementSize = (nuint) sizeof(T);
-        _ptr = zeroed
+        _ptr = (IntPtr) (zeroed
             ? NativeMemory.AllocZeroed(elementCount, elementSize)
-            : NativeMemory.Alloc(elementCount, elementSize);
+            : NativeMemory.Alloc(elementCount, elementSize));
 
         _elementCount = (int) elementCount;
     }
 
     /// <summary>
     ///     Instantiates a new <see cref="NativeMemoryManager{T}"/>
-    ///     with the specified pointer and element count.
+    ///     with the specified <see cref="NativeMemory"/> pointer and element count.
     /// </summary>
     /// <param name="ptr"> The pointer to the unmanaged memory. </param>
     /// <param name="elementCount"> The amount of <typeparamref name="T"/> elements. </param>
     public NativeMemoryManager(void* ptr, nuint elementCount)
     {
-        _ptr = ptr;
+        _ptr = (IntPtr) ptr;
         _elementCount = (int) elementCount;
     }
 
     /// <inheritdoc/>
     public override Span<T> GetSpan()
     {
-        return new(_ptr, _elementCount);
+        return new((void*) _ptr, _elementCount);
     }
 
     /// <summary>
@@ -58,6 +60,7 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
     /// <returns>
     ///     A <see cref="MemoryHandle"/> with the pointer offset by the given element index.
     /// </returns>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public override MemoryHandle Pin(int elementIndex = 0)
     {
         return new((T*) _ptr + elementIndex);
@@ -66,13 +69,14 @@ public unsafe class NativeMemoryManager<T> : MemoryManager<T>
     /// <summary>
     ///     Does nothing as the memory is unmanaged.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public override void Unpin()
     { }
 
-    /// <inheritdoc />
+    /// <inheritdoc/>
     protected override void Dispose(bool disposing)
     {
-        NativeMemory.Free(_ptr);
-        _ptr = null;
+        var ptr = Interlocked.Exchange(ref _ptr, IntPtr.Zero);
+        NativeMemory.Free((void*) ptr);
     }
 }
