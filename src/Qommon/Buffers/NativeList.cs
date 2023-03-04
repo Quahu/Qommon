@@ -122,7 +122,7 @@ public struct NativeList<T> : IList<T>, IList, IReadOnlyList<T>,
     /// <summary>
     ///     Gets a span that represents the current buffer of this list.
     /// </summary>
-    private unsafe Span<T> WorkingSpan
+    private readonly unsafe Span<T> WorkingSpan
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -138,7 +138,7 @@ public struct NativeList<T> : IList<T>, IList, IReadOnlyList<T>,
     ///     Gets or sets the item at the given index.
     /// </summary>
     /// <param name="index"> The index of the item. </param>
-    public T this[int index]
+    public readonly T this[int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get => Span[index];
