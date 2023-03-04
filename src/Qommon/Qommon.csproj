@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <VersionPrefix>3.0.8</VersionPrefix>
+        <VersionPrefix>4.0.0</VersionPrefix>
         <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -66,6 +66,9 @@
             <DesignTime>True</DesignTime>
             <DependentUpon>Guard.Collection.tt</DependentUpon>
         </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="NonBlocking" Version="2.1.1" />
     </ItemGroup>
 
 </Project>
