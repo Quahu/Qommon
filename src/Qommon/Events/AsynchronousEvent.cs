@@ -127,8 +127,8 @@ public sealed class AsynchronousEvent<TEventArgs> : IAsynchronousEvent
         static async Task InvokeMultipleAsync(ImmutableArray<AsynchronousEventHandler<TEventArgs>> handlers, int handlerCount, object? sender, TEventArgs e)
         {
             List<Exception>? exceptions = null;
-            var tasks = new Task?[handlers.Length];
-            for (var i = 0; i < handlers.Length; i++)
+            var tasks = new Task?[handlerCount];
+            for (var i = 0; i < handlerCount; i++)
             {
                 var handler = handlers[i];
                 try
