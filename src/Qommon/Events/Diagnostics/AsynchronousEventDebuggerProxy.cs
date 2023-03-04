@@ -1,8 +1,7 @@
 using System;
 using System.Diagnostics;
-using Qommon.Events;
 
-namespace Qommon.Pooling;
+namespace Qommon.Events;
 
 internal sealed class AsynchronousEventDebuggerProxy<T>
     where T : EventArgs
