@@ -9,14 +9,19 @@ using System.Threading;
 namespace Qommon.Buffers;
 
 /// <summary>
-///     Represents an array over unmanaged memory.
+///     Represents an array that uses unmanaged memory.
 /// </summary>
 /// <typeparam name="T"> The unmanaged type of elements. </typeparam>
+/// <remarks>
+///     When you are done working with the array,
+///     make sure to call <see cref="Free"/> (see the remarks) to free
+///     any unmanaged memory that was possibly allocated
+///     by the array and prevent leaking memory.
+/// </remarks>
 [DebuggerTypeProxy(typeof(NativeArrayDebuggerProxy<>))]
 [DebuggerDisplay("{ToString(),raw}")]
 public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
-    IEquatable<NativeArray<T>>,
-    IDisposable
+    IEquatable<NativeArray<T>>
     where T : unmanaged
 {
     /// <summary>
@@ -29,7 +34,7 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
     }
 
     /// <summary>
-    ///     Gets the pointer to the memory of this array.
+    ///     Gets the pointer to the allocated memory of this array.
     /// </summary>
     public IntPtr Pointer
     {
@@ -75,9 +80,10 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
 
     private readonly IntPtr _ptr;
     private readonly int _length;
+    private readonly bool _freePtr;
 
     /// <summary>
-    ///     Instantiates a new <see cref="NativeArray{T}"/> with the given length.
+    ///     Instantiates a new <see cref="NativeArray{T}"/> with the specified length.
     /// </summary>
     /// <param name="length"> The length of the array. </param>
     /// <param name="zeroed"> Whether the memory should be zeroed. </param>
@@ -89,29 +95,30 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
             : NativeMemory.Alloc(length, elementSize));
 
         _length = (int) length;
+        _freePtr = true;
     }
 
     /// <summary>
-    ///     Instantiates a new <see cref="NativeArray{T}"/> with the given pointer and length.
+    ///     Instantiates a new <see cref="NativeArray{T}"/> with the specified pointer and length.
     /// </summary>
+    /// <remarks>
+    ///     The memory specified by the pointer is not deallocated by <see cref="Free"/> (see the remarks).
+    /// </remarks>
     /// <param name="ptr"> The pointer to the memory. </param>
     /// <param name="length"> The length of the array. </param>
     public NativeArray(IntPtr ptr, int length)
     {
+        Guard.IsNotEqualTo(ptr, IntPtr.Zero);
+
         _ptr = ptr;
         _length = length;
+        _freePtr = false;
     }
 
-    /// <summary>
-    ///     Instantiates a new <see cref="NativeArray{T}"/> with the given pointer and length.
-    /// </summary>
-    /// <param name="ptr"> The pointer to the memory. </param>
-    /// <param name="length"> The length of the array. </param>
+    /// <inheritdoc cref="NativeArray{T}(IntPtr,int)"/>
     public unsafe NativeArray(T* ptr, int length)
-    {
-        _ptr = (IntPtr) ptr;
-        _length = length;
-    }
+        : this((IntPtr) ptr, length)
+    { }
 
     /// <summary>
     ///     Reinterprets this array as the given type.
@@ -132,10 +139,10 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
     }
 
     /// <summary>
-    ///     Copies the contents of this array to a new array.
+    ///     Copies the items of this array to a managed array.
     /// </summary>
     /// <returns>
-    ///     The new array.
+    ///     The managed array containing the copied items.
     /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public T[] ToArray()
@@ -167,12 +174,22 @@ public readonly struct NativeArray<T> : IList<T>, IList, IReadOnlyList<T>,
         return _ptr.GetHashCode();
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    ///     Frees the memory allocated by this array.
+    /// </summary>
+    /// <remarks>
+    ///     This does not free the memory that was specified via the
+    ///     <see cref="NativeArray{T}(IntPtr, int)"/> and <see cref="NativeArray{T}(T*, int)"/> constructors.
+    ///     You must free that memory yourself.
+    /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public unsafe void Dispose()
+    public unsafe void Free()
     {
         var ptr = Interlocked.Exchange(ref Unsafe.AsRef(in _ptr), IntPtr.Zero);
-        NativeMemory.Free((void*) ptr);
+        if (_freePtr)
+        {
+            NativeMemory.Free((void*) ptr);
+        }
     }
 
     /// <summary>
