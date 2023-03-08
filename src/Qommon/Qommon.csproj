@@ -67,8 +67,5 @@
             <DependentUpon>Guard.Collection.tt</DependentUpon>
         </Compile>
     </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="NonBlocking" Version="2.1.1" />
-    </ItemGroup>
 
 </Project>
